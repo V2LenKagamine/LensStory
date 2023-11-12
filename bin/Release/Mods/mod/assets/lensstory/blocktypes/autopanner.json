@@ -1,0 +1,31 @@
+{
+    "code": "autopanner",
+    "shape": { "base": "game:block/basic/cube" },
+    "attributes": {
+        "handbook": {
+            "exclude": true
+        }
+    },
+    "drawtype": "cube",
+    "creativeinventory": {
+        "general": [ "*" ]
+    },
+    "class": "lensautopannerblock",
+    "entityClass": "lensautopanner",
+    "entityBehaviors": [ { "name": "lensautopannerbehavior" },{"name": "Mana"} ],
+    "blockmaterial": "Wood",
+    "replaceable": 900,
+    "lightAbsorption": 99,
+    "maxStackSize": 32,
+    "materialDensity": 700,
+    "resistance": 4,
+    "textures": {
+        "all": { "base": "game:block/wood/oak" }
+    },
+    "sideopaque": {
+        "all": true
+    },
+    "sidesolid": {
+        "all": true
+    }
+}

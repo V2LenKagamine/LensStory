@@ -1,0 +1,10 @@
+﻿{
+    "code": "attunementwand",
+    "class": "attunementclass",
+    "creativeinventory": {
+        "general": [ "*" ]
+    },
+    "texture": {
+        "base": "item/astick"
+    }
+}

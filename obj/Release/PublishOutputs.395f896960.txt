@@ -1,0 +1,13 @@
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\blocktypes\autopanner.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\blocktypes\creativemana.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\itemtypes\attunementwand.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\itemtypes\fluidskimmer.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\itemtypes\misc\coin.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\lang\en.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\recipes\grid\fluidskimmer.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\shapes\item\coinshp.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\textures\item\astick.png
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\modinfo.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\lensstory.dll
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\lensstory.deps.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\lensstory.pdb

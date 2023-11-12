@@ -1,0 +1,11 @@
+{
+  "type": "code",
+  "modid": "lensstory",
+  "name": "Lens Story",
+  "authors": ["LenKagamine"],
+  "description": "Basically a randomthings mod. Use to gain endless suffering!",
+  "version": "0.0.17",
+  "dependencies": {
+    "game": "1.18.15"
+  }
+}

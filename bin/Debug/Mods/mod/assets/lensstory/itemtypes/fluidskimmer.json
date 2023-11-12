@@ -1,0 +1,10 @@
+{
+    "code": "fluidskimmer",
+    "class": "fluidskimmerclass",
+    "creativeinventory": {
+        "general": [ "*" ]
+    },
+    "texture": {
+        "base": "item/astick"
+    }
+}

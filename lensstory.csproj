@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>bin\$(Configuration)\Mods\mod</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Vintagestory">
+      <HintPath>..\..\Vintagestory\Vintagestory.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VintagestoryAPI">
+      <HintPath>$(VINTAGE_STORY)/VintagestoryAPI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="VintagestoryLib">
+      <HintPath>..\..\Vintagestory\VintagestoryLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VintagestoryServer">
+      <HintPath>..\..\Vintagestory\VintagestoryServer.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VSCreativeMod">
+      <HintPath>..\..\Vintagestory\Mods\VSCreativeMod.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VSEssentials">
+      <HintPath>..\..\Vintagestory\Mods\VSEssentials.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VSSurvivalMod">
+      <HintPath>..\..\Vintagestory\Mods\VSSurvivalMod.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+<ItemGroup>
+  <Content Include="assets\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+  </Content>
+  <None Remove="assets\lensstory\itemtypes\attunementwand.json" />
+  <None Remove="src\Manastuff.cs~RF31215bb.TMP" />
+  <Content Include="modinfo.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+  </Content>
+</ItemGroup>
+
+</Project>
