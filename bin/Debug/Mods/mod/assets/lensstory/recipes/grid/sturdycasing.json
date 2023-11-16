@@ -1,0 +1,25 @@
+﻿{
+    "ingredientPattern": "GPG,PTP,GPG",
+    "width": 3,
+    "height": 3,
+    "ingredients": {
+        "T": {
+            "type": "item",
+            "code": "game:gear-temporal",
+            "returnedStack": { "type": "item", "code": "game:gear-rusty" }
+        },
+        "G": {
+            "type": "item",
+            "code": "gear-*",
+            "quantity": 2
+        },
+        "P": {
+            "type": "item",
+            "code": "game:metalplate-iron"
+        } 
+    },
+    "output": {
+        "type": "block",
+        "code": "sturdycasing"
+    }
+}

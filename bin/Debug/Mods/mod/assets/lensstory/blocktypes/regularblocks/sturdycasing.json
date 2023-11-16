@@ -1,0 +1,23 @@
+﻿{
+    "code": "sturdycasing",
+    "shape": { "base": "game:block/basic/cube" },
+    "drawtype": "cube",
+    "creativeinventory": {
+        "general": [ "*" ]
+    },
+    "blockmaterial": "Metal",
+    "replaceable": 900,
+    "lightAbsorption": 99,
+    "maxStackSize": 32,
+    "materialDensity": 700,
+    "resistance": 4,
+    "textures": {
+        "all": { "base": "game:block/metal/sheet/iron1" }
+    },
+    "sideopaque": {
+        "all": true
+    },
+    "sidesolid": {
+        "all": true
+    }
+}

@@ -2,7 +2,6 @@
 using System.Text;
 using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
-using Vintagestory.API.Util;
 
 namespace LensstoryMod
 {
@@ -81,7 +80,7 @@ namespace LensstoryMod
             base.GetBlockInfo(forPlayer, dsc);
             var mananetInfo = this.System?.GetManaNetInfo(this.Blockentity.Pos);
 
-            dsc.AppendLine("Mana:")
+            dsc.AppendLine("MP:")
                 .AppendLine("NetID: " + mananetInfo?.ManaID)
                 .AppendLine("Producers: " + mananetInfo?.TotalMakers)
                 .AppendLine("Produced: " + mananetInfo?.ManaProduced)
@@ -119,7 +118,7 @@ namespace LensstoryMod
 
     public interface IManaConsumer
     {
-        public int ToVoid { get; }
+        public int ToVoid();
         public void EatMana(int mana);
     }
 
@@ -131,7 +130,7 @@ namespace LensstoryMod
         public ManaConsumer(IManaConsumer manaEater)
         {
             ManaEater = manaEater;
-            ManaNeeded = manaEater.ToVoid;
+            ManaNeeded = manaEater.ToVoid();
         }
     }
 

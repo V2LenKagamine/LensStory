@@ -1,0 +1,24 @@
+﻿{
+    "ingredientPattern": "I,S,W",
+    "width": 1,
+    "height": 3,
+    "ingredients": {
+        "S": {
+            "type": "item",
+            "code": "game:stick"
+        },
+        "I": {
+            "type": "item",
+            "code": "game:ingot-*"
+        },
+        "W": {
+            "type": "item",
+            "code": "game:wrench-*",
+            "isTool": true
+        }
+    },
+    "output": {
+        "type": "item",
+        "code": "attunementwand"
+    }
+}

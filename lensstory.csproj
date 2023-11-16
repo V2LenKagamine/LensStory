@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Reference Include="protobuf-net">
+      <HintPath>..\..\Vintagestory\Lib\protobuf-net.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Vintagestory">
       <HintPath>..\..\Vintagestory\Vintagestory.dll</HintPath>
       <Private>False</Private>
@@ -41,11 +45,35 @@
   <Content Include="assets\**">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
   </Content>
+  <None Remove="assets\lensstory\blocktypes\manarepair.json" />
+  <None Remove="assets\lensstory\blocktypes\regularblocks\sturdycasing.json" />
+  <None Remove="assets\lensstory\blocktypes\rockmaker.json" />
   <None Remove="assets\lensstory\itemtypes\attunementwand.json" />
+  <None Remove="assets\lensstory\itemtypes\misc\hoardingsack.json" />
+  <None Remove="assets\lensstory\itemtypes\misc\parts\longrod.json" />
+  <None Remove="assets\lensstory\itemtypes\misc\parts\restoredgear.json" />
+  <None Remove="assets\lensstory\itemtypes\misc\parts\rods.json" />
+  <None Remove="assets\lensstory\itemtypes\misc\parts\spareparts.json" />
+  <None Remove="assets\lensstory\itemtypes\misc\scrollbook.json" />
+  <None Remove="assets\lensstory\itemtypes\scrolls.json" />
+  <None Remove="assets\lensstory\patches\classes.json" />
+  <None Remove="assets\lensstory\patches\tradershenanigans.json" />
+  <None Remove="assets\lensstory\patches\traits.json" />
+  <None Remove="assets\lensstory\recipes\grid\attunementwand.json" />
+  <None Remove="assets\lensstory\recipes\grid\hoardingsack.json" />
+  <None Remove="assets\lensstory\recipes\grid\machines\burnerator.json" />
+  <None Remove="assets\lensstory\recipes\grid\machines\manarepair.json" />
+  <None Remove="assets\lensstory\recipes\grid\machines\rockmaker.json" />
+  <None Remove="assets\lensstory\recipes\grid\sturdycasing.json" />
+  <None Remove="assets\lensstory\recipes\smithing\gears.json" />
+  <None Remove="assets\lensstory\recipes\smithing\longrods.json" />
+  <None Remove="assets\lensstory\recipes\smithing\rods.json" />
   <None Remove="src\Manastuff.cs~RF31215bb.TMP" />
   <Content Include="modinfo.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
   </Content>
 </ItemGroup>
+
+<ProjectExtensions><VisualStudio><UserProperties assets_4lensstory_4recipes_4grid_4machines_4manarepair_1json__JsonSchema="json" /></VisualStudio></ProjectExtensions>
 
 </Project>

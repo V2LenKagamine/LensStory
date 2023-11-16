@@ -49,19 +49,18 @@ namespace LensstoryMod
         }
         public int FuelAmnt
         {
-            get => this.fuel; set
+            get => fuel; set
             {
-                if (this.fuel != value)
+                if (fuel != value)
                 {
-                    this.fuel = value;
-                    this.MarkDirty();
+                    fuel = value;
+                    MarkDirty();
                 }
             }
         }
         private double ticker;
 
         private double LastTickTotalHours;
-        private Mana ManaStore => this.GetBehavior<Mana>();
 
         public override void Initialize(ICoreAPI api)
         {
@@ -72,33 +71,36 @@ namespace LensstoryMod
 
         private void OnCommonTick(float dt)
         {
-            if (this.Working)
+            if (Working)
             {
-                var hourspast = this.Api.World.Calendar.TotalHours - this.LastTickTotalHours;
-                if(this.fuel >= 1)
+                var hourspast = Api.World.Calendar.TotalHours - LastTickTotalHours;
+                if(fuel >= 1)
                 {
-                    ticker += hourspast;
-                    if (ticker >= 0.05)
+                    ticker += hourspast * 25; 
+                    if (ticker >= 1)
                     {
-                        if (Api.World.Rand.Next(100) <= 25)
+                        int workdone = (int)Math.Floor(ticker);
+                        for (var i = 0; i < workdone; i++)
                         {
-                            ItemStack Item = new ItemStack(Api.World.GetItem(AssetLocation.Create(this.PossibleDrops[Api.World.Rand.Next(PossibleDrops.Length)])),Api.World.Rand.Next(2)+1);
-                            if (Item != null) 
+                            if (Api.World.Rand.Next(100) <= 25)
                             {
-                                this.Api.World.SpawnItemEntity(Item, this.Pos.ToVec3d().Add(0.5, -1.5, 0.5));
+                                ItemStack Item = new ItemStack(Api.World.GetItem(AssetLocation.Create(PossibleDrops[Api.World.Rand.Next(PossibleDrops.Length)])), Api.World.Rand.Next(2) + 1);
+                                if (Item != null)
+                                {
+                                    Api.World.SpawnItemEntity(Item, Pos.ToVec3d().Add(0.5, -1.1, 0.5));
+                                }
                             }
-                            
+                            if (Api.World.Rand.Next(100) <= 10)
+                            {
+                                fuel--;
+                            }
                         }
-                        if (Api.World.Rand.Next(100) <= 10)
-                        {
-                            this.fuel--;
-                        }
-                        ticker -= 0.05;
-                        this.MarkDirty();
+                        ticker -= workdone;
+                        MarkDirty();
                     }
                 }
             }
-            this.LastTickTotalHours = this.Api.World.Calendar.TotalHours;
+            LastTickTotalHours = Api.World.Calendar.TotalHours;
         }
 
         internal bool OnPlayerInteract(IPlayer player)
@@ -158,13 +160,13 @@ namespace LensstoryMod
 
         }
 
-        public int ToVoid => 1;
+        public int ToVoid() { return 1; }
 
         public void EatMana(int mana)
         {
             if (this.Blockentity is AutoPannerBE entity)
             {
-                entity.Working = mana == ToVoid;
+                entity.Working = mana == ToVoid();
             }
         }
 
@@ -172,8 +174,8 @@ namespace LensstoryMod
         {
             base.GetBlockInfo(forPlayer, dsc);
 
-            dsc.AppendLine("Mana: ")
-                .AppendLine("Consuming: " + ToVoid);
+            dsc.AppendLine("MP: ")
+                .AppendLine("Consumes: " + ToVoid());
         }
     }
 }

@@ -1,0 +1,47 @@
+{
+    "code": "manarepair",
+    "shape": { "base": "game:block/basic/cube" },
+    "drawtype": "cube",
+    "creativeinventory": {
+        "general": [ "*" ]
+    },
+    "class": "lensmanarepairblock",
+    "entityClass": "lensmanarepair",
+    "entityBehaviors": [
+        { "name": "lensmanarepairbehavior" },
+        { "name": "Mana" }
+    ],
+    "blockmaterial": "Metal",
+    "replaceable": 900,
+    "lightAbsorption": 99,
+    "maxStackSize": 32,
+    "materialDensity": 700,
+    "resistance": 4,
+    "textures": {
+        "verticals": { "base": "game:block/metal/lantern/meteoriciron" },
+        "horizontals": {
+            "base": "game:block/metal/lantern/blackbronze",
+            "blendedoverlays": [
+                {
+                    "base": "game:block/metal/lantern/lining-gold",
+                    "blendMode": "Overlay"
+                }
+            ]
+        }
+    },
+    "sideopaque": {
+        "all": true
+    },
+    "sidesolid": {
+        "all": true
+    },
+    "handbook": {
+        "extraSections": [
+            {
+                "tite": "manarepair-help-title",
+                "text": "manarepair-help-text"
+            }
+        ],
+        "include": true
+    }
+}

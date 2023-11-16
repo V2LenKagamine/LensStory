@@ -1,38 +1,124 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
+using ProtoBuf;
+using Vintagestory;
+using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
 using Vintagestory.API.MathTools;
-using Vintagestory.GameContent;
+using Vintagestory.API.Server;
 
 namespace LensstoryMod {
+
+    /* Quick reference to all attributes that change the characters Stats:
+   healingeffectivness, maxhealthExtraPoints, walkSpeed, hungerrate, rangedWeaponsAcc, rangedWeaponsSpeed
+   rangedWeaponsDamage, meleeWeaponsDamage, mechanicalsDamage, animalLootDropRate, forageDropRate, wildCropDropRate
+   vesselContentsDropRate, oreDropRate, rustyGearDropRate, miningSpeedMul, animalSeekingRange, armorDurabilityLoss,
+   bowDrawingStrength, wholeVesselLootChance, temporalGearTLRepairCost, animalHarvestingTime*/
+    //A reminder that "mana" is now "Mechanus Potentia"
     public class LensStoryMod : ModSystem
     {
         private readonly HashSet<KeyValuePair<ManaNetwork,int>> mananetworks = new();
         private readonly List<ManaConsumer> consumers = new();
         private readonly Dictionary<BlockPos,ManaPart> ManaParts = new();
 
+        public IServerNetworkChannel servermanachannel;
+        public IClientNetworkChannel clientmanachannel;
+        ICoreClientAPI storedcapi;
+        ICoreServerAPI storedsapi;
+        public AttunementWandGui manathing;
+
         public override void Start(ICoreAPI api)
         {
             base.Start(api);
             api.RegisterItemClass("fluidskimmerclass", typeof(FluidSkimmerItem));
             api.RegisterItemClass("attunementclass",typeof(AttunementWandItem));
+            api.RegisterItemClass("scrollitem",typeof(ScrollItem));
 
-            api.RegisterBlockClass("lenscreativemanablock", typeof(CreativeMana));
-            api.RegisterBlockEntityClass("lenscreativemana", typeof(CreativeManaBE));
-            api.RegisterBlockEntityBehaviorClass("lenscreativemanabehavior",typeof(CreativeManaBhv));
+            RegisterTrio(api,"creativemana",typeof(CreativeMana),typeof(CreativeManaBE),typeof(CreativeManaBhv));
 
-            api.RegisterBlockClass("lensautopannerblock", typeof(AutoPannerBlock));
-            api.RegisterBlockEntityClass("lensautopanner",typeof(AutoPannerBE));
-            api.RegisterBlockEntityBehaviorClass("lensautopannerbehavior",typeof(AutoPannerBhv));
+            RegisterTrio(api, "furnacegen", typeof(Burnerator), typeof(BurneratorBE), typeof(BurneratorBhv));
+
+            RegisterTrio(api, "autopanner", typeof(AutoPannerBlock), typeof(AutoPannerBE), typeof(AutoPannerBhv));
+
+            RegisterTrio(api, "manarepair", typeof(ManaRepairBlock), typeof(ManaRepairBE), typeof(ManaRepairBhv));
+
+            RegisterTrio(api, "rockmaker", typeof(RockmakerBlock), typeof(RockmakerBE), typeof(RockmakerBhv));
 
             api.RegisterBlockEntityBehaviorClass("Mana", typeof(Mana));
 
             api.Event.RegisterGameTickListener(this.OnGameTick, 1000);
         }
+
+        private static void RegisterTrio(ICoreAPI api,string basename,Type block,Type blockEntity,Type entBehavior)
+        {
+            api.RegisterBlockClass("lens" + basename + "block", block);
+            api.RegisterBlockEntityClass("lens" + basename, blockEntity);
+            api.RegisterBlockEntityBehaviorClass("lens" + basename + "behavior", entBehavior);
+        }
+
+        public override void StartServerSide(ICoreServerAPI api)
+        {
+            api.Event.PlayerNowPlaying += (IServerPlayer player) =>
+            {
+                if(player.Entity is EntityPlayer)
+                {
+                    Entity e = player.Entity;
+                    e.AddBehavior(new ScrollStuffBhv(e));
+                }
+            };
+
+            storedsapi = api;
+
+            servermanachannel = api.Network.RegisterChannel("manamessages")
+                .RegisterMessageType(typeof(ManaWandMessage))
+                .RegisterMessageType(typeof(ManaWandResponce))
+                .SetMessageHandler<ManaWandMessage>(OnManaMessageS);
+        }
+        public override void StartClientSide(ICoreClientAPI api)
+        {
+            base.StartClientSide(api);
+
+            storedcapi = api;
+
+            clientmanachannel = api.Network.RegisterChannel("manamessages")
+                .RegisterMessageType(typeof(ManaWandMessage))
+                .RegisterMessageType(typeof(ManaWandResponce))
+                .SetMessageHandler<ManaWandResponce>(OnManaMessageC);
+
+            manathing = new AttunementWandGui(api);
+        }
+
+
+        #region NetworkingBullshit
+
+        private void OnManaMessageS(IPlayer from, ManaWandMessage packet) 
+        {
+            if (from.InventoryManager.ActiveHotbarSlot.Itemstack.Item.Code == AssetLocation.Create("lensstory:attunementwand"))
+            {
+                from.InventoryManager.ActiveHotbarSlot.Itemstack.Attributes.SetInt("channel", packet.message);
+                from.InventoryManager.ActiveHotbarSlot.MarkDirty();
+            }
+        }
+
+        private void OnManaMessageC(ManaWandResponce packet)
+        {
+            storedcapi.ShowChatMessage("You attune the wand to channel " + packet.message);
+        }
+
+        [ProtoContract(ImplicitFields = ImplicitFields.AllPublic)]
+        public class ManaWandMessage
+        {
+            public int message;
+        }
+        [ProtoContract(ImplicitFields = ImplicitFields.AllPublic)]
+        public class ManaWandResponce
+        {
+            public int message;
+        }
+
+        #endregion
 
         //Mana stuff start
         #region Manastuff
@@ -60,26 +146,29 @@ namespace LensstoryMod {
         {
             foreach (var network in mananetworks)
             {
-                this.consumers.Clear();
+                consumers.Clear();
 
                 var totalMana = network.Key.Makers.Sum(maker=> maker.MakeMana());
 
                 var neededMana = 0;
 
-                foreach (var consumer  in network.Key.Consumers.Select(theconsumer => new ManaConsumer(theconsumer)))
+                foreach (var consumer in network.Key.Consumers.Select(theconsumer => new ManaConsumer(theconsumer)))
                 {
                     neededMana += consumer.ManaNeeded;
-                    this.consumers.Add(consumer);
+                    consumers.Add(consumer);
                 }
-                do
+                if (totalMana >= 1)
                 {
-                    foreach (var customer in this.consumers)
+                    do
                     {
-                        customer.ManaEater.EatMana(customer.ManaNeeded);
-                        neededMana -= customer.ManaNeeded;
+                        foreach (var customer in this.consumers)
+                        {
+                            customer.ManaEater.EatMana(customer.ManaNeeded);
+                            neededMana -= customer.ManaNeeded;
+                        }
                     }
+                    while (totalMana >= neededMana && neededMana > 0);
                 }
-                while (totalMana >= neededMana && neededMana > 0);
             }
         }
 
@@ -90,7 +179,7 @@ namespace LensstoryMod {
             public readonly HashSet<BlockPos> Positions = new();
 
             public int ManaID;
-            public int Consumed { get => this.Consumers.Sum(consumer => consumer.ToVoid); }
+            public int Consumed { get => this.Consumers.Sum(consumer => consumer.ToVoid()); }
             public int Produced { get => this.Makers.Sum(producer => producer.MakeMana()); }
 
             public ManaNetwork(int ManaID)
@@ -237,40 +326,5 @@ namespace LensstoryMod {
         }
 
         #endregion
-    }
-    public class FluidSkimmerItem : Item
-    {
-        public override float OnBlockBreaking(IPlayer player, BlockSelection blockSel, ItemSlot itemslot, float remainingResistance, float dt, int counter)
-        {
-            if (blockSel.Block is BlockBarrel && api.Side == EnumAppSide.Server)
-            {
-                BlockEntity BarrelEntMaybe = api.World.BlockAccessor.GetBlockEntity(blockSel.Position);
-                if (BarrelEntMaybe != null && BarrelEntMaybe is BlockEntityLiquidContainer BarrelEnt)
-                {
-                    ItemSlot theFluid = BarrelEnt.Inventory[1];
-                    theFluid.TakeOut(theFluid.StackSize % 100);
-                    BarrelEnt.Inventory.MarkSlotDirty(1);
-                }
-            }
-            return base.OnBlockBreaking(player, blockSel, itemslot, remainingResistance, dt, counter);
-        }
-    }
-
-    public class AttunementWandItem : Item
-    {
-        
-        public override float OnBlockBreaking(IPlayer player, BlockSelection blockSel, ItemSlot itemslot, float remainingResistance, float dt, int counter)
-        {
-            if (api.Side == EnumAppSide.Server)
-            {
-                BlockEntity mayhapMana = api.World.BlockAccessor.GetBlockEntity(blockSel.Position);
-                if (mayhapMana != null && mayhapMana.GetBehavior<Mana>() is { } behavior)
-                {
-                    behavior.ManaID = itemslot.StackSize; //Todo: selector for this number
-                    behavior.begin(true); //Force add Connection?
-                }
-            }
-            return base.OnBlockBreaking(player, blockSel, itemslot, remainingResistance, dt, counter);
-        }
     }
 }

@@ -52,7 +52,7 @@ namespace LensstoryMod
         {
             base.GetBlockInfo(forPlayer, dsc);
 
-            dsc.AppendLine("Mana:")
+            dsc.AppendLine("MP:")
                 .AppendLine("Producing: " + 99999);
         }
 

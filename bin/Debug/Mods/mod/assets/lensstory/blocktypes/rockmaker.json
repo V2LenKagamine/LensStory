@@ -1,0 +1,47 @@
+{
+    "code": "rockmaker",
+    "shape": { "base": "game:block/basic/cube" },
+    "drawtype": "cube",
+    "creativeinventory": {
+        "general": [ "*" ]
+    },
+    "class": "lensrockmakerblock",
+    "entityClass": "lensrockmaker",
+    "entityBehaviors": [
+        { "name": "lensrockmakerbehavior" },
+        { "name": "Mana" }
+    ],
+    "blockmaterial": "Metal",
+    "replaceable": 900,
+    "lightAbsorption": 99,
+    "maxStackSize": 32,
+    "materialDensity": 700,
+    "resistance": 4,
+    "textures": {
+        "verticals": { "base": "game:block/metal/lantern/steel" },
+        "horizontals": {
+            "base": "game:block/metal/plate/titanium",
+            "blendedoverlays": [
+                {
+                    "base": "game:block/metal/lantern/silver-deco",
+                    "blendMode": "Overlay"
+                }
+            ]
+        }
+    },
+    "sideopaque": {
+        "all": true
+    },
+    "sidesolid": {
+        "all": true
+    },
+    "handbook": {
+        "extraSections": [
+            {
+                "tite": "rockmaker-help-title",
+                "text": "rockmaker-help-text"
+            }
+        ],
+        "include": true
+    }
+}
