@@ -36,6 +36,17 @@ namespace LensstoryMod {
             api.RegisterItemClass("attunementclass",typeof(AttunementWandItem));
             api.RegisterItemClass("scrollitem",typeof(ScrollItem));
 
+            api.RegisterBlockClass("frameblock", typeof(WoodFrame));
+            api.RegisterBlockClass("liquidconcreteblock", typeof(LiquidConcreteBlock));
+
+            api.RegisterBlockClass("lenssturdybucketblock", typeof(SturdyBucketBlock));
+            api.RegisterBlockEntityClass("lenssturdybucket", typeof(SturdyBucketBE));
+            api.RegisterBlockClass("lenssturdybucketfilledblock", typeof(SturdyBucketFilledBlock));
+            api.RegisterBlockEntityClass("lenssturdybucketfilled", typeof(SturdyBucketFilledBE));
+
+            api.RegisterBlockClass("lensreinforcedbloomeryblock", typeof(ReinforcedBloomery));
+            api.RegisterBlockEntityClass("lensreinforcedbloomery", typeof(ReinforcedBloomeryBE));
+
             RegisterTrio(api,"creativemana",typeof(CreativeMana),typeof(CreativeManaBE),typeof(CreativeManaBhv));
 
             RegisterTrio(api, "furnacegen", typeof(Burnerator), typeof(BurneratorBE), typeof(BurneratorBhv));

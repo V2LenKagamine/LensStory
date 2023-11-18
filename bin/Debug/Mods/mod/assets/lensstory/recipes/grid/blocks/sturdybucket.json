@@ -1,0 +1,21 @@
+﻿{
+    "ingredientPattern": "_R_,P_P,_P_",
+    "ingredients": {
+        "P": {
+            "type": "item",
+            "code": "metalplate-iron",
+            "quantity": 2
+        },
+        "R": {
+            "type": "item",
+            "code": "rod-iron"
+        }
+    },
+    "shapeless": true,
+    "width": 3,
+    "height": 3,
+    "output": {
+        "type": "block",
+        "code": "sturdybucket-empty"
+    }
+}

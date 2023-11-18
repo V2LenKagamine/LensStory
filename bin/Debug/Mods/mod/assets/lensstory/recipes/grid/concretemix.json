@@ -1,0 +1,22 @@
+﻿{
+    "ingredientPattern": "L,P",
+    "ingredients": {
+        "L": {
+            "type": "block",
+            "code": "game:sand-*",
+            "quantity": 8
+        },
+        "P": {
+            "type": "item",
+            "code": "game:clay-*",
+            "quantity": 8
+        }
+    },
+    "width": 1,
+    "height": 2,
+    "output": {
+        "type": "item",
+        "code": "concretemix",
+        "quantity": 16
+    }
+}

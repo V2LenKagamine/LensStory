@@ -43,7 +43,7 @@ namespace LensstoryMod
 
             contents?.ResolveBlockOrItem(api.World);
 
-            RegisterGameTickListener(OnCommonTick, 250);
+            RegisterGameTickListener(OnCommonTick, 1000);
         }
 
         internal void OnCommonTick(float dt)
@@ -147,15 +147,15 @@ namespace LensstoryMod
                 {
                     case string x when x == "rock" || x == "gravel" || x == "sand":
                         {
-                            return 2;
+                            return 4;
                         }
                     case "soil":
                         {
-                            return 8;
+                            return 12;
                         }
                     case "ore":
                         {
-                            return 20;
+                            return 36;
                         }
                 }
             }

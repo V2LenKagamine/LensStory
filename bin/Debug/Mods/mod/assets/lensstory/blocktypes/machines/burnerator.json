@@ -1,0 +1,49 @@
+{
+    "code": "burnerator",
+    "shape": { "base": "game:block/basic/cube" },
+    "drawtype": "cube",
+    "creativeinventory": {
+        "general": [ "*" ]
+    },
+    "class": "lensfurnacegenblock",
+    "entityClass": "lensfurnacegen",
+    "entityBehaviors": [
+        { "name": "lensfurnacegenbehavior" },
+        { "name": "Mana" }
+    ],
+    "attributes": {
+        "handbook": {
+            "extraSections": [
+                {
+                    "title": "handbook-block-burnerator-title",
+                    "text": "handbook-block-burnerator-text"
+                }
+            ],
+            "include": true
+        }
+    },
+    "blockmaterial": "Metal",
+    "replaceable": 900,
+    "lightAbsorption": 99,
+    "maxStackSize": 32,
+    "materialDensity": 700,
+    "resistance": 4,
+    "textures": {
+        "verticals": { "base": "game:block/metal/lantern/rust" },
+        "horizontals": {
+            "base": "game:block/metal/lantern/blackbronze",
+            "blendedoverlays": [
+                {
+                    "base": "game:block/metal/lantern/copper-deco",
+                    "blendMode": "Overlay"
+                }
+            ]
+        }
+    },
+    "sideopaque": {
+        "all": true
+    },
+    "sidesolid": {
+        "all": true
+    }
+}

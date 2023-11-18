@@ -46,7 +46,7 @@ namespace LensstoryMod
 
             contents?.ResolveBlockOrItem(api.World);
 
-            RegisterGameTickListener(OnCommonTick, 250);
+            RegisterGameTickListener(OnCommonTick, 1000);
         }
 
         internal void OnCommonTick(float dt)
@@ -54,16 +54,23 @@ namespace LensstoryMod
             if (Working)
             {
                 var hourspast = Api.World.Calendar.TotalHours - LastTickTotalHours;
-                storedDura = storedDura <= 10 ? storedDura + hourspast * 50 : storedDura = 10;
+                storedDura = storedDura < 10 ? storedDura + hourspast * 5 : storedDura = 10;
                 if(storedDura >=1 && contents != null)
                 {
                     if (contents.Attributes?.GetInt("durability") < contents.Collectible?.Durability)
                     {
-                        var torepair = (int)Math.Floor(storedDura);
-                        var newdura = Math.Min(contents.Attributes.GetInt("durability") + torepair, contents.Collectible.Durability);
-                        contents.Attributes.SetInt("durability", newdura);
-                        storedDura -= torepair;
-                        MarkDirty();
+                        var dura = contents.Collectible?.Durability;
+                        if (dura != null)
+                        {
+                            int percentDura = (int)Math.Floor((double)dura * 0.01);
+                            int torepair = (int)Math.Floor(storedDura);
+
+                            var newdura = Math.Min(contents.Attributes.GetInt("durability") + (torepair * percentDura) + 1, contents.Collectible.Durability);
+                            contents.Attributes.SetInt("durability", newdura);
+                            storedDura -= torepair;
+                            MarkDirty();
+
+                        }
                     }
                 }
             }

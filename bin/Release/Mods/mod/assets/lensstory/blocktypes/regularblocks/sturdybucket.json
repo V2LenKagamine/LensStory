@@ -1,0 +1,158 @@
+﻿{
+    "code": "sturdybucket",
+    "classByType": {
+        "*-empty": "lenssturdybucketblock",
+        "*-filled": "lenssturdybucketfilledblock"
+    },
+
+    "entityClassByType": {
+        "*-empty": "lenssturdybucket",
+        "*-filled": "lenssturdybucketfilled"
+
+    },
+    "behaviorsbyType": {
+        "*-empty": [
+            { "name": "UnstableFalling" },
+            { "name": "RightClickPickup" }
+        ],
+        "*-filled": [
+            { "name": "UnstableFalling" },
+            { "name": "RightClickPickup" }
+        ]
+    },
+    "attributesByType": {
+        "*-empty": {
+            "liquidContainerProps": {
+                "capacityLitres": 10,
+                "transferSizeLitres": 10,
+                "emptyShapeLoc": "shapes/block/sturdybucket/empty",
+                "opaqueContentShapeLoc": "game:shapes/block/wood/bucket/contents",
+                "liquidContentShapeLoc": "game:shapes/block/wood/bucket/liquidcontents",
+                "liquidMaxYTranslate": 0.4375
+            },
+            "handbook": {
+                "extraSections": [
+                    {
+                        "title": "handbook-block-sturdybucket-title",
+                        "text": "handbook-block-sturdybucket-text"
+                    }
+                ],
+                "include": true
+            }
+        },
+        "*-filled": {
+            "liquidContainerProps": {
+                "capacityLitres": 0,
+                "transferSizeLitres": 0,
+                "emptyShapeLoc": "shapes/block/sturdybucket/filled",
+                "opaqueContentShapeLoc": "game:shapes/block/wood/bucket/contents",
+                "liquidContentShapeLoc": "game:shapes/block/wood/bucket/liquidcontents",
+                "liquidMaxYTranslate": 0.4375
+            },
+            "handbook": {
+                "extraSections": [
+                    {
+                        "title": "handbook-block-sturdybucket-title",
+                        "text": "handbook-block-sturdybucket-text"
+                    }
+                ],
+                "include": true
+            }
+        }
+    },
+    "creativeinventory": {
+        "general": [ "sturdybucket-empty" ],
+        "decorative": [ "sturdybucket-empty" ],
+        "primitive": [ "sturdybucket-empty" ]
+    },
+    "variantgroups": [
+        {
+            "code": "type",
+            "states": [ "empty", "filled" ]
+        }
+    ],
+    "shapebytype": {
+        "*": {
+            "base": "block/sturdybucket/{type}"
+        }
+    },
+    "sidesolid": {
+        "all": false
+    },
+    "sideopaque": {
+        "all": false
+    },
+    "blockmaterial": "Metal",
+    "textures": {
+        "sides": { "base": "game:block/metal/ingot/steel" },
+        "inner side": { "base": "game:block/metal/ingot/steel" },
+        "contents": { "base": "block/lava" },
+        "normal1": {
+            "base": "game:block/metal/ingot/steel"
+        },
+        "handle": { "base": "game:block/metal/ingot/steel" },
+        "honeyportion": { "base": "game:block/liquid/honey" }
+    },
+    "replaceable": 500,
+    "resistance": 1.5,
+    "liquidSelectable": true,
+    "lightAbsorption": 0,
+    "maxstacksizebytype": {
+        "*": 1
+    },
+    "sounds": {
+        "place": "game:block/plate",
+        "hit": "game:block/plate",
+        "break": "game:block/plate",
+        "walk": "game:block/plate"
+    },
+    "collisionbox": {
+        "x1": 0.25,
+        "y1": 0,
+        "z1": 0.25,
+        "x2": 0.75,
+        "y2": 0.75,
+        "z2": 0.75
+    },
+    "selectionbox": {
+        "x1": 0.25,
+        "y1": 0,
+        "z1": 0.25,
+        "x2": 0.75,
+        "y2": 0.75,
+        "z2": 0.75
+    },
+    "materialDensity": 400,
+    "tpHandTransform": {
+        "translation": {
+            "x": -0.86,
+            "y": -1.03,
+            "z": -0.88
+        },
+        "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "scale": 0.55
+    },
+    "guiTransform": {
+        "origin": {
+            "x": 0.5,
+            "y": 0.35,
+            "z": 0.5
+        },
+        "scale": 1.75
+    },
+    "fpHandTransform": {
+        "scale": 1.5
+    },
+    "groundTransform": {
+        "origin": {
+            "x": 0.5,
+            "y": 0,
+            "z": 0.5
+        },
+        "scale": 2
+    }
+}

@@ -39,6 +39,9 @@
                 "rangedWeaponsSpeed": -1.5,
                 "walkspeed": 0.03,
                 "wildCropDropRate": 0.3
+            },
+            "handbook": {
+                "include": false
             }
         },
         "*-ranged": {

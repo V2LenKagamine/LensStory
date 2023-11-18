@@ -12,6 +12,7 @@
     "item-coin-molybdochalkos": "Molybdochalkos Coin",
     "item-coin-iron": "Iron Coin",
     "item-coin-steel": "Steel Coin",
+    "itemdesc-coin-*": "Shiny. The traders prefer gears, but surely someone finds these valuable.",
 
     "item-hoardingsack": "Hoarder's Backpack",
 
@@ -29,6 +30,7 @@
     "item-gear-bismuthbronze": "Bismuth Bronze Gear",
     "item-gear-blackbronze": "Black Bronze Gear",
     "item-gear-tinbronze": "Tin Bronze Gear",
+    "itemdesc-gear-*": "Somehow less perfect than their rusty counterparts.",
 
     "item-rod-brass": "Brass Rod",
     "item-rod-copper": "Copper Rod",
@@ -44,6 +46,7 @@
     "item-rod-bismuthbronze": "Bismuth Bronze Rod",
     "item-rod-blackbronze": "Black Bronze Rod",
     "item-rod-tinbronze": "Tin Bronze Rod",
+    "itemdesc-rod-*": "Like a stick, but more metal.",
 
     "item-longrod-brass": "Brass Long Rod",
     "item-longrod-copper": "Copper Long Rod",
@@ -59,6 +62,7 @@
     "item-longrod-bismuthbronze": "Bismuth Bronze Long Rod",
     "item-longrod-blackbronze": "Black Bronze Long Rod",
     "item-longrod-tinbronze": "Tin Bronze Long Rod",
+    "itemdesc-longrod-*": "Like a rod, but long.",
 
     "item-spareparts-brass": "Brass Spare Parts",
     "item-spareparts-copper": "Copper Spare Parts",
@@ -74,6 +78,7 @@
     "item-spareparts-bismuthbronze": "Bismuth Bronze Spare Parts",
     "item-spareparts-blackbronze": "Black Bronze Spare Parts",
     "item-spareparts-tinbronze": "Tin Bronze Spare Parts",
+    "itemdesc-spareparts-*": "Bolts,Rivets and Screws all together in a messy pile.",
 
     "item-statsscroll-referenceall": "Debug Scroll of Eggs",
     "item-statsscroll-rangedacc": "Scroll of Better Aim",
@@ -102,11 +107,24 @@
 
     "block-sturdycasing": "Sturdy Metal Casing",
 
+    "block-concretefull": "Concrete Block",
+    "block-concretepath-*": "Concrete Path",
+    "block-concretestair-*": "Concrete Stair",
+    "block-liquidconcrete-*": "Liquid Concrete",
+    "item-concreteportion": "Liquid Concrete",
+    "item-concretemix": "Concrete Mix",
+    "block-frame": "Empty Concrete Frame",
+    "incontainer-item-concreteportion": "Liquid Concrete",
+
     "block-burnerator": "Heat Fuled Potentia-Accumulator",
     "block-creativemana": "Endless Potentia-Maker",
     "block-autopanner": "Mechanical Panner",
     "block-manarepair": "Mechanical Entropy Siphoner",
     "block-rockmaker": "Geoformic Accelerator",
+
+    "block-sturdybucket-*": "Sturdy Bucket",
+
+    "block-reinforcedbloomery-*": "Reinforced Bloomery",
 
     "game:traitname-len-fortunate": "Fortunate",
     "game:trait-len-fortunate": "<font color=\"#84ff84\">• Fortunate</font>",
@@ -126,12 +144,21 @@
     "game:characterclass-len-hoarder": "Hoarder",
     "game:characterdesc-len-hoarder": "<font color=\"#99c9f9\"><i>Oh,shiny! Mine!</i></font><br><br>Hoarders can't seem to let go of even the simplest of objects, even if it is worthless to others.To be fair, they find a lot. They start with an unusually large bag, and can craft more later.",
 
-    "rockmaker-help-title": "Geformic Accelerator Usage:",
-    "rockmaker-help-text": "To use the machine, insert a sample of geologic material, such as sand, dirt, or even raw ore blocks. Given enough MP, it will produce a sample in the space above it, if there is no obstructions. Sand and Rock are cheap, but raw ore requires significant amounts of MP. You can shift+interact to retreive the sample.",
-    "manarepair-help-title": "Mechanical Entropy Siphoner Usage:",
-    "manarepair-help-text": "To use the machine, insert a damaged tool or object. Given time and MP, it will be repaired. When it's done, you can retreive it with shift+interact.'",
-    "burnerator-help-title": "Heat Fuled Potentia Accumulator Usage:",
-    "burnerator-help-text": "To use the machine, simply insert a burnable item.You must be holding shift to insert, as there is no way to retreive an item inserted. As the item burns, it produces a steady flow of MP",
-    "autopanner-help-title": "Mechanical Panner Usage:",
-    "autopanner-help-text": "To use the machine,simply insert anything you could manually pan. Given a steady supply of MP and time, your reward will be spit out the bottom. You may only insert said material while holding shift, however, as anything inserted can not be retreived."
+    "game:handbook-block-sturdybucket-title": "Notable Properties:",
+    "game:handbook-block-sturdybucket-text": "It's a bucket,but metal. Sturdy enough to contain lava.",
+
+    "game:handbook-block-concrete-title": "How to obtain:",
+    "game:handbook-block-concrete-text": "Use a fluid container [like a bucket] filled with atleast 200ml of Liquid Concrete on an Empty Concrete Frame to form a concrete block.",
+
+    "game:handbook-block-reinforcedbloomery-title": "Usage:",
+    "game:handbook-block-reinforcedbloomery-text": "Works just like the regular bloomery, but doesnt break, and finished products can be removed by shift clicking. Is a little smaller, so it only holds 2/3rds the normal bloomery.",
+
+    "game:handbook-block-rockmaker-title": "Geformic Accelerator Usage:",
+    "game:handbook-block-rockmaker-text": "To use the machine, insert a sample of geologic material, such as sand, dirt, or even raw ore blocks. Given enough MP, it will produce a sample in the space above it, if there is no obstructions. Sand and Rock are cheap, but raw ore requires significant amounts of MP. You can shift+interact to retreive the sample.",
+    "game:handbook-block-manarepair-title": "Mechanical Entropy Siphoner Usage:",
+    "game:handbook-block-manarepair-text": "To use the machine, insert a damaged tool or object. Given time and MP, it will be repaired. When it's done, you can retreive it with shift+interact.'",
+    "game:handbook-block-burnerator-title": "Heat Fuled Potentia Accumulator Usage:",
+    "game:handbook-block-burnerator-text": "To use the machine, simply insert a burnable item.You must be holding shift to insert, as there is no way to retreive an item inserted. As the item burns, it produces a steady flow of MP",
+    "game:handbook-block-autopanner-title": "Mechanical Panner Usage:",
+    "game:handbook-block-autopanner-text": "To use the machine,simply insert anything you could manually pan. Given a steady supply of MP and time, your reward will be spit out the bottom. You may only insert said material while holding shift, however, as anything inserted can not be retreived."
 }

@@ -79,7 +79,7 @@ namespace LensstoryMod
                 if(slot.Itemstack.Collectible.CombustibleProps != null)
                 {
                     var combustprops = slot.Itemstack.Collectible.CombustibleProps;
-                    if(combustprops.BurnDuration + fuel <= 48000)
+                    if(combustprops.BurnDuration + fuel <= 4800)
                     {
                         slot.TakeOut(1);
                         slot.MarkDirty();

@@ -7,6 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Vintagestory\Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="protobuf-net">
       <HintPath>..\..\Vintagestory\Lib\protobuf-net.dll</HintPath>
       <Private>False</Private>
@@ -45,11 +48,19 @@
   <Content Include="assets\**">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
   </Content>
+  <None Remove="assets\lensstory\blocktypes\liquids\liquidconcrete.json" />
+  <None Remove="assets\lensstory\blocktypes\machines\reinforcedbloomery.json" />
   <None Remove="assets\lensstory\blocktypes\manarepair.json" />
+  <None Remove="assets\lensstory\blocktypes\regularblocks\concretefull.json" />
+  <None Remove="assets\lensstory\blocktypes\regularblocks\concretepath.json" />
+  <None Remove="assets\lensstory\blocktypes\regularblocks\concretestair.json" />
+  <None Remove="assets\lensstory\blocktypes\regularblocks\sturdybucket.json" />
   <None Remove="assets\lensstory\blocktypes\regularblocks\sturdycasing.json" />
   <None Remove="assets\lensstory\blocktypes\rockmaker.json" />
   <None Remove="assets\lensstory\itemtypes\attunementwand.json" />
+  <None Remove="assets\lensstory\itemtypes\misc\concreteportion.json" />
   <None Remove="assets\lensstory\itemtypes\misc\hoardingsack.json" />
+  <None Remove="assets\lensstory\itemtypes\misc\parts\concretemix.json" />
   <None Remove="assets\lensstory\itemtypes\misc\parts\longrod.json" />
   <None Remove="assets\lensstory\itemtypes\misc\parts\restoredgear.json" />
   <None Remove="assets\lensstory\itemtypes\misc\parts\rods.json" />
@@ -59,15 +70,28 @@
   <None Remove="assets\lensstory\patches\classes.json" />
   <None Remove="assets\lensstory\patches\tradershenanigans.json" />
   <None Remove="assets\lensstory\patches\traits.json" />
+  <None Remove="assets\lensstory\recipes\barrel\liquidconcrete.json" />
   <None Remove="assets\lensstory\recipes\grid\attunementwand.json" />
+  <None Remove="assets\lensstory\recipes\grid\blocks\concrete.json" />
+  <None Remove="assets\lensstory\recipes\grid\blocks\concretepath.json" />
+  <None Remove="assets\lensstory\recipes\grid\blocks\concretestairs.json" />
+  <None Remove="assets\lensstory\recipes\grid\blocks\concretestairsalt.json" />
+  <None Remove="assets\lensstory\recipes\grid\blocks\frame.json" />
+  <None Remove="assets\lensstory\recipes\grid\blocks\sturdybucket.json" />
+  <None Remove="assets\lensstory\recipes\grid\concretemix.json" />
   <None Remove="assets\lensstory\recipes\grid\hoardingsack.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\burnerator.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\manarepair.json" />
+  <None Remove="assets\lensstory\recipes\grid\machines\reinforcedbloomery.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\rockmaker.json" />
+  <None Remove="assets\lensstory\recipes\grid\parts.json" />
   <None Remove="assets\lensstory\recipes\grid\sturdycasing.json" />
   <None Remove="assets\lensstory\recipes\smithing\gears.json" />
   <None Remove="assets\lensstory\recipes\smithing\longrods.json" />
   <None Remove="assets\lensstory\recipes\smithing\rods.json" />
+  <None Remove="assets\lensstory\shapes\block\sturdybucket\empty.json" />
+  <None Remove="assets\lensstory\shapes\block\sturdybucket\filled.json" />
+  <None Remove="assets\lensstory\shapes\item\powderedconcrete.json" />
   <None Remove="src\Manastuff.cs~RF31215bb.TMP" />
   <Content Include="modinfo.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

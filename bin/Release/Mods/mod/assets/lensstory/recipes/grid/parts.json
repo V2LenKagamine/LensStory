@@ -1,0 +1,22 @@
+﻿{
+    "ingredientPattern": "I,S",
+    "width": 1,
+    "height": 2,
+    "ingredients": {
+        "I": {
+            "type": "item",
+            "code": "rod-*",
+            "name": "metal"
+        },
+        "S": {
+            "type": "item",
+            "code": "game:saw-*",
+            "isTool": true
+        }
+    },
+    "output": {
+        "type": "item",
+        "code": "spareparts-{metal}",
+        "quantity": 4
+    }
+}

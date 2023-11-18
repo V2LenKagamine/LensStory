@@ -1,0 +1,34 @@
+﻿{
+    "code": "concretefull",
+    "shape": { "base": "game:block/basic/cube" },
+    "drawtype": "cube",
+    "creativeinventory": {
+        "general": [ "*" ]
+    },
+    "attributes": {
+        "handbook": {
+            "extraSections": [
+                {
+                    "title": "handbook-block-concrete-title",
+                    "text": "handbook-block-concrete-text"
+                }
+            ],
+            "include": true
+        }
+    },
+    "blockmaterial": "Stone",
+    "replaceable": 900,
+    "lightAbsorption": 99,
+    "maxStackSize": 64,
+    "materialDensity": 700,
+    "resistance": 4,
+    "textures": {
+        "all": { "base": "block/concrete" }
+    },
+    "sideopaque": {
+        "all": true
+    },
+    "sidesolid": {
+        "all": true
+    }
+}
