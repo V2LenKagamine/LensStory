@@ -2,7 +2,8 @@
     "code": "fluidskimmer",
     "class": "fluidskimmerclass",
     "creativeinventory": {
-        "general": [ "*" ]
+        "general": [ "*" ],
+        "lensstorytab": [ "*" ]
     },
     "texture": {
         "base": "item/astick"

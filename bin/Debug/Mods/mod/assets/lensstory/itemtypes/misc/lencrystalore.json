@@ -1,0 +1,123 @@
+﻿{
+    "code": "lencrystalore",
+    "__commment": "Yep doing it for this too.",
+    "maxstacksize": 64,
+    "storageFlags": 5,
+    "attributes": {
+        "handbook": {
+            "include": false
+        },
+        "metalUnitsByType": {
+            "*-poor-platinumiridium-*": 2,
+            "*-normal-platinumiridium-*": 4,
+            "*-rich-platinumiridium-*": 10,
+            "*-bountiful-platinumiridium-*": 20
+        },
+        "displaycaseable": true,
+        "shelvable": true
+    },
+    "variantgroups": [
+        {
+            "code": "grade",
+            "states": [ "poor", "medium", "rich", "bountiful" ]
+        },
+        {
+            "code": "ore",
+            "states": ["platiniridium"]
+        },
+        {
+            "code": "rock",
+            "loadFromProperties": "game:block/rockwithdeposit"
+        }
+    ],
+    "allowedVariants": [
+        "lencrystalore-poor-platiniridium-andesite",
+        "lencrystalore-medium-platiniridium-andesite",
+        "lencrystalore-rich-platiniridium-andesite",
+        "lencrystalore-bountiful-platiniridium-andesite"
+    ],
+    "shape": {
+        "base": "item/ore/genericcrystal-{grade}"
+    },
+    "textures": {
+        "ore": {
+            "base": "game:block/stone/rock/{rock}1",
+            "overlays": [ "block/ore/{ore}" ]
+        },
+        "crystal": {
+            "base": "item/ore/{ore}"
+        }
+    },
+    "creativeinventory": {
+        "general": [ "*" ],
+        "items": [ "*" ],
+        "lensstorytab": [ "*" ]
+    },
+    "fpHandTransform": {
+        "translation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "rotation": {
+            "x": 1,
+            "y": 90,
+            "z": 0
+        },
+        "scale": 1.67
+    },
+    "guiTransform": {
+        "translation": {
+            "x": 3,
+            "y": 2,
+            "z": 0
+        },
+        "rotation": {
+            "x": 150,
+            "y": -38,
+            "z": 0
+        },
+        "origin": {
+            "x": 0.5,
+            "y": 0.1,
+            "z": 0.5
+        },
+        "scale": 3.8
+    },
+    "tpHandTransform": {
+        "translation": {
+            "x": -0.93,
+            "y": -0.19,
+            "z": -0.77
+        },
+        "rotation": {
+            "x": -48,
+            "y": -180,
+            "z": 23
+        },
+        "origin": {
+            "x": 0.5,
+            "y": 0.12,
+            "z": 0.5
+        },
+        "scale": 0.6
+    },
+    "groundTransform": {
+        "translation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "origin": {
+            "x": 0.5,
+            "y": 0,
+            "z": 0.5
+        },
+        "scale": 4.5
+    }
+}

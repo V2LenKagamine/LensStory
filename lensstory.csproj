@@ -60,6 +60,9 @@
   <None Remove="assets\lensstory\itemtypes\attunementwand.json" />
   <None Remove="assets\lensstory\itemtypes\misc\concreteportion.json" />
   <None Remove="assets\lensstory\itemtypes\misc\hoardingsack.json" />
+  <None Remove="assets\lensstory\itemtypes\misc\lencrystalore.json" />
+  <None Remove="assets\lensstory\itemtypes\misc\lenore.json" />
+  <None Remove="assets\lensstory\itemtypes\misc\nuggets.json" />
   <None Remove="assets\lensstory\itemtypes\misc\parts\concretemix.json" />
   <None Remove="assets\lensstory\itemtypes\misc\parts\longrod.json" />
   <None Remove="assets\lensstory\itemtypes\misc\parts\restoredgear.json" />
@@ -84,6 +87,7 @@
   <None Remove="assets\lensstory\recipes\grid\machines\manarepair.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\reinforcedbloomery.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\rockmaker.json" />
+  <None Remove="assets\lensstory\recipes\grid\nuggetjank.json" />
   <None Remove="assets\lensstory\recipes\grid\parts.json" />
   <None Remove="assets\lensstory\recipes\grid\sturdycasing.json" />
   <None Remove="assets\lensstory\recipes\smithing\gears.json" />
@@ -91,11 +95,21 @@
   <None Remove="assets\lensstory\recipes\smithing\rods.json" />
   <None Remove="assets\lensstory\shapes\block\sturdybucket\empty.json" />
   <None Remove="assets\lensstory\shapes\block\sturdybucket\filled.json" />
+  <None Remove="assets\lensstory\shapes\item\ore\genericcrystal-bountiful.json" />
+  <None Remove="assets\lensstory\shapes\item\ore\genericcrystal-medium.json" />
+  <None Remove="assets\lensstory\shapes\item\ore\genericcrystal-poor.json" />
+  <None Remove="assets\lensstory\shapes\item\ore\genericcrystal-rich.json" />
   <None Remove="assets\lensstory\shapes\item\powderedconcrete.json" />
+  <None Remove="assets\lensstory\textures\block\ore\platiniridium.png" />
+  <None Remove="assets\lensstory\worldgen\deposits\metalore\platiniridium.json" />
   <None Remove="src\Manastuff.cs~RF31215bb.TMP" />
   <Content Include="modinfo.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
   </Content>
+</ItemGroup>
+
+<ItemGroup>
+  <Folder Include="assets\lensstory\textures\item\ore\" />
 </ItemGroup>
 
 <ProjectExtensions><VisualStudio><UserProperties assets_4lensstory_4recipes_4grid_4machines_4manarepair_1json__JsonSchema="json" /></VisualStudio></ProjectExtensions>

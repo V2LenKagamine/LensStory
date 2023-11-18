@@ -94,7 +94,8 @@
     "materialdensity": 1000,
     "creativeinventory": {
         "general": [ "liquidconcrete-still-7" ],
-        "terrain": [ "liquidconcrete-still-7" ]
+        "terrain": [ "liquidconcrete-still-7" ],
+        "lensstorytab": [ "liquidconcrete-still-7" ]
     },
     "replaceable": 9500,
     "lightAbsorption": 2,

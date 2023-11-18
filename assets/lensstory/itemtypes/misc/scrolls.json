@@ -163,7 +163,8 @@
         }
     },
     "creativeinventory": {
-        "general": [ "*" ]
+        "general": [ "*" ],
+        "lensstorytab": [ "*" ]
     },
     "texture": {
         "base": "item/scroll"

@@ -115,7 +115,8 @@
         }
     },
     "creativeinventory": {
-        "general": [ "*" ]
+        "general": [ "*" ],
+        "lensstorytab": [ "*" ]
     },
     "guiTransform": {
         "translation": {

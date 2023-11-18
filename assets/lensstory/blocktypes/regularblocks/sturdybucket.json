@@ -63,7 +63,7 @@
     "creativeinventory": {
         "general": [ "sturdybucket-empty" ],
         "decorative": [ "sturdybucket-empty" ],
-        "primitive": [ "sturdybucket-empty" ]
+        "lensstorytab": ["sturdybucket-empty"]
     },
     "variantgroups": [
         {

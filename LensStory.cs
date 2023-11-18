@@ -39,6 +39,9 @@ namespace LensstoryMod {
             api.RegisterBlockClass("frameblock", typeof(WoodFrame));
             api.RegisterBlockClass("liquidconcreteblock", typeof(LiquidConcreteBlock));
 
+            api.RegisterItemClass("lenssimpleore",typeof(SimpleItemOre));
+            api.RegisterItemClass("lenssimplenugget", typeof(SimpleItemNugget));
+
             api.RegisterBlockClass("lenssturdybucketblock", typeof(SturdyBucketBlock));
             api.RegisterBlockEntityClass("lenssturdybucket", typeof(SturdyBucketBE));
             api.RegisterBlockClass("lenssturdybucketfilledblock", typeof(SturdyBucketFilledBlock));

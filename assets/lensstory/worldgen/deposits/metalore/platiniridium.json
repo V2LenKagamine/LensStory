@@ -1,0 +1,39 @@
+﻿[
+    {
+        "code": "platiniridium",
+        "triesPerChunk": 0.2,
+        "generator": "disc-anywhere",
+        "attributes": {
+            "inblock": {
+                "code": "rock-*",
+                "name": "rock",
+                "allowedVariants": [ "andesite" ]
+            },
+            "placeblock": {
+                "code": "lensstory:lenorb-*-platiniridium-{rock}",
+                "name": "grade",
+                "allowedVariantsByInBlock": {
+                    "rock-andesite": [ "poor", "medium", "rich", "bountiful" ]
+                }
+
+            },
+            "genSurfaceBlockChance": 0.15,
+            "surfaceBlockChance": 0.01,
+            "radius": {
+                "dist": "gaussian",
+                "avg": 12,
+                "var": 4
+            },
+            "yPosRel": {
+                "dist": "uniform",
+                "avg": 0.5,
+                "var": 0.5
+            },
+            "thickness": {
+                "dist": "invexp",
+                "avg": 2,
+                "var": 1
+            }
+        }
+    }
+]

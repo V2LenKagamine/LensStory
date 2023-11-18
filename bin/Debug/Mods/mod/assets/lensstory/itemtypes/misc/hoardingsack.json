@@ -20,7 +20,8 @@
     "storageFlags": 2,
     "creativeinventory": {
         "general": [ "*" ],
-        "items": [ "*" ]
+        "items": [ "*" ],
+        "lensstorytab": [ "*" ]
     },
     "guiTransform": {
         "translation": {

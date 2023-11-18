@@ -3,7 +3,8 @@
     "shape": { "base": "game:block/basic/cube-lowered-{cover}" },
     "creativeinventory": {
         "general": [ "*-free" ],
-        "decorative": [ "*-free" ]
+        "decorative": [ "*-free" ],
+        "lensstorytab": [ "*-free" ]
     },
     "blockmaterial": "Stone",
     "variantgroups": [

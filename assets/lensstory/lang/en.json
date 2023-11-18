@@ -2,17 +2,19 @@
     "item-fluidskimmer": "Fluid Skimmer",
     "item-attunementwand": "Mechanical Attunement Wand",
 
-    "item-coin-brass": "Brass Coin",
-    "item-coin-copper": "Copper Coin",
-    "item-coin-silver": "Silver Coin",
-    "item-coin-gold": "Gold Coin",
-    "item-coin-platinum": "Platinum Coin",
-    "item-coin-titanium": "Titanium Coin",
-    "item-coin-uranium": "Uranium Coin",
-    "item-coin-molybdochalkos": "Molybdochalkos Coin",
-    "item-coin-iron": "Iron Coin",
-    "item-coin-steel": "Steel Coin",
-    "itemdesc-coin-*": "Shiny. The traders prefer gears, but surely someone finds these valuable.",
+    "game:tabname-lensstorytab": "Lens Story Stuff",
+
+    "item-lenscoin-brass": "Brass Coin",
+    "item-lenscoin-copper": "Copper Coin",
+    "item-lenscoin-silver": "Silver Coin",
+    "item-lenscoin-gold": "Gold Coin",
+    "item-lenscoin-platinum": "Platinum Coin",
+    "item-lenscoin-titanium": "Titanium Coin",
+    "item-lenscoin-uranium": "Uranium Coin",
+    "item-lenscoin-molybdochalkos": "Molybdochalkos Coin",
+    "item-lenscoin-iron": "Iron Coin",
+    "item-lenscoin-steel": "Steel Coin",
+    "itemdesc-lenscoin-*": "Shiny. The traders prefer gears, but surely someone finds these valuable.",
 
     "item-hoardingsack": "Hoarder's Backpack",
 
@@ -104,6 +106,11 @@
     "item-statsbook-traveler": "From Place to Place",
     "item-statsbook-spelunker": "Pyrite's False Promise",
     "item-statsbook-medic": "Field Medicine 101",
+
+    "block-lenorb-*-platiniridium-*": "Platiniridium",
+    "item-nugget-platiniridium": "Platiniridium Nugget",
+    "item-lencrystalore-*-platiniridium-*": "Crystalized Platiniridium",
+    "game:ore-platiniridium": "Platiniridium",
 
     "block-sturdycasing": "Sturdy Metal Casing",
 

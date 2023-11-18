@@ -1,0 +1,181 @@
+﻿[
+    {
+        "__comment": "All these recipes are just matching templates. The actual output item and quantity is determined in code in SimpleItemNugget.OnCreatedByCrafting. The quantity is read from the ore attributes from the ore json file",
+        "ingredientPattern": "H,S",
+        "ingredients": {
+            "H": {
+                "type": "item",
+                "code": "game:hammer-*",
+                "isTool": true
+            },
+            "S": {
+                "type": "item",
+                "name": "ore",
+                "code": "lensstory:lenore-poor-*"
+            }
+        },
+        "width": 1,
+        "height": 2,
+        "output": {
+            "type": "item",
+            "code": "lensstory:nugget-platiniridium",
+            "quantity": 1
+        }
+    },
+    {
+        "ingredientPattern": "H,S",
+        "ingredients": {
+            "H": {
+                "type": "item",
+                "code": "game:hammer-*",
+                "isTool": true
+            },
+            "S": {
+                "type": "item",
+                "name": "ore",
+                "code": "lensstory:lenore-medium-*"
+            }
+        },
+        "width": 1,
+        "height": 2,
+        "output": {
+            "type": "item",
+            "code": "lensstory:nugget-platiniridium",
+            "quantity": 1
+        }
+    },
+    {
+        "ingredientPattern": "H,S",
+        "ingredients": {
+            "H": {
+                "type": "item",
+                "code": "game:hammer-*",
+                "isTool": true
+            },
+            "S": {
+                "type": "item",
+                "name": "ore",
+                "code": "lensstory:lenore-rich-*"
+            }
+        },
+        "width": 1,
+        "height": 2,
+        "output": {
+            "type": "item",
+            "code": "lensstory:nugget-platiniridium",
+            "quantity": 1
+        }
+    },
+    {
+        "ingredientPattern": "H,S",
+        "ingredients": {
+            "H": {
+                "type": "item",
+                "code": "game:hammer-*",
+                "isTool": true
+            },
+            "S": {
+                "type": "item",
+                "name": "ore",
+                "code": "lensstory:lenore-bountiful-*"
+            }
+        },
+        "width": 1,
+        "height": 2,
+        "output": {
+            "type": "item",
+            "code": "lensstory:nugget-platiniridium",
+            "quantity": 1
+        }
+    },
+
+
+    {
+        "ingredientPattern": "H,S",
+        "ingredients": {
+            "H": {
+                "type": "item",
+                "code": "game:hammer-*",
+                "isTool": true
+            },
+            "S": {
+                "type": "item",
+                "name": "ore",
+                "code": "lensstory:lencrystalore-poor-*"
+            }
+        },
+        "width": 1,
+        "height": 2,
+        "output": {
+            "type": "item",
+            "code": "lensstory:nugget-platiniridium",
+            "quantity": 1
+        }
+    },
+    {
+        "ingredientPattern": "H,S",
+        "ingredients": {
+            "H": {
+                "type": "item",
+                "code": "game:hammer-*",
+                "isTool": true
+            },
+            "S": {
+                "type": "item",
+                "name": "ore",
+                "code": "lensstory:lencrystalore-medium-*"
+            }
+        },
+        "width": 1,
+        "height": 2,
+        "output": {
+            "type": "item",
+            "code": "lensstory:nugget-platiniridium",
+            "quantity": 1
+        }
+    },
+    {
+        "ingredientPattern": "H,S",
+        "ingredients": {
+            "H": {
+                "type": "item",
+                "code": "game:hammer-*",
+                "isTool": true
+            },
+            "S": {
+                "type": "item",
+                "name": "ore",
+                "code": "lensstory:lencrystalore-rich-*"
+            }
+        },
+        "width": 1,
+        "height": 2,
+        "output": {
+            "type": "item",
+            "code": "lensstory:nugget-platiniridium",
+            "quantity": 1
+        }
+    },
+    {
+        "ingredientPattern": "H,S",
+        "ingredients": {
+            "H": {
+                "type": "item",
+                "code": "game:hammer-*",
+                "isTool": true
+            },
+            "S": {
+                "type": "item",
+                "name": "ore",
+                "code": "lensstory:lencrystalore-bountiful-*"
+            }
+        },
+        "width": 1,
+        "height": 2,
+        "output": {
+            "type": "item",
+            "code": "lensstory:nugget-platiniridium",
+            "quantity": 1
+        }
+    }
+]

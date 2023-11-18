@@ -10,7 +10,8 @@
     "storageFlags": 128,
     "creativeinventory": {
         "general": [ "*" ],
-        "items": [ "*" ]
+        "items": [ "*" ],
+        "lensstorytab": [ "*" ]
     },
     "variantgroups": [
         {
