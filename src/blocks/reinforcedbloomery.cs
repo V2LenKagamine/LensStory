@@ -10,6 +10,7 @@ using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Util;
 using Vintagestory.GameContent;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace LensstoryMod
 {
@@ -150,9 +151,18 @@ namespace LensstoryMod
         ItemSlot InputSlot { get { return contents[1]; } }
         ItemSlot OutputSlot { get { return contents[2]; } }
 
+        static SimpleParticleProperties smoke;
+
         public ReinforcedBloomeryBE()
         {
             contents = new InventoryGeneric(3,"reinforcedbloomery-1",null,null);
+            smoke = new SimpleParticleProperties(
+                1, 1, ColorUtil.ToRgba(128, 110, 110, 110), new Vec3d(), new Vec3d(),
+                new Vec3f(-0.2f, 0.3f, -0.2f), new Vec3f(0.2f, 0.3f, 0.2f), 2, 0, 0.5f, 1f, EnumParticleModel.Quad
+            );
+            smoke.SelfPropelled = true;
+            smoke.OpacityEvolve = new EvolvingNatFloat(EnumTransformFunction.LINEAR, -255);
+            smoke.SizeEvolve = new EvolvingNatFloat(EnumTransformFunction.LINEAR, 2);
         }
 
         public override void Initialize(ICoreAPI api)
@@ -168,7 +178,17 @@ namespace LensstoryMod
         {
             if (!burning) { return; }
 
-            if(Api.Side == EnumAppSide.Server && burningUntil < Api.World.Calendar.TotalDays)
+            if (Api.Side == EnumAppSide.Client)
+            {
+                if (Api.World.Rand.Next(10) != 0)
+                {
+                    smoke.MinPos.Set(Pos.X + 0.5 - 2 / 16.0, Pos.Y + 0.1 + 10 / 16f, Pos.Z + 0.5 - 2 / 16.0);
+                    smoke.AddPos.Set(4 / 16.0, 0, 4 / 16.0);
+                    Api.World.SpawnParticles(smoke, null);
+                }
+            }
+
+            if (Api.Side == EnumAppSide.Server && burningUntil < Api.World.Calendar.TotalDays)
             {
                 Smelt();
             }

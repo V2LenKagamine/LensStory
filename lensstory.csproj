@@ -51,6 +51,7 @@
   <None Remove="assets\lensstory\blocktypes\liquids\liquidconcrete.json" />
   <None Remove="assets\lensstory\blocktypes\machines\reinforcedbloomery.json" />
   <None Remove="assets\lensstory\blocktypes\manarepair.json" />
+  <None Remove="assets\lensstory\blocktypes\regularblocks\clearglass.json" />
   <None Remove="assets\lensstory\blocktypes\regularblocks\concretefull.json" />
   <None Remove="assets\lensstory\blocktypes\regularblocks\concretepath.json" />
   <None Remove="assets\lensstory\blocktypes\regularblocks\concretestair.json" />
@@ -58,6 +59,7 @@
   <None Remove="assets\lensstory\blocktypes\regularblocks\sturdycasing.json" />
   <None Remove="assets\lensstory\blocktypes\rockmaker.json" />
   <None Remove="assets\lensstory\itemtypes\attunementwand.json" />
+  <None Remove="assets\lensstory\itemtypes\consumable\sandwich.json" />
   <None Remove="assets\lensstory\itemtypes\misc\concreteportion.json" />
   <None Remove="assets\lensstory\itemtypes\misc\hoardingsack.json" />
   <None Remove="assets\lensstory\itemtypes\misc\lencrystalore.json" />
@@ -76,6 +78,7 @@
   <None Remove="assets\lensstory\patches\traits.json" />
   <None Remove="assets\lensstory\recipes\barrel\liquidconcrete.json" />
   <None Remove="assets\lensstory\recipes\grid\attunementwand.json" />
+  <None Remove="assets\lensstory\recipes\grid\blocks\clearglass.json" />
   <None Remove="assets\lensstory\recipes\grid\blocks\concrete.json" />
   <None Remove="assets\lensstory\recipes\grid\blocks\concretepath.json" />
   <None Remove="assets\lensstory\recipes\grid\blocks\concretestairs.json" />
@@ -83,6 +86,7 @@
   <None Remove="assets\lensstory\recipes\grid\blocks\frame.json" />
   <None Remove="assets\lensstory\recipes\grid\blocks\sturdybucket.json" />
   <None Remove="assets\lensstory\recipes\grid\concretemix.json" />
+  <None Remove="assets\lensstory\recipes\grid\food\sandwich.json" />
   <None Remove="assets\lensstory\recipes\grid\hoardingsack.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\burnerator.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\manarepair.json" />

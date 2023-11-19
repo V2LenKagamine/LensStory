@@ -35,6 +35,7 @@ namespace LensstoryMod {
             api.RegisterItemClass("fluidskimmerclass", typeof(FluidSkimmerItem));
             api.RegisterItemClass("attunementclass",typeof(AttunementWandItem));
             api.RegisterItemClass("scrollitem",typeof(ScrollItem));
+            api.RegisterItemClass("coinflipper", typeof(LenCoinItem));
 
             api.RegisterBlockClass("frameblock", typeof(WoodFrame));
             api.RegisterBlockClass("liquidconcreteblock", typeof(LiquidConcreteBlock));
@@ -42,6 +43,8 @@ namespace LensstoryMod {
             api.RegisterItemClass("lenssimpleore",typeof(SimpleItemOre));
             api.RegisterItemClass("lenssimplenugget", typeof(SimpleItemNugget));
             api.RegisterItemClass("lenssimplebloom", typeof(GenericOreBloom));
+
+            api.RegisterItemClass("lenssimplefood",typeof(SimpleFoodItem));
 
             api.RegisterBlockClass("lenssturdybucketblock", typeof(SturdyBucketBlock));
             api.RegisterBlockEntityClass("lenssturdybucket", typeof(SturdyBucketBE));

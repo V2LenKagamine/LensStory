@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
+using Vintagestory.API.Config;
 using Vintagestory.API.Server;
 using Vintagestory.GameContent;
 
@@ -18,7 +19,7 @@ namespace LensstoryMod
             IServerPlayer P = this.entity.World.PlayerByUid((this.entity as EntityPlayer).PlayerUID) as IServerPlayer;
 
             ScrollEffect scroll = new ScrollEffect();
-            scroll.removeAll((P.Entity as EntityPlayer), "lensmod");
+            scroll.removeAll((P.Entity), "lensmod");
 
             base.OnEntityDeath(damageSourceForDeath);
         }
@@ -39,7 +40,9 @@ namespace LensstoryMod
 
         string effectID;
 
-        public void ScrollStats(EntityPlayer entity,Dictionary<string,float> effectlist,string code,string id)
+        int statDuration = 0;
+
+        public void ScrollStats(EntityPlayer entity,Dictionary<string,float> effectlist,string code,string id,int duration = 0)
         {
             affected = entity;
             effectPowerList = effectlist;
@@ -49,8 +52,36 @@ namespace LensstoryMod
             {
                 applyStats();
             }
+            if (duration > 0)
+            {
+                long dissapateCallback = affected.World.RegisterCallback(DissapateEffect, duration * 1000);
+                affected.WatchedAttributes.SetLong(effectID, dissapateCallback);
+                statDuration = duration;
+            }
         }
 
+        public void DissapateEffect(float dt) 
+        {
+            Dissapate();
+        }
+
+        public void Dissapate()
+        {
+            foreach(KeyValuePair<string,float> stat in effectPowerList)
+            {
+                affected.Stats.Remove(stat.Key, effectCode);
+            }
+            affected.WatchedAttributes.RemoveAttribute(effectID);
+            IServerPlayer player = (
+               affected.World.PlayerByUid((affected).PlayerUID)
+               as IServerPlayer
+           );
+            player.SendMessage(
+                GlobalConstants.InfoLogChatGroup,
+                "You feel your body shift, as a temporary effect dissapates.",
+                EnumChatType.Notification
+            );
+        }
 
         public void applyStats()
         {

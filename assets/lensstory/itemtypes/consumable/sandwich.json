@@ -1,0 +1,114 @@
+﻿{
+    "code": "sandwich",
+    "class": "lenssimplefood",
+    "maxstacksize": 32,
+    "creativeinventory": {
+        "general": [ "*-flawless-deluxe" ],
+        "items": [ "*-flawless-deluxe" ],
+        "lensstorytab": [ "*-flawless-deluxe" ]
+    },
+    "nutritionPropsByType": {
+        "*": {
+            "satiety": 100,
+            "foodcategory": "NoNutrition"
+        }
+    },
+    "variantgroups": [
+        {
+            "code": "bread",
+            "states": [ "spelt", "rye", "flax", "rice", "cassava", "amaranth", "sunflower" ]
+        },
+        {
+            "code": "state",
+            "states": [ "moist", "flawless", "toasted" ]
+        },
+        {
+            "code": "type",
+            "states": [ "meaty", "gamey", "cheese", "leafy", "deluxe" ]
+        }
+    ],
+    "shape": { "base": "item/sandwich" },
+    "attributes": {
+        "displaycaseable": true,
+        "shelvable": true,
+        "handbook": { "groupBy": [ "sandwich-*" ] },
+        "satMult": 1.25
+    },
+    "transitionablePropsByType": {
+        "*-moist-*": [
+            {
+                "type": "Perish",
+                "freshHours": { "avg": 120 },
+                "transitionHours": { "avg": 24 },
+                "transitionedStack": {
+                    "type": "item",
+                    "code": "game:rot"
+                },
+                "transitionRatio": 1
+            }
+        ],
+        "*-flawless-*": [
+            {
+                "type": "Perish",
+                "freshHours": { "avg": 192 },
+                "transitionHours": { "avg": 36 },
+                "transitionedStack": {
+                    "type": "item",
+                    "code": "game:rot"
+                },
+                "transitionRatio": 1
+            }
+        ],
+        "*-toasted-*": [
+            {
+                "type": "Perish",
+                "freshHours": { "avg": 420 },
+                "transitionHours": { "avg": 60 },
+                "transitionedStack": {
+                    "type": "item",
+                    "code": "game:rot"
+                },
+                "transitionRatio": 1
+            }
+        ]
+    },
+    "fpHandTransform": {
+        "translation": {
+            "x": 0.25,
+            "y": 0.2,
+            "z": 0
+        },
+        "rotation": {
+            "x": 100,
+            "y": 120,
+            "z": -47
+        },
+        "scale": 3.28
+    },
+    "guiTransform": {
+        "translation": {
+            "x": 33,
+            "y": -12,
+            "z": 0
+        },
+        "rotation": {
+            "x": 90,
+            "y": -90,
+            "z": 0
+        },
+        "scale": 3
+    },
+    "groundTransform": {
+        "translation": {
+            "x": 0,
+            "y": 0.3,
+            "z": 0
+        },
+        "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "scale": 2.5
+    }
+}

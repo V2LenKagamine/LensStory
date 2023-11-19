@@ -38,7 +38,6 @@ F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\shapes\item
 F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\shapes\item\longrod.json
 F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\shapes\item\rod.json
 F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\shapes\item\spareparts.json
-F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\itemtypes\misc\scrollbook.json
 F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\patches\tradershenanigans.json
 F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\recipes\smithing\longrods.json
 F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\recipes\grid\parts.json
@@ -48,7 +47,6 @@ F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\blocktypes\
 F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\blocktypes\machines\manarepair.json
 F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\blocktypes\machines\reinforcedbloomery.json
 F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\blocktypes\machines\rockmaker.json
-F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\itemtypes\misc\scrolls.json
 F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\recipes\grid\machines\reinforcedbloomery.json
 F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\shapes\block\reinforcedbloomery.json
 F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\textures\block\reinforcedbloomery\inside.png
@@ -95,3 +93,10 @@ F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\itemtypes\r
 F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\itemtypes\resource\nuggets.json
 F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\itemtypes\resource\oreblooms.json
 F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\recipes\smithing\processbloom.json
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\itemtypes\consumable\sandwich.json
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\itemtypes\consumable\scrollbook.json
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\itemtypes\consumable\scrolls.json
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\recipes\grid\food\sandwich.json
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\shapes\item\sandwich.json
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\blocktypes\regularblocks\clearglass.json
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\recipes\grid\blocks\clearglass.json
