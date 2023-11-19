@@ -24,7 +24,8 @@
     },
     "creativeinventory": {
         "general": [ "*" ],
-        "items": [ "*" ]
+        "items": [ "*" ],
+        "lensstorytab": [ "*" ]
     },
     "maxstacksize": 64,
     "materialDensity": 500,

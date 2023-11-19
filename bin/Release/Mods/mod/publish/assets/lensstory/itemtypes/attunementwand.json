@@ -2,7 +2,8 @@
     "code": "attunementwand",
     "class": "attunementclass",
     "creativeinventory": {
-        "general": [ "*" ]
+        "general": [ "*" ],
+        "lensstorytab": [ "*" ]
     },
     "texture": {
         "base": "item/astick"

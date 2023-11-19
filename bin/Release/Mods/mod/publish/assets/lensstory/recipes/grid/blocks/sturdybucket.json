@@ -3,7 +3,7 @@
     "ingredients": {
         "P": {
             "type": "item",
-            "code": "metalplate-iron",
+            "code": "game:metalplate-iron",
             "quantity": 2
         },
         "R": {

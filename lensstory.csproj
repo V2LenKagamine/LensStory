@@ -69,6 +69,7 @@
   <None Remove="assets\lensstory\itemtypes\misc\parts\rods.json" />
   <None Remove="assets\lensstory\itemtypes\misc\parts\spareparts.json" />
   <None Remove="assets\lensstory\itemtypes\misc\scrollbook.json" />
+  <None Remove="assets\lensstory\itemtypes\resource\oreblooms.json" />
   <None Remove="assets\lensstory\itemtypes\scrolls.json" />
   <None Remove="assets\lensstory\patches\classes.json" />
   <None Remove="assets\lensstory\patches\tradershenanigans.json" />
@@ -92,6 +93,7 @@
   <None Remove="assets\lensstory\recipes\grid\sturdycasing.json" />
   <None Remove="assets\lensstory\recipes\smithing\gears.json" />
   <None Remove="assets\lensstory\recipes\smithing\longrods.json" />
+  <None Remove="assets\lensstory\recipes\smithing\processbloom.json" />
   <None Remove="assets\lensstory\recipes\smithing\rods.json" />
   <None Remove="assets\lensstory\shapes\block\sturdybucket\empty.json" />
   <None Remove="assets\lensstory\shapes\block\sturdybucket\filled.json" />

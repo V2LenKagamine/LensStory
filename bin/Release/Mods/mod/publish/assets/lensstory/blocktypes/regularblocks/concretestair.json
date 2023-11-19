@@ -51,7 +51,8 @@
     },
     "creativeinventory": {
         "general": [ "*-up-north-free" ],
-        "construction": [ "*-up-north-free" ]
+        "construction": [ "*-up-north-free" ],
+        "lensstorytab": [ "*-up-north-free" ]
     },
     "blockmaterial": "Stone",
     "replaceable": 900,

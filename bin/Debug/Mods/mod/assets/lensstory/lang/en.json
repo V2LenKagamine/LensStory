@@ -111,6 +111,8 @@
     "item-nugget-platiniridium": "Platiniridium Nugget",
     "item-lencrystalore-*-platiniridium-*": "Crystalized Platiniridium",
     "game:ore-platiniridium": "Platiniridium",
+    
+    "item-genericorebloom-platinum": "Platinum Bloom",
 
     "block-sturdycasing": "Sturdy Metal Casing",
 
@@ -158,7 +160,7 @@
     "game:handbook-block-concrete-text": "Use a fluid container [like a bucket] filled with atleast 200ml of Liquid Concrete on an Empty Concrete Frame to form a concrete block.",
 
     "game:handbook-block-reinforcedbloomery-title": "Usage:",
-    "game:handbook-block-reinforcedbloomery-text": "Works just like the regular bloomery, but doesnt break, and finished products can be removed by shift clicking. Is a little smaller, so it only holds 2/3rds the normal bloomery.",
+    "game:handbook-block-reinforcedbloomery-text": "Works just like the regular bloomery, but doesnt break,has a max temperature of 2000, and finished products can be removed by shift clicking. Is a little smaller, so it only holds 2/3rds the normal bloomery.",
 
     "game:handbook-block-rockmaker-title": "Geformic Accelerator Usage:",
     "game:handbook-block-rockmaker-text": "To use the machine, insert a sample of geologic material, such as sand, dirt, or even raw ore blocks. Given enough MP, it will produce a sample in the space above it, if there is no obstructions. Sand and Rock are cheap, but raw ore requires significant amounts of MP. You can shift+interact to retreive the sample.",

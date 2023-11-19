@@ -82,7 +82,7 @@ namespace LensstoryMod
             { return false; }
             var maybeblock = slot.Itemstack.Collectible;
             var type = maybeblock.FirstCodePart();
-            if (maybeblock != null && (type == "rock" || type == "gravel" || type == "sand" || type == "soil") || type == "ore") 
+            if (maybeblock != null && (type == "rock" || type == "gravel" || type == "sand" || type == "soil")) 
             {
                 contents = slot.Itemstack;
                 slot.TakeOut(1);
@@ -147,15 +147,30 @@ namespace LensstoryMod
                 {
                     case string x when x == "rock" || x == "gravel" || x == "sand":
                         {
-                            return 4;
+                            return 1;
                         }
                     case "soil":
                         {
-                            return 12;
-                        }
-                    case "ore":
-                        {
-                            return 36;
+                            switch (entity.contents.Collectible.FirstCodePart(1))
+                            {
+                                case string x when x == "verylow" || x == "low": 
+                                    {
+                                        return 1;
+                                    }
+                                case "medium":
+                                    {
+                                        return 2;
+                                    }
+                                case "compost":
+                                    {
+                                        return 4;
+                                    }
+                                case "high":
+                                    {
+                                        return 8;
+                                    }
+                            }
+                            return 1;
                         }
                 }
             }

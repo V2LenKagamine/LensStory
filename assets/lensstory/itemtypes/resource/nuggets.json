@@ -37,7 +37,7 @@
             "smeltedRatio": 100,
             "smeltedStack": {
                 "type": "item",
-                "code": "game:ingot-platinum"
+                "code": "genericorebloom-platinum"
             }
         }
     },

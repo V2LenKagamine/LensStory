@@ -2,17 +2,19 @@
     "item-fluidskimmer": "Fluid Skimmer",
     "item-attunementwand": "Mechanical Attunement Wand",
 
-    "item-coin-brass": "Brass Coin",
-    "item-coin-copper": "Copper Coin",
-    "item-coin-silver": "Silver Coin",
-    "item-coin-gold": "Gold Coin",
-    "item-coin-platinum": "Platinum Coin",
-    "item-coin-titanium": "Titanium Coin",
-    "item-coin-uranium": "Uranium Coin",
-    "item-coin-molybdochalkos": "Molybdochalkos Coin",
-    "item-coin-iron": "Iron Coin",
-    "item-coin-steel": "Steel Coin",
-    "itemdesc-coin-*": "Shiny. The traders prefer gears, but surely someone finds these valuable.",
+    "game:tabname-lensstorytab": "Lens Story Stuff",
+
+    "item-lenscoin-brass": "Brass Coin",
+    "item-lenscoin-copper": "Copper Coin",
+    "item-lenscoin-silver": "Silver Coin",
+    "item-lenscoin-gold": "Gold Coin",
+    "item-lenscoin-platinum": "Platinum Coin",
+    "item-lenscoin-titanium": "Titanium Coin",
+    "item-lenscoin-uranium": "Uranium Coin",
+    "item-lenscoin-molybdochalkos": "Molybdochalkos Coin",
+    "item-lenscoin-iron": "Iron Coin",
+    "item-lenscoin-steel": "Steel Coin",
+    "itemdesc-lenscoin-*": "Shiny. The traders prefer gears, but surely someone finds these valuable.",
 
     "item-hoardingsack": "Hoarder's Backpack",
 
@@ -105,6 +107,13 @@
     "item-statsbook-spelunker": "Pyrite's False Promise",
     "item-statsbook-medic": "Field Medicine 101",
 
+    "block-lenorb-*-platiniridium-*": "Platiniridium",
+    "item-nugget-platiniridium": "Platiniridium Nugget",
+    "item-lencrystalore-*-platiniridium-*": "Crystalized Platiniridium",
+    "game:ore-platiniridium": "Platiniridium",
+    
+    "item-genericorebloom-platinum": "Platinum Bloom",
+
     "block-sturdycasing": "Sturdy Metal Casing",
 
     "block-concretefull": "Concrete Block",
@@ -151,7 +160,7 @@
     "game:handbook-block-concrete-text": "Use a fluid container [like a bucket] filled with atleast 200ml of Liquid Concrete on an Empty Concrete Frame to form a concrete block.",
 
     "game:handbook-block-reinforcedbloomery-title": "Usage:",
-    "game:handbook-block-reinforcedbloomery-text": "Works just like the regular bloomery, but doesnt break, and finished products can be removed by shift clicking. Is a little smaller, so it only holds 2/3rds the normal bloomery.",
+    "game:handbook-block-reinforcedbloomery-text": "Works just like the regular bloomery, but doesnt break,has a max temperature of 2000, and finished products can be removed by shift clicking. Is a little smaller, so it only holds 2/3rds the normal bloomery.",
 
     "game:handbook-block-rockmaker-title": "Geformic Accelerator Usage:",
     "game:handbook-block-rockmaker-text": "To use the machine, insert a sample of geologic material, such as sand, dirt, or even raw ore blocks. Given enough MP, it will produce a sample in the space above it, if there is no obstructions. Sand and Rock are cheap, but raw ore requires significant amounts of MP. You can shift+interact to retreive the sample.",

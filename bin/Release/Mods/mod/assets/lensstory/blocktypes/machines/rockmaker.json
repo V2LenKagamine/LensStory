@@ -3,7 +3,8 @@
     "shape": { "base": "game:block/basic/cube" },
     "drawtype": "cube",
     "creativeinventory": {
-        "general": [ "*" ]
+        "general": [ "*" ],
+        "lensstorytab": [ "*" ]
     },
     "class": "lensrockmakerblock",
     "entityClass": "lensrockmaker",

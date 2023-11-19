@@ -1,6 +1,7 @@
 ﻿{
     "code": "lencrystalore",
     "__commment": "Yep doing it for this too.",
+    "class": "lenssimpleore",
     "maxstacksize": 64,
     "storageFlags": 5,
     "attributes": {

@@ -1,17 +1,19 @@
 ﻿{
-    "code": "lencrystalore",
-    "__commment": "Yep doing it for this too.",
+    "code": "lenore",
+    "__comment": "Second verse, same as the first! We use my class because normal isnt tooled for general use.",
+    "class": "lenssimpleore",
     "maxstacksize": 64,
     "storageFlags": 5,
     "attributes": {
         "handbook": {
-            "include": false
+            "groupBy": [ "ore-{ore}-*" ],
+            "searchWeightOffset": -0.25
         },
         "metalUnitsByType": {
-            "*-poor-platinumiridium-*": 2,
-            "*-normal-platinumiridium-*": 4,
-            "*-rich-platinumiridium-*": 10,
-            "*-bountiful-platinumiridium-*": 20
+            "lenore-poor-platiniridium-*": 1,
+            "lenore-medium-platiniridium-*": 2,
+            "lenore-rich-platiniridium-*": 3,
+            "lenore-bountiful-platiniridium-*": 5
         },
         "displaycaseable": true,
         "shelvable": true
@@ -31,21 +33,16 @@
         }
     ],
     "allowedVariants": [
-        "lencrystalore-poor-platiniridium-andesite",
-        "lencrystalore-medium-platiniridium-andesite",
-        "lencrystalore-rich-platiniridium-andesite",
-        "lencrystalore-bountiful-platiniridium-andesite"
+        "lenore-poor-platiniridium-andesite",
+        "lenore-medium-platiniridium-andesite",
+        "lenore-rich-platiniridium-andesite",
+        "lenore-bountiful-platiniridium-andesite"
     ],
-    "shape": {
-        "base": "item/ore/genericcrystal-{grade}"
-    },
+    "shape": { "base": "item/ore/generic-{grade}" },
     "textures": {
         "ore": {
-            "base": "game:block/stone/rock/{rock}1",
-            "overlays": [ "block/ore/{ore}" ]
-        },
-        "crystal": {
-            "base": "item/ore/{ore}"
+            "base": "game:block/stone/rock/{rock}1" ,
+            "overlays": ["block/ore/{ore}"]
         }
     },
     "creativeinventory": {

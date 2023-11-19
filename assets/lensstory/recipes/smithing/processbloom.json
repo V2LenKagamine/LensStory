@@ -1,0 +1,23 @@
+﻿{
+    "ingredient": {
+        "type": "item",
+        "code": "genericorebloom-platinum"
+    },
+    "pattern": [
+        [
+            "#######",
+            "#######",
+            "#######"
+        ],
+        [
+            "#######",
+            "#######",
+            "#######"
+        ]
+    ],
+    "name": "Platinum Ingot",
+    "output": {
+        "type": "item",
+        "code": "game:ingot-platinum"
+    }
+}

@@ -3,7 +3,8 @@
     "class": "frameblock",
     "shape": { "base": "block/frame" },
     "creativeinventory": {
-        "general": [ "*" ]
+        "general": [ "*" ],
+        "lensstorytab": [ "*" ]
     },
     "blockmaterial": "Wood",
     "replaceable": 900,

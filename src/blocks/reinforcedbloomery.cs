@@ -33,7 +33,7 @@ namespace LensstoryMod
                 foreach (CollectibleObject obj in api.World.Collectibles)
                 {
                     if (obj.CombustibleProps == null) continue;
-                    if (obj.CombustibleProps.SmeltedStack != null && obj.CombustibleProps.MeltingPoint < 1500)
+                    if (obj.CombustibleProps.SmeltedStack != null && obj.CombustibleProps.MeltingPoint < 2000)
                     {
                         List<ItemStack> stacks = obj.GetHandBookStacks(capi);
                         if (stacks != null) heatableStacklist.AddRange(stacks);
@@ -214,7 +214,7 @@ namespace LensstoryMod
                 OutputSlot.Itemstack = input.Collectible.CombustibleProps.SmeltedStack.ResolvedItemstack.Clone();
                 OutputSlot.Itemstack.StackSize *= amt;
             }
-            OutputSlot.Itemstack.Collectible.SetTemperature(Api.World, OutputSlot.Itemstack, 1000, true);
+            OutputSlot.Itemstack.Collectible.SetTemperature(Api.World, OutputSlot.Itemstack, 1100, true);
             FuelSlot.Itemstack = null;
             input.StackSize -= amt * input.Collectible.CombustibleProps.SmeltedRatio;
             if(input.StackSize <= 0) { InputSlot.Itemstack = null; }
@@ -230,7 +230,7 @@ namespace LensstoryMod
 
             CollectibleObject coll = stacc.Collectible;
 
-            if(coll.CombustibleProps?.SmeltedStack != null && coll.CombustibleProps.MeltingPoint < 1500 && coll.CombustibleProps.MeltingPoint >= 1000)
+            if(coll.CombustibleProps?.SmeltedStack != null && coll.CombustibleProps.MeltingPoint < 2000 && coll.CombustibleProps.MeltingPoint >= 1000)
             {
                 if(InputSlot.StackSize + amt > InputCap) { return false; }
                 if(!InputSlot.Empty && !FuelSlot.Itemstack.Equals(Api.World,stacc,GlobalConstants.IgnoredStackAttributes)) { return false; }
@@ -253,7 +253,7 @@ namespace LensstoryMod
 
             CollectibleObject coll = slot.Itemstack.Collectible;
 
-            if(coll.CombustibleProps?.SmeltedStack != null && coll.CombustibleProps.MeltingPoint < 1500 && coll.CombustibleProps.MeltingPoint >=1000)
+            if(coll.CombustibleProps?.SmeltedStack != null && coll.CombustibleProps.MeltingPoint < 2000 && coll.CombustibleProps.MeltingPoint >=1000)
             {
                 if(InputSlot.StackSize >= InputCap) { return false;}
                 int movable = Math.Min ( InputCap -  InputSlot.StackSize, amt);

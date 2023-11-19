@@ -15,12 +15,12 @@
                 "action": "PlaceBlock",
                 "stack": {
                     "type": "block",
-                    "code": "concrete-still-3"
+                    "code": "lensstory:concrete-still-3"
                 },
                 "stackByFillLevel": {
                     "10": {
                         "type": "block",
-                        "code": "concrete-still-7"
+                        "code": "lensstory:concrete-still-7"
                     }
                 }
             }
