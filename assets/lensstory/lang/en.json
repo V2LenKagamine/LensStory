@@ -130,6 +130,25 @@
 
     "item-genericorebloom-platinum": "Platinum Bloom",
 
+
+    "block-lenorb-medium-sus-*": "Gem-bearing Rock",
+    "item-roughgem-green": "Rough Emerald",
+    "item-cutgem-green": "Cut Emerald",
+    "item-roughgem-blue": "Rough Sapphire",
+    "item-cutgem-blue": "Cut Sapphire",
+    "item-roughgem-violet": "Rough Amethyst",
+    "item-cutgem-violet": "Cut Amethyst",
+    "item-roughgem-red": "Rough Ruby",
+    "item-cutgem-red": "Cut Ruby",
+    "item-roughgem-yellow": "Rough Topaz",
+    "item-cutgem-yellow": "Cut Topaz",
+    "item-roughgem-brown": "Rough Petrified Wood",
+    "item-cutgem-brown": "Cut Petrified Wood",
+    "item-roughgem-smoky": "Rough Smoky Quartz",
+    "item-cutgem-smoky": "Cut Smoky Quartz",
+    "item-roughgem-pink": "Rough Spinel",
+    "item-cutgem-pink": "Cut Spinel",
+
     "block-sturdycasing": "Sturdy Metal Casing",
 
     "block-concretefull": "Concrete Block",

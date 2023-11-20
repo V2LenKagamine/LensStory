@@ -18,7 +18,7 @@
         },
         {
             "code": "type",
-            "states": ["platiniridium"]
+            "states": ["platiniridium","sus"]
         },
         {
             "code": "rock",
@@ -29,10 +29,12 @@
         "lenorb-poor-platiniridium-andesite",
         "lenorb-medium-platiniridium-andesite",
         "lenorb-rich-platiniridium-andesite",
-        "lenorb-bountiful-platiniridium-andesite"
+        "lenorb-bountiful-platiniridium-andesite",
+        "lenorb-medium-sus-*"
     ],
     "requiredMiningTeirByType": {
-        "lenorb-*-platiniridium-andesite": 3
+        "lenorb-*-platiniridium-andesite": 3,
+        "lenorb-medium-sus-*": 2
     },
     "creativeinventory": {
         "general": [ "*" ],
@@ -42,10 +44,17 @@
     "storageFlags": 5,
     "shape": { "base": "game:block/basic/cube" },
     "drawtype": "cube",
-    "textures": {
-        "all": {
-            "base": "game:block/stone/rock/{rock}1",
-            "overlays": [ "block/ore/{type}" ]
+    "texturesByType": {
+        "lenorb-medium-sus-*": {
+            "all": {
+                "base": "game:block/stone/rock/{rock}1"
+            }
+        },
+        "*": {
+            "all": {
+                "base": "game:block/stone/rock/{rock}1",
+                "overlays": [ "block/ore/{type}" ]
+            }
         }
     },
     "replaceable": 100,
@@ -60,6 +69,72 @@
         }
     },
     "dropsByType": {
+        "lenorb-medium-sus-*": [
+            {
+                "type": "item",
+                "code": "roughgem-green",
+                "quantity": {
+                    "avg": 0.1,
+                    "var": 0
+                }
+            },
+            {
+                "type": "item",
+                "code": "roughgem-blue",
+                "quantity": {
+                    "avg": 0.1,
+                    "var": 0
+                }
+            },
+            {
+                "type": "item",
+                "code": "roughgem-violet",
+                "quantity": {
+                    "avg": 0.1,
+                    "var": 0
+                }
+            },
+            {
+                "type": "item",
+                "code": "roughgem-red",
+                "quantity": {
+                    "avg": 0.1,
+                    "var": 0
+                }
+            },
+            {
+                "type": "item",
+                "code": "roughgem-yellow",
+                "quantity": {
+                    "avg": 0.1,
+                    "var": 0
+                }
+            },
+            {
+                "type": "item",
+                "code": "roughgem-brown",
+                "quantity": {
+                    "avg": 0.1,
+                    "var": 0
+                }
+            },
+            {
+                "type": "item",
+                "code": "roughgem-smoky",
+                "quantity": {
+                    "avg": 0.1,
+                    "var": 0
+                }
+            },
+            {
+                "type": "item",
+                "code": "roughgem-pink",
+                "quantity": {
+                    "avg": 0.1,
+                    "var": 0
+                }
+            }
+        ],
         "*": [
             {
                 "type": "item",

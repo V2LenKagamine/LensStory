@@ -18,7 +18,7 @@ namespace LensstoryMod
                     if (fluid.StackSize >= 200)
                     {
                         container.TryTakeLiquid(slot.Itemstack, 0.2f);
-                        world.BlockAccessor.SetBlock(api.World.GetBlock(AssetLocation.Create("lensstory:concretefull")).Id,blockSel.Position);
+                        world.BlockAccessor.SetBlock(api.World.GetBlock(AssetLocation.Create("lensstory:concretepath-free")).Id,blockSel.Position);
                         slot.MarkDirty();
                     }
                 }

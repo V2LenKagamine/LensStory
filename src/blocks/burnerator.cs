@@ -57,18 +57,26 @@ namespace LensstoryMod
 
         private void OnCommonTick(float dt)
         {
+            var hourspast = Api.World.Calendar.TotalHours - LastTickTotalHours;
             if(fuel > 0)
             {
-                var hourspast = Api.World.Calendar.TotalHours - LastTickTotalHours;
                 ticker += hourspast * 100;
-                if(ticker >= 1)
+                var workdone = (int)Math.Floor(ticker);
+                if (Api.World.BlockAccessor.GetBlock(Pos.DownCopy()).FirstCodePart() == "lava" && fuel <= 720)
                 {
-                    var workdone = (int)Math.Floor(ticker);
+                    fuel += 2 * workdone;
+                    MarkDirty();
+                }
+                if (ticker >= 1)
+                {
+                    
                     fuel-= workdone;
                     ticker -= workdone;
                     MarkDirty();
                 }
             }
+
+            LastTickTotalHours = Api.World.Calendar.TotalHours;
         }
 
         internal bool OnPlayerInteract(IPlayer player)

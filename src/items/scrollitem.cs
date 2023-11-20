@@ -125,7 +125,7 @@ namespace LensstoryMod
                 }
                 if (dic.ContainsKey("healingeffectivness"))
                 {
-                    dsc.AppendLine(Lang.Get("When used, {0}% healing effectiveness loot till death do you part.", dic["healingeffectivness"] * 100));
+                    dsc.AppendLine(Lang.Get("When used, {0}% healing effectiveness till death do you part.", dic["healingeffectivness"] * 100));
                 }
                 if (dic.ContainsKey("hungerrate"))
                 {

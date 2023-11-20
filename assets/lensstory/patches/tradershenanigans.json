@@ -9,11 +9,11 @@
             "stacksize": 1,
             "stock": {
                 "avg": 1,
-                "var": 1
+                "var": 0
             },
             "price": {
-                "avg": 30,
-                "var": 1.5
+                "avg": 45,
+                "var": 7.5
             }
         }
 
@@ -28,11 +28,11 @@
             "stacksize": 1,
             "stock": {
                 "avg": 1,
-                "var": 1
+                "var": 0
             },
             "price": {
-                "avg": 30,
-                "var": 1.5
+                "avg": 45,
+                "var": 7.5
             }
         }
 
@@ -47,11 +47,11 @@
             "stacksize": 1,
             "stock": {
                 "avg": 1,
-                "var": 1
+                "var": 0
             },
             "price": {
-                "avg": 26,
-                "var": 1.5
+                "avg": 41,
+                "var": 7.5
             }
         }
 
@@ -66,11 +66,11 @@
             "stacksize": 1,
             "stock": {
                 "avg": 1,
-                "var": 1
+                "var": 0
             },
             "price": {
-                "avg": 26,
-                "var": 1.5
+                "avg": 41,
+                "var": 7.5
             }
         }
 
@@ -85,11 +85,11 @@
             "stacksize": 1,
             "stock": {
                 "avg": 1,
-                "var": 1
+                "var": 0
             },
             "price": {
-                "avg": 28,
-                "var": 1.5
+                "avg": 41,
+                "var": 7.5
             }
         }
     },
@@ -103,11 +103,11 @@
             "stacksize": 1,
             "stock": {
                 "avg": 1,
-                "var": 1
+                "var": 0
             },
             "price": {
-                "avg": 25,
-                "var": 1.5
+                "avg": 40,
+                "var": 7.5
             }
         }
 

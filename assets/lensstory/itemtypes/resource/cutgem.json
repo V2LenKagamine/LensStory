@@ -1,0 +1,76 @@
+﻿{
+
+    "code": "cutgem",
+    "shape": { "base": "item/cutgem" },
+    "creativeinventory": {
+        "general": [ "*" ],
+        "items": [ "*" ],
+        "lensstorytab": [ "*" ]
+    },
+    "variantgroups": [
+        {
+            "code": "type",
+            "states": [ "green", "blue", "violet", "red", "yellow", "brown", "smoky", "pink" ]
+        }
+    ],
+    "attributes": {
+        "displaycaseable": true,
+        "shelvable": true
+    },
+    "textures": {
+        "base": {
+            "base": "game:block/glass/{type}",
+            "blendedOverlays": [
+                {
+                    "base": "game:block/glass/{type}",
+                    "blendMode": "Overlay"
+                }
+            ],
+            "alpha": 250
+        }
+    },
+    "fpHandTransform": {
+        "translation": {
+            "x": -0.25,
+            "y": 0.2,
+            "z": 0
+        },
+        "rotation": {
+            "x": -140,
+            "y": 35,
+            "z": 110
+        },
+        "scale": 3
+    },
+    "guiTransform": {
+        "translation": {
+            "x": 3,
+            "y": -35,
+            "z": 0
+        },
+        "rotation": {
+            "x": 180,
+            "y": -20,
+            "z": 30
+        },
+        "scale": 3
+    },
+    "groundTransform": {
+        "translation": {
+            "x": 0,
+            "y": 0.45,
+            "z": 0
+        },
+        "rotation": {
+            "x": 130,
+            "y": 52,
+            "z": 180
+        },
+        "origin": {
+            "x": 0.5,
+            "y": 0.5,
+            "z": 0.5299
+        },
+        "scale": 6
+    }
+}

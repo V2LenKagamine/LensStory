@@ -71,7 +71,9 @@
   <None Remove="assets\lensstory\itemtypes\misc\parts\rods.json" />
   <None Remove="assets\lensstory\itemtypes\misc\parts\spareparts.json" />
   <None Remove="assets\lensstory\itemtypes\misc\scrollbook.json" />
+  <None Remove="assets\lensstory\itemtypes\resource\cutgem.json" />
   <None Remove="assets\lensstory\itemtypes\resource\oreblooms.json" />
+  <None Remove="assets\lensstory\itemtypes\resource\roughgem.json" />
   <None Remove="assets\lensstory\itemtypes\scrolls.json" />
   <None Remove="assets\lensstory\patches\classes.json" />
   <None Remove="assets\lensstory\patches\tradershenanigans.json" />
@@ -87,6 +89,7 @@
   <None Remove="assets\lensstory\recipes\grid\blocks\sturdybucket.json" />
   <None Remove="assets\lensstory\recipes\grid\concretemix.json" />
   <None Remove="assets\lensstory\recipes\grid\food\sandwich.json" />
+  <None Remove="assets\lensstory\recipes\grid\gemcut.json" />
   <None Remove="assets\lensstory\recipes\grid\hoardingsack.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\burnerator.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\manarepair.json" />
@@ -99,6 +102,7 @@
   <None Remove="assets\lensstory\recipes\smithing\longrods.json" />
   <None Remove="assets\lensstory\recipes\smithing\processbloom.json" />
   <None Remove="assets\lensstory\recipes\smithing\rods.json" />
+  <None Remove="assets\lensstory\shapes\block\crystal.json" />
   <None Remove="assets\lensstory\shapes\block\sturdybucket\empty.json" />
   <None Remove="assets\lensstory\shapes\block\sturdybucket\filled.json" />
   <None Remove="assets\lensstory\shapes\item\ore\genericcrystal-bountiful.json" />
@@ -107,6 +111,7 @@
   <None Remove="assets\lensstory\shapes\item\ore\genericcrystal-rich.json" />
   <None Remove="assets\lensstory\shapes\item\powderedconcrete.json" />
   <None Remove="assets\lensstory\textures\block\ore\platiniridium.png" />
+  <None Remove="assets\lensstory\worldgen\deposits\gems.json" />
   <None Remove="assets\lensstory\worldgen\deposits\metalore\platiniridium.json" />
   <None Remove="src\Manastuff.cs~RF31215bb.TMP" />
   <Content Include="modinfo.json">

@@ -19,6 +19,10 @@
             "states": [ "copper", "silver", "gold", "platinum", "titanium", "uranium", "brass", "molybdochalkos", "iron", "steel", "stainlesssteel", "bismuthbronze", "blackbronze", "tinbronze" ]
         }
     ],
+    "attributes": {
+        "displaycaseable": true,
+        "shelvable": true
+    },
     "textures": {
         "metal1": {
             "base": "game:block/metal/plate/{metal}"

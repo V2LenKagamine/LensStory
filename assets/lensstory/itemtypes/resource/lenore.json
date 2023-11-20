@@ -39,10 +39,12 @@
         "lenore-bountiful-platiniridium-andesite"
     ],
     "shape": { "base": "item/ore/generic-{grade}" },
-    "textures": {
-        "ore": {
-            "base": "game:block/stone/rock/{rock}1" ,
-            "overlays": ["block/ore/{ore}"]
+    "texturesByType": {
+        "*": {
+            "ore": {
+                "base": "game:block/stone/rock/{rock}1",
+                "overlays": [ "block/ore/{ore}" ]
+            }
         }
     },
     "creativeinventory": {

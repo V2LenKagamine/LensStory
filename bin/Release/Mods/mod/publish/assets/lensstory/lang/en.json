@@ -18,6 +18,22 @@
 
     "item-hoardingsack": "Hoarder's Backpack",
 
+    "item-sandwich-*-moist-meaty": "Half-Baked Meat Sandwich",
+    "item-sandwich-*-flawless-meaty": "Flawless Meat Sandwich",
+    "item-sandwich-*-toasted-meaty": "Toasted Meat Sandwich",
+    "item-sandwich-*-moist-cheese": "Half-Baked Cheese Sandwich",
+    "item-sandwich-*-flawless-cheese": "Flawless Cheese Sandwich",
+    "item-sandwich-*-toasted-cheese": "Toasted Cheese Sandwich",
+    "item-sandwich-*-moist-leafy": "Half-Baked Veggie Sandwich",
+    "item-sandwich-*-flawless-leafy": "Flawless Veggie Sandwich",
+    "item-sandwich-*-toasted-leafy": "Toasted Veggie Sandwich",
+    "item-sandwich-*-moist-gamey": "Half-Baked Game Sandwich",
+    "item-sandwich-*-flawless-gamey": "Flawless Game Sandwich",
+    "item-sandwich-*-toasted-gamey": "Toasted Game Sandwich",
+    "item-sandwich-*-moist-deluxe": "Half-Baked Deluxe Sandwich",
+    "item-sandwich-*-flawless-deluxe": "Flawless Deluxe Sandwich",
+    "item-sandwich-*-toasted-deluxe": "Toasted Deluxe Sandwich",
+
     "item-gear-brass": "Brass Gear",
     "item-gear-copper": "Copper Gear",
     "item-gear-silver": "Silver Gear",
@@ -111,8 +127,27 @@
     "item-nugget-platiniridium": "Platiniridium Nugget",
     "item-lencrystalore-*-platiniridium-*": "Crystalized Platiniridium",
     "game:ore-platiniridium": "Platiniridium",
-    
+
     "item-genericorebloom-platinum": "Platinum Bloom",
+
+
+    "block-lenorb-medium-sus-*": "Gem-bearing Rock",
+    "item-roughgem-green": "Rough Emerald",
+    "item-cutgem-green": "Cut Emerald",
+    "item-roughgem-blue": "Rough Sapphire",
+    "item-cutgem-blue": "Cut Sapphire",
+    "item-roughgem-violet": "Rough Amethyst",
+    "item-cutgem-violet": "Cut Amethyst",
+    "item-roughgem-red": "Rough Ruby",
+    "item-cutgem-red": "Cut Ruby",
+    "item-roughgem-yellow": "Rough Topaz",
+    "item-cutgem-yellow": "Cut Topaz",
+    "item-roughgem-brown": "Rough Petrified Wood",
+    "item-cutgem-brown": "Cut Petrified Wood",
+    "item-roughgem-smoky": "Rough Smoky Quartz",
+    "item-cutgem-smoky": "Cut Smoky Quartz",
+    "item-roughgem-pink": "Rough Spinel",
+    "item-cutgem-pink": "Cut Spinel",
 
     "block-sturdycasing": "Sturdy Metal Casing",
 
@@ -124,6 +159,18 @@
     "item-concretemix": "Concrete Mix",
     "block-frame": "Empty Concrete Frame",
     "incontainer-item-concreteportion": "Liquid Concrete",
+
+    "block-clearglass-green": "Green Borderless Glass",
+    "block-clearglass-blue": "Blue Borderless Glass",
+    "block-clearglass-violet": "Violet Borderless Glass",
+    "block-clearglass-red": "Red Borderless Glass",
+    "block-clearglass-yellow": "Yellow Borderless Glass",
+    "block-clearglass-brown": "Brown Borderless Glass",
+    "block-clearglass-vintage": "Vintage Borderless Glass",
+    "block-clearglass-smoky": "Smoky Borderless Glass",
+    "block-clearglass-pink": "Pink Borderless Glass",
+    "block-clearglass-plain": "Borderless Glass",
+    "block-clearglass-quartz": "Quartz Borderless Glass",
 
     "block-burnerator": "Heat Fuled Potentia-Accumulator",
     "block-creativemana": "Endless Potentia-Maker",

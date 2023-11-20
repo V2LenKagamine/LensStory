@@ -1,0 +1,35 @@
+﻿[
+    {
+        "code": "gemrock",
+        "triesPerChunk": 0.05,
+        "generator": "disc-anywhere",
+        "attributes": {
+            "inblock": {
+                "code": "rock-*",
+                "name": "rock",
+                "allowedVariants": [ "andesite", "chalk", "chert", "conglomerate", "limestone", "claystone", "granite", "sandstone", "shale", "basalt", "peridotite", "phyllite", "slate" ]
+            },
+            "placeblock": {
+                "code": "lensstory:lenorb-medium-sus-{rock}",
+                "name": "grade"
+            },
+            "genSurfaceBlockChance": 0.15,
+            "surfaceBlockChance": 0.01,
+            "radius": {
+                "dist": "gaussian",
+                "avg": 2,
+                "var": 4
+            },
+            "yPosRel": {
+                "dist": "uniform",
+                "avg": 0.5,
+                "var": 0.5
+            },
+            "thickness": {
+                "dist": "invexp",
+                "avg": 2,
+                "var": 1
+            }
+        }
+    }
+]

@@ -16,8 +16,8 @@
         "handbook": {
             "extraSections": [
                 {
-                    "title": "handbook-block-manarepair-title",
-                    "text": "handbook-block-manarepair-text"
+                    "title": "handbook-block-rockmaker-title",
+                    "text": "handbook-block-rockmaker-text"
                 }
             ],
             "include": true

@@ -3,14 +3,14 @@
     "class": "lenssimplefood",
     "maxstacksize": 32,
     "creativeinventory": {
-        "general": [ "*-flawless-deluxe" ],
-        "items": [ "*-flawless-deluxe" ],
-        "lensstorytab": [ "*-flawless-deluxe" ]
+        "general": [ "*" ],
+        "items": [ "*" ],
+        "lensstorytab": [ "*" ]
     },
     "nutritionPropsByType": {
         "*": {
-            "satiety": 100,
-            "foodcategory": "NoNutrition"
+            "satiety": 25,
+            "foodcategory": "Grain"
         }
     },
     "variantgroups": [
