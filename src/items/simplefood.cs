@@ -56,7 +56,9 @@ namespace LensstoryMod
 
                 foreach (FoodNutritionProperties prop in addProps)
                 {
-                    byEntity.ReceiveSaturation(prop.Satiety * satLossMul, prop.FoodCategory);
+                    float sat = prop.Satiety * satLossMul;
+                    float satLossDelay = Math.Min(1.3f, satLossMul * 3) * 10 + sat / 70f * 60f;
+                    byEntity.ReceiveSaturation(sat, prop.FoodCategory,satLossDelay);
 
                     float healthChange = prop.Health * healthLossMul;
 

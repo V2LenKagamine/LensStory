@@ -163,7 +163,12 @@ namespace LensstoryMod
         {
         }
 
-        public int ToVoid() { return 2; }
+        public int ToVoid() {
+            if (Blockentity is ManaRepairBE entity)
+            {
+                return entity.contents != null ? entity.contents.StackSize : 0;
+            } return 0;
+        }
 
         public void EatMana(int mana)
         {

@@ -1,6 +1,8 @@
 {
     "item-fluidskimmer": "Fluid Skimmer",
+    "itemdesc-fluidskimmer": "Hold shift R-click on a container to round it's contents down to nearest bucket.'",
     "item-attunementwand": "Mechanical Attunement Wand",
+    "itemdesc-attunementwand": "Shift R-click to select a number, then R-click machines to attune them.",
 
     "game:tabname-lensstorytab": "Lens Story Stuff",
 
@@ -15,6 +17,11 @@
     "item-lenscoin-iron": "Iron Coin",
     "item-lenscoin-steel": "Steel Coin",
     "itemdesc-lenscoin-*": "Shiny. The traders prefer gears, but surely someone finds these valuable.",
+
+    "item-arrow-sturdy-iron": "Sturdy Iron Arrow",
+    "item-arrow-sturdy-meteoriciron": "Sturdy Meteoric Iron Arrow",
+    "item-arrow-sturdy-steel": "Sturdy Steel Arrow",
+    "itemdesc-arrow-sturdy-*": "Doesn't break, but hard to shoot.",
 
     "item-hoardingsack": "Hoarder's Backpack",
 
@@ -129,6 +136,7 @@
     "game:ore-platiniridium": "Platiniridium",
 
     "item-genericorebloom-platinum": "Platinum Bloom",
+    "item-genericorebloom-titanium": "Titanium Bloom",
 
 
     "block-lenorb-medium-sus-*": "Gem-bearing Rock",
@@ -148,6 +156,7 @@
     "item-cutgem-smoky": "Cut Smoky Quartz",
     "item-roughgem-pink": "Rough Spinel",
     "item-cutgem-pink": "Cut Spinel",
+    "itemdesc-cutgem-*": "Shiny stone.",
 
     "block-sturdycasing": "Sturdy Metal Casing",
 

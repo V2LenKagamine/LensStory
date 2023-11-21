@@ -106,7 +106,7 @@ namespace LensstoryMod
                 this.ManaID = manaid;
                 this.dirtyboi = true;
             }
-            this.begin();
+            this.begin(true);
         }
 
     }

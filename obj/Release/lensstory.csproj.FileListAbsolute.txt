@@ -32,7 +32,9 @@ F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\itemtypes
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\itemtypes\resource\nuggets.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\itemtypes\resource\oreblooms.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\itemtypes\resource\roughgem.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\itemtypes\tools\sturdyarrow.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\lang\en.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\patches\bloommaker.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\patches\classes.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\patches\tradershenanigans.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\patches\traits.json
@@ -57,6 +59,7 @@ F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\recipes\g
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\recipes\grid\machines\rockmaker.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\recipes\grid\nuggetjank.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\recipes\grid\parts.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\recipes\grid\sturdyarrow.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\recipes\smithing\gears.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\recipes\smithing\longrods.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\recipes\smithing\processbloom.json
@@ -82,12 +85,14 @@ F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\shapes\it
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\shapes\item\rod.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\shapes\item\sandwich.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\shapes\item\spareparts.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\shapes\item\sturdyarrow.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\textures\block\concrete.png
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\textures\block\lava.png
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\textures\block\ore\platiniridium.png
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\textures\block\reinforcedbloomery\inside.png
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\textures\item\astick.png
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\textures\item\ore\platiniridium.png
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\textures\item\parts\feather2.png
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\textures\item\scroll.png
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\worldgen\deposits\gems.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\worldgen\deposits\metalore\platiniridium.json

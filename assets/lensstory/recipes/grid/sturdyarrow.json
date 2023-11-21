@@ -1,0 +1,27 @@
+﻿[
+    {
+        "ingredientPattern": "H,S,F",
+        "ingredients": {
+            "H": {
+                "type": "item",
+                "code": "game:arrowhead-*",
+                "name": "metal",
+                "allowedVariants": [ "iron", "meteoriciron", "steel" ]
+            },
+            "S": {
+                "type": "item",
+                "code": "rod-titanium"
+            },
+            "F": {
+                "type": "item",
+                "code": "spareparts-titanium"
+            }
+        },
+        "width": 1,
+        "height": 3,
+        "output": {
+            "type": "item",
+            "code": "arrow-sturdy-{metal}"
+        }
+    }
+]

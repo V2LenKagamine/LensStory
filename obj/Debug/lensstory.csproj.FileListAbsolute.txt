@@ -106,3 +106,8 @@ F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\shapes\item
 F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\worldgen\deposits\gems.json
 F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\itemtypes\resource\cutgem.json
 F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\itemtypes\resource\roughgem.json
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\itemtypes\tools\sturdyarrow.json
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\recipes\grid\sturdyarrow.json
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\shapes\item\sturdyarrow.json
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\textures\item\parts\feather2.png
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\patches\bloommaker.json

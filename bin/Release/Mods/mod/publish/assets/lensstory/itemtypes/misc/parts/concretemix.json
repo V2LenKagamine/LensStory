@@ -27,7 +27,7 @@
         "items": [ "*" ],
         "lensstorytab": [ "*" ]
     },
-    "maxstacksize": 64,
+    "maxstacksize": 128,
     "materialDensity": 500,
     "guiTransform": {
         "translation": {

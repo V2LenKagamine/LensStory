@@ -9,7 +9,7 @@
         {
             "type": "item",
             "code": "concretemix",
-            "quantity": 2 
+            "quantity": 1 
         }
     ],
     "output": {"type": "item","code": "concreteportion","litres": 1}

@@ -1,0 +1,11 @@
+﻿[
+    {
+        "file": "game:itemtypes/resource/nugget.json",
+        "op": "replace",
+        "path": "/combustiblePropsByType/*-ilmenite/smeltedStack",
+        "value": {
+            "type": "item",
+            "code": "lensstory:genericorebloom-titanium"
+        }
+    }
+]

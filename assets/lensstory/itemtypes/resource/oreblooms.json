@@ -10,12 +10,20 @@
     "variantgroups": [
         {
             "code": "ore",
-            "states": ["platinum"]
+            "states": ["platinum","titanium"]
         }
     ],
     "maxstacksize": 64,
     "attributesByType": {
         "*-platinum": {
+            "forgable": true,
+            "workableTemperature": 700,
+            "displaycaseable": true,
+            "shelvable": true,
+            "mergeUnitsInBloomery": true,
+            "requiresAnvilTier": 2
+        },
+        "*-titanium": {
             "forgable": true,
             "workableTemperature": 700,
             "displaycaseable": true,

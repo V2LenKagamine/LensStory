@@ -1,23 +1,48 @@
-﻿{
-    "ingredient": {
-        "type": "item",
-        "code": "genericorebloom-platinum"
-    },
-    "pattern": [
-        [
-            "#######",
-            "#######",
-            "#######"
+﻿[
+    {
+        "ingredient": {
+            "type": "item",
+            "code": "genericorebloom-platinum"
+        },
+        "pattern": [
+            [
+                "#######",
+                "#######",
+                "#######"
+            ],
+            [
+                "#######",
+                "#######",
+                "#######"
+            ]
         ],
-        [
-            "#######",
-            "#######",
-            "#######"
-        ]
-    ],
-    "name": "Platinum Ingot",
-    "output": {
-        "type": "item",
-        "code": "game:ingot-platinum"
+        "name": "Platinum Ingot",
+        "output": {
+            "type": "item",
+            "code": "game:ingot-platinum"
+        }
+    },
+    {
+        "ingredient": {
+            "type": "item",
+            "code": "genericorebloom-titanium"
+        },
+        "pattern": [
+            [
+                "#######",
+                "#######",
+                "#######"
+            ],
+            [
+                "#######",
+                "#######",
+                "#######"
+            ]
+        ],
+        "name": "Titanium Ingot",
+        "output": {
+            "type": "item",
+            "code": "game:ingot-titanium"
+        }
     }
-}
+]

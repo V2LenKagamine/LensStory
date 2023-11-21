@@ -15,9 +15,9 @@ namespace LensstoryMod
                 ItemStack fluid = container.GetContent(slot.Itemstack);
                 if (fluid!=null && fluid.Collectible?.Code == AssetLocation.Create("lensstory:concreteportion"))
                 {
-                    if (fluid.StackSize >= 200)
+                    if (fluid.StackSize >= 10)
                     {
-                        container.TryTakeLiquid(slot.Itemstack, 0.2f);
+                        container.TryTakeLiquid(slot.Itemstack, 0.1f);
                         world.BlockAccessor.SetBlock(api.World.GetBlock(AssetLocation.Create("lensstory:concretepath-free")).Id,blockSel.Position);
                         slot.MarkDirty();
                     }

@@ -62,14 +62,13 @@ namespace LensstoryMod
             {
                 ticker += hourspast * 100;
                 var workdone = (int)Math.Floor(ticker);
-                if (Api.World.BlockAccessor.GetBlock(Pos.DownCopy()).FirstCodePart() == "lava" && fuel <= 720)
+                if (Api.World.BlockAccessor.GetBlock(Pos.DownCopy()).FirstCodePart() == "lava" && fuel <= 300)
                 {
                     fuel += 2 * workdone;
                     MarkDirty();
                 }
                 if (ticker >= 1)
                 {
-                    
                     fuel-= workdone;
                     ticker -= workdone;
                     MarkDirty();

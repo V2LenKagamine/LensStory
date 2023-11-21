@@ -75,6 +75,8 @@
   <None Remove="assets\lensstory\itemtypes\resource\oreblooms.json" />
   <None Remove="assets\lensstory\itemtypes\resource\roughgem.json" />
   <None Remove="assets\lensstory\itemtypes\scrolls.json" />
+  <None Remove="assets\lensstory\itemtypes\tools\sturdyarrow.json" />
+  <None Remove="assets\lensstory\patches\bloommaker.json" />
   <None Remove="assets\lensstory\patches\classes.json" />
   <None Remove="assets\lensstory\patches\tradershenanigans.json" />
   <None Remove="assets\lensstory\patches\traits.json" />
@@ -97,6 +99,7 @@
   <None Remove="assets\lensstory\recipes\grid\machines\rockmaker.json" />
   <None Remove="assets\lensstory\recipes\grid\nuggetjank.json" />
   <None Remove="assets\lensstory\recipes\grid\parts.json" />
+  <None Remove="assets\lensstory\recipes\grid\sturdyarrow.json" />
   <None Remove="assets\lensstory\recipes\grid\sturdycasing.json" />
   <None Remove="assets\lensstory\recipes\smithing\gears.json" />
   <None Remove="assets\lensstory\recipes\smithing\longrods.json" />
@@ -111,6 +114,7 @@
   <None Remove="assets\lensstory\shapes\item\ore\genericcrystal-rich.json" />
   <None Remove="assets\lensstory\shapes\item\powderedconcrete.json" />
   <None Remove="assets\lensstory\textures\block\ore\platiniridium.png" />
+  <None Remove="assets\lensstory\textures\item\parts\feather2.png" />
   <None Remove="assets\lensstory\worldgen\deposits\gems.json" />
   <None Remove="assets\lensstory\worldgen\deposits\metalore\platiniridium.json" />
   <None Remove="src\Manastuff.cs~RF31215bb.TMP" />
