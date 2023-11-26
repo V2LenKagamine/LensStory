@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HarmonyLib;
 using Vintagestory.API.Util;
 
 namespace LensstoryMod
 {
-    public class Lentills
+    public static class Lentills
     {
         public static string FindInArray(string needle, string[] haystack)
         {
@@ -22,5 +23,6 @@ namespace LensstoryMod
 
             return "";
         }
+
     }
 }

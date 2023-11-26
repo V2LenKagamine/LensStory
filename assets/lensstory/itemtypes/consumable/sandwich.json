@@ -1,7 +1,7 @@
 ﻿{
     "code": "sandwich",
     "class": "lenssimplefood",
-    "maxstacksize": 32,
+    "maxstacksize": 8,
     "creativeinventory": {
         "general": [ "*" ],
         "items": [ "*" ],
@@ -13,41 +13,23 @@
             "foodcategory": "Grain"
         }
     },
-    "variantgroups": [
-        {
-            "code": "bread",
-            "states": [ "spelt", "rye", "flax", "rice", "cassava", "amaranth", "sunflower" ]
-        },
-        {
-            "code": "state",
-            "states": [ "moist", "flawless", "toasted" ]
-        },
-        {
-            "code": "type",
-            "states": [ "meaty", "gamey", "cheese", "leafy", "deluxe" ]
-        }
-    ],
     "shape": { "base": "item/sandwich" },
     "attributes": {
         "displaycaseable": true,
         "shelvable": true,
-        "handbook": { "groupBy": [ "sandwich-*" ] },
-        "satMult": 1.25
+        "satMult": 1.25,
+        "handbook": {
+            "extraSections": [
+                {
+                    "title": "handbook-item-sandwich-title",
+                    "text": "handbook-item-sandwich-text"
+                }
+            ],
+            "include": true
+        }
     },
     "transitionablePropsByType": {
-        "*-moist-*": [
-            {
-                "type": "Perish",
-                "freshHours": { "avg": 120 },
-                "transitionHours": { "avg": 24 },
-                "transitionedStack": {
-                    "type": "item",
-                    "code": "game:rot"
-                },
-                "transitionRatio": 1
-            }
-        ],
-        "*-flawless-*": [
+        "*": [
             {
                 "type": "Perish",
                 "freshHours": { "avg": 192 },
@@ -56,34 +38,22 @@
                     "type": "item",
                     "code": "game:rot"
                 },
-                "transitionRatio": 1
-            }
-        ],
-        "*-toasted-*": [
-            {
-                "type": "Perish",
-                "freshHours": { "avg": 420 },
-                "transitionHours": { "avg": 60 },
-                "transitionedStack": {
-                    "type": "item",
-                    "code": "game:rot"
-                },
-                "transitionRatio": 1
+                "transitionRatio": 4
             }
         ]
     },
     "fpHandTransform": {
         "translation": {
-            "x": 0.25,
-            "y": 0.2,
+            "x": 0.35,
+            "y": 0.6,
             "z": 0
         },
         "rotation": {
-            "x": 100,
-            "y": 120,
-            "z": -47
+            "x": 37,
+            "y": 96,
+            "z": -32
         },
-        "scale": 3.28
+        "scale": 3
     },
     "guiTransform": {
         "translation": {

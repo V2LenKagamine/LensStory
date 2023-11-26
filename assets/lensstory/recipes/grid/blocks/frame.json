@@ -15,6 +15,6 @@
     "output": {
         "type": "block",
         "code": "frame",
-        "quantity": 4
+        "quantity": 16
     }
 }

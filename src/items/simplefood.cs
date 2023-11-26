@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using lensstory.src.recipe;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Config;
 using Vintagestory.API.Datastructures;
+using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 
 namespace LensstoryMod
@@ -192,7 +195,59 @@ namespace LensstoryMod
             output.Attributes["bonusSats"] = new FloatArrayAttribute(sat.ToArray());
         }
 
+        public void OnCreatedTinker(ItemStack[] allInputSlots,LenShapelessRecipe byRecipe,ref EntityItem thePopper)
+        {
+            List<string> ingredients = new List<string>();
+            float[] sat = new float[6];
 
+            foreach (ItemStack slot in allInputSlots)
+            {
+                if (slot == null) { continue; }
+                CraftingRecipeIngredient possible = null;
+                if (byRecipe?.Ingredients != null)
+                {
+                    foreach (var value in byRecipe.Ingredients) { if (value!= null) { possible = value; break; } }
+                }
+                if (slot.Collectible is SimpleFoodItem)
+                {
+                    string[] addIngs = (slot.Attributes["madeWith"] as StringArrayAttribute)?.value;
+                    float[] addSat = (slot.Attributes["bonusSats"] as FloatArrayAttribute)?.value;
+
+                    if (addSat != null && addSat.Length == 6)
+                        sat = sat.Zip(addSat, (x, y) => x + (y * possible?.Quantity ?? 1)).ToArray();
+
+                    if (addIngs != null && addIngs.Length > 0)
+                    {
+                        foreach (string aL in addIngs)
+                        {
+                            if (ingredients.Contains(aL))
+                                continue;
+
+                            ingredients.Add(aL);
+                        }
+                    }
+                }
+                else
+                {
+                    GetNutrientsFromIngredient(ref sat, slot.Collectible, possible?.Quantity ?? 1);
+                    string aL = slot.Collectible.Code.Domain + ":" + slot.Collectible.Code.Path;
+                    if (ingredients.Contains(aL))
+                        continue;
+                    ingredients.Add(aL);
+                }
+            }
+            if (byRecipe.Output.Quantity > 1)
+            {
+                for (var i = 0; i < sat.Length; i++)
+                {
+                    sat[i] = (float)Math.Floor(sat[i] * (1f / (float)byRecipe.Output.Quantity));
+                }
+            }
+            ingredients.Sort();
+            thePopper.Itemstack.Attributes["madeWith"] = new StringArrayAttribute(ingredients.ToArray());
+            thePopper.Itemstack.Attributes["bonusSats"] = new FloatArrayAttribute(sat.ToArray());
+            thePopper.Slot.MarkDirty();
+        }
 
         public void GetNutrientsFromIngredient(ref float[] satHolder, CollectibleObject ing, int mult)
         {
@@ -263,8 +318,6 @@ namespace LensstoryMod
                 return;
 
             ItemStack smeltedStack = inputSlot.Itemstack.Collectible.CombustibleProps.SmeltedStack.ResolvedItemstack.Clone();
-
-            // Copy over spoilage values but reduce them by a bit
             TransitionState state = UpdateAndGetTransitionState(world, new DummySlot(inputSlot.Itemstack), EnumTransitionType.Perish);
 
             if (state != null)
@@ -295,8 +348,6 @@ namespace LensstoryMod
             else
             {
                 smeltedStack.StackSize = batchSize * smeltedStack.StackSize;
-
-                // use TryMergeStacks to average spoilage rate and temperature
                 ItemStackMergeOperation op = new ItemStackMergeOperation(world, EnumMouseButton.Left, 0, EnumMergePriority.ConfirmedMerge, batchSize * smeltedStack.StackSize);
                 op.SourceSlot = new DummySlot(smeltedStack);
                 op.SinkSlot = new DummySlot(outputSlot.Itemstack);

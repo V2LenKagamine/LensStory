@@ -7,7 +7,6 @@ namespace LensstoryMod
     {
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
         {
-
             if(world.Side == EnumAppSide.Client) { return true; }
             ItemSlot slot = byPlayer.InventoryManager.ActiveHotbarSlot;
             if(slot.Itemstack != null && slot.Itemstack.Collectible is BlockLiquidContainerBase container)
@@ -22,6 +21,14 @@ namespace LensstoryMod
                         slot.MarkDirty();
                     }
                 }
+            }
+            else if (byPlayer.Entity.Controls.Sneak)
+            {
+                if (!byPlayer.InventoryManager.TryGiveItemstack(new ItemStack(api.World.GetBlock(AssetLocation.Create("lensstory:frame"))))) 
+                {
+                    api.World.SpawnItemEntity(new ItemStack(api.World.GetBlock(AssetLocation.Create("lensstory:frame"))),blockSel.Position.ToVec3d().Add(0.5,0.5,0.5));
+                }
+                world.BlockAccessor.SetBlock(0, blockSel.Position);
             }
             return true;
         }

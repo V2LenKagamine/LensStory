@@ -65,17 +65,24 @@
         "*-*-free": 2.4
     },
     "walkspeedmultiplierByType": {
-        "*-*-free": 2.5,
-        "*-*-snow": 1.75
+        "*-*-free": 1.6,
+        "*-*-snow": 1.2
     },
     "textures": {
-        "all": { "base": "block/concrete" }
+        "sides": {
+            "base": "block/concrete",
+            "alternates": [
+                { "base": "block/concrete2" },
+                { "base": "block/concrete3" },
+                { "base": "block/concrete4" }
+            ]
+        }
     },
     "emitSideAo": { "all": true },
     "drops": [
         {
             "type": "block",
-            "code": "concretepath-free"
+            "code": "concretestair-up-north-free"
         }
     ],
     "faceCullMode": "NeverCull",

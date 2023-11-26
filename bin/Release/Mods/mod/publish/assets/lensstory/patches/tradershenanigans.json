@@ -110,6 +110,173 @@
                 "var": 7.5
             }
         }
-
+    },
+    {
+        "file": "game:entities/humanoid/trader-luxuries.json",
+        "op": "add",
+        "path": "/attributes/tradeProps/buying/list/-",
+        "value": {
+            "code": "lensstory:cutgem-green",
+            "type": "item",
+            "stacksize": 1,
+            "stock": {
+                "avg": 4,
+                "var": 0.5
+            },
+            "price": {
+                "avg": 14,
+                "var": 6
+            },
+            "attributes": {
+                "potential": "medium"
+            }
+        }
+    },
+    {
+        "file": "game:entities/humanoid/trader-luxuries.json",
+        "op": "add",
+        "path": "/attributes/tradeProps/buying/list/-",
+        "value": {
+            "code": "lensstory:cutgem-blue",
+            "type": "item",
+            "stacksize": 1,
+            "stock": {
+                "avg": 4,
+                "var": 0.5
+            },
+            "price": {
+                "avg": 14,
+                "var": 6
+            },
+            "attributes": {
+                "potential": "medium"
+            }
+        }
+    },
+    {
+        "file": "game:entities/humanoid/trader-luxuries.json",
+        "op": "add",
+        "path": "/attributes/tradeProps/buying/list/-",
+        "value": {
+            "code": "lensstory:cutgem-violet",
+            "type": "item",
+            "stacksize": 1,
+            "stock": {
+                "avg": 4,
+                "var": 0.5
+            },
+            "price": {
+                "avg": 14,
+                "var": 6
+            },
+            "attributes": {
+                "potential": "medium"
+            }
+        }
+    },
+    {
+        "file": "game:entities/humanoid/trader-luxuries.json",
+        "op": "add",
+        "path": "/attributes/tradeProps/buying/list/-",
+        "value": {
+            "code": "lensstory:cutgem-red",
+            "type": "item",
+            "stacksize": 1,
+            "stock": {
+                "avg": 4,
+                "var": 0.5
+            },
+            "price": {
+                "avg": 14,
+                "var": 6
+            },
+            "attributes": {
+                "potential": "medium"
+            }
+        }
+    },
+    {
+        "file": "game:entities/humanoid/trader-luxuries.json",
+        "op": "add",
+        "path": "/attributes/tradeProps/buying/list/-",
+        "value": {
+            "code": "lensstory:cutgem-yellow",
+            "type": "item",
+            "stacksize": 1,
+            "stock": {
+                "avg": 4,
+                "var": 0.5
+            },
+            "price": {
+                "avg": 14,
+                "var": 6
+            },
+            "attributes": {
+                "potential": "medium"
+            }
+        }
+    },
+    {
+        "file": "game:entities/humanoid/trader-luxuries.json",
+        "op": "add",
+        "path": "/attributes/tradeProps/buying/list/-",
+        "value": {
+            "code": "lensstory:cutgem-brown",
+            "type": "item",
+            "stacksize": 1,
+            "stock": {
+                "avg": 4,
+                "var": 0.5
+            },
+            "price": {
+                "avg": 14,
+                "var": 6
+            },
+            "attributes": {
+                "potential": "medium"
+            }
+        }
+    },
+    {
+        "file": "game:entities/humanoid/trader-luxuries.json",
+        "op": "add",
+        "path": "/attributes/tradeProps/buying/list/-",
+        "value": {
+            "code": "lensstory:cutgem-smoky",
+            "type": "item",
+            "stacksize": 1,
+            "stock": {
+                "avg": 4,
+                "var": 0.5
+            },
+            "price": {
+                "avg": 14,
+                "var": 6
+            },
+            "attributes": {
+                "potential": "medium"
+            }
+        }
+    },
+    {
+        "file": "game:entities/humanoid/trader-luxuries.json",
+        "op": "add",
+        "path": "/attributes/tradeProps/buying/list/-",
+        "value": {
+            "code": "lensstory:cutgem-pink",
+            "type": "item",
+            "stacksize": 1,
+            "stock": {
+                "avg": 4,
+                "var": 0.5
+            },
+            "price": {
+                "avg": 14,
+                "var": 6
+            },
+            "attributes": {
+                "potential": "medium"
+            }
+        }
     }
 ]

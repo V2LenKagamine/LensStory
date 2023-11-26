@@ -7,6 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\Vintagestory\Lib\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ACulinaryArtillery">
+      <HintPath>..\referencedlls\ACulinaryArtillery.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\Vintagestory\Lib\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -49,8 +57,13 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
   </Content>
   <None Remove="assets\lensstory\blocktypes\liquids\liquidconcrete.json" />
+  <None Remove="assets\lensstory\blocktypes\machines\heater.json" />
   <None Remove="assets\lensstory\blocktypes\machines\reinforcedbloomery.json" />
+  <None Remove="assets\lensstory\blocktypes\machines\tinkeringtable.json" />
   <None Remove="assets\lensstory\blocktypes\manarepair.json" />
+  <None Remove="assets\lensstory\blocktypes\redstone\lever.json" />
+  <None Remove="assets\lensstory\blocktypes\redstone\swapper.json" />
+  <None Remove="assets\lensstory\blocktypes\redstone\swapperalt.json" />
   <None Remove="assets\lensstory\blocktypes\regularblocks\clearglass.json" />
   <None Remove="assets\lensstory\blocktypes\regularblocks\concretefull.json" />
   <None Remove="assets\lensstory\blocktypes\regularblocks\concretepath.json" />
@@ -58,6 +71,7 @@
   <None Remove="assets\lensstory\blocktypes\regularblocks\sturdybucket.json" />
   <None Remove="assets\lensstory\blocktypes\regularblocks\sturdycasing.json" />
   <None Remove="assets\lensstory\blocktypes\rockmaker.json" />
+  <None Remove="assets\lensstory\compatibility\primitivesurvival\recipes\lenfood\sandwiches.json" />
   <None Remove="assets\lensstory\itemtypes\attunementwand.json" />
   <None Remove="assets\lensstory\itemtypes\consumable\sandwich.json" />
   <None Remove="assets\lensstory\itemtypes\misc\concreteportion.json" />
@@ -71,6 +85,7 @@
   <None Remove="assets\lensstory\itemtypes\misc\parts\rods.json" />
   <None Remove="assets\lensstory\itemtypes\misc\parts\spareparts.json" />
   <None Remove="assets\lensstory\itemtypes\misc\scrollbook.json" />
+  <None Remove="assets\lensstory\itemtypes\redwand.json" />
   <None Remove="assets\lensstory\itemtypes\resource\cutgem.json" />
   <None Remove="assets\lensstory\itemtypes\resource\oreblooms.json" />
   <None Remove="assets\lensstory\itemtypes\resource\roughgem.json" />
@@ -89,18 +104,23 @@
   <None Remove="assets\lensstory\recipes\grid\blocks\concretestairsalt.json" />
   <None Remove="assets\lensstory\recipes\grid\blocks\frame.json" />
   <None Remove="assets\lensstory\recipes\grid\blocks\sturdybucket.json" />
+  <None Remove="assets\lensstory\recipes\grid\blocks\tinkertable.json" />
   <None Remove="assets\lensstory\recipes\grid\concretemix.json" />
-  <None Remove="assets\lensstory\recipes\grid\food\sandwich.json" />
   <None Remove="assets\lensstory\recipes\grid\gemcut.json" />
   <None Remove="assets\lensstory\recipes\grid\hoardingsack.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\burnerator.json" />
+  <None Remove="assets\lensstory\recipes\grid\machines\heater.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\manarepair.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\reinforcedbloomery.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\rockmaker.json" />
   <None Remove="assets\lensstory\recipes\grid\nuggetjank.json" />
   <None Remove="assets\lensstory\recipes\grid\parts.json" />
+  <None Remove="assets\lensstory\recipes\grid\redstone\lever.json" />
+  <None Remove="assets\lensstory\recipes\grid\redstone\swappers.json" />
+  <None Remove="assets\lensstory\recipes\grid\redwand.json" />
   <None Remove="assets\lensstory\recipes\grid\sturdyarrow.json" />
   <None Remove="assets\lensstory\recipes\grid\sturdycasing.json" />
+  <None Remove="assets\lensstory\recipes\lenfood\sandwiches.json" />
   <None Remove="assets\lensstory\recipes\smithing\gears.json" />
   <None Remove="assets\lensstory\recipes\smithing\longrods.json" />
   <None Remove="assets\lensstory\recipes\smithing\processbloom.json" />
@@ -124,6 +144,7 @@
 </ItemGroup>
 
 <ItemGroup>
+  <Folder Include="assets\lensstory\recipes\grid\food\" />
   <Folder Include="assets\lensstory\textures\item\ore\" />
 </ItemGroup>
 

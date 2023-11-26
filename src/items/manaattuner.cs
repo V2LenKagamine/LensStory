@@ -33,7 +33,6 @@ namespace LensstoryMod
                     if (mayhapMana != null && mayhapMana.GetBehavior<Mana>() is { } behavior)
                     {
                         behavior.ManaID = slot.Itemstack.Attributes.GetInt("channel");
-                        behavior.begin(true);
                     }
                 }
             }

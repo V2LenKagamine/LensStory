@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net.Sockets;
+using lensstory.src.recipe;
 using ProtoBuf;
 using Vintagestory;
 using Vintagestory.API.Client;
@@ -8,6 +11,7 @@ using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
+using Vintagestory.Client.NoObf;
 
 namespace LensstoryMod {
 
@@ -23,17 +27,25 @@ namespace LensstoryMod {
         private readonly List<ManaConsumer> consumers = new();
         private readonly Dictionary<BlockPos,ManaPart> ManaParts = new();
 
+
         public IServerNetworkChannel servermanachannel;
         public IClientNetworkChannel clientmanachannel;
+        public IServerNetworkChannel serverRedChannel;
+        public IClientNetworkChannel clientRedChannel;
+        public IServerNetworkChannel serverRecipeChannel;
+        public IClientNetworkChannel clientRecipeChannel;
         ICoreClientAPI storedcapi;
         ICoreServerAPI storedsapi;
         public AttunementWandGui manathing;
+        public RedWandGui redthing;
 
+        public static ILogger logger;
         public override void Start(ICoreAPI api)
         {
             base.Start(api);
             api.RegisterItemClass("fluidskimmerclass", typeof(FluidSkimmerItem));
             api.RegisterItemClass("attunementclass",typeof(AttunementWandItem));
+            api.RegisterItemClass("redclass", typeof(RedWandItem));
             api.RegisterItemClass("scrollitem",typeof(ScrollItem));
             api.RegisterItemClass("coinflipper", typeof(LenCoinItem));
 
@@ -45,6 +57,8 @@ namespace LensstoryMod {
             api.RegisterItemClass("lenssimplebloom", typeof(GenericOreBloom));
 
             api.RegisterItemClass("lenssimplefood",typeof(SimpleFoodItem));
+            api.RegisterBlockClass("lenstinkertableblock", typeof(TinkeringTable));
+            api.RegisterBlockEntityClass("lenstinkertable", typeof(TinkeringTableBe));
 
             api.RegisterBlockClass("lenssturdybucketblock", typeof(SturdyBucketBlock));
             api.RegisterBlockEntityClass("lenssturdybucket", typeof(SturdyBucketBE));
@@ -53,6 +67,15 @@ namespace LensstoryMod {
 
             api.RegisterBlockClass("lensreinforcedbloomeryblock", typeof(ReinforcedBloomery));
             api.RegisterBlockEntityClass("lensreinforcedbloomery", typeof(ReinforcedBloomeryBE));
+
+            api.RegisterBlockClass("lensheaterblock", typeof(HeaterBlock));
+            api.RegisterBlockEntityClass("lensheater",typeof(HeaterBE));
+
+            api.RegisterBlockEntityClass("lensswapper", typeof(SwapperBE));
+            api.RegisterBlockEntityBehaviorClass("lensswapperbehavior", typeof(SwapperBhv));
+
+            api.RegisterBlockEntityClass("lensrotator", typeof(SwapperDiagBE));
+            api.RegisterBlockEntityBehaviorClass("lensrotatorbehavior", typeof(SwapperDiagBhv));
 
             RegisterTrio(api,"creativemana",typeof(CreativeMana),typeof(CreativeManaBE),typeof(CreativeManaBhv));
 
@@ -64,9 +87,19 @@ namespace LensstoryMod {
 
             RegisterTrio(api, "rockmaker", typeof(RockmakerBlock), typeof(RockmakerBE), typeof(RockmakerBhv));
 
+            RegisterTrio(api,"lever",typeof(LeverBlock),typeof(LeverBE),typeof(LeverBhv));
+
+            api.RegisterBlockBehaviorClass("LenBlockCoverWithDirection", typeof(BlockBehaviorCoverWithDirection));
+
             api.RegisterBlockEntityBehaviorClass("Mana", typeof(Mana));
 
-            api.Event.RegisterGameTickListener(this.OnGameTick, 1000);
+            api.RegisterBlockEntityBehaviorClass("Redstone", typeof(Redstone));
+
+            api.Event.RegisterGameTickListener(OnGameTick, 1000);
+
+            api.Event.RegisterGameTickListener(OnRedTick, 250);
+
+            logger = api.Logger;
         }
 
         private static void RegisterTrio(ICoreAPI api,string basename,Type block,Type blockEntity,Type entBehavior)
@@ -93,6 +126,13 @@ namespace LensstoryMod {
                 .RegisterMessageType(typeof(ManaWandMessage))
                 .RegisterMessageType(typeof(ManaWandResponce))
                 .SetMessageHandler<ManaWandMessage>(OnManaMessageS);
+
+            serverRedChannel = api.Network.RegisterChannel("redmessages")
+                .RegisterMessageType(typeof(RedWandMessage))
+                .SetMessageHandler<RedWandMessage>(OnRedMessageRec);
+
+            serverRecipeChannel = api.Network.RegisterChannel("lenrecipes")
+                .RegisterMessageType(typeof(RecipeUpload));
         }
         public override void StartClientSide(ICoreClientAPI api)
         {
@@ -105,10 +145,21 @@ namespace LensstoryMod {
                 .RegisterMessageType(typeof(ManaWandResponce))
                 .SetMessageHandler<ManaWandResponce>(OnManaMessageC);
 
+            clientRecipeChannel = api.Network.RegisterChannel("lenrecipes")
+                .RegisterMessageType(typeof(RecipeUpload))
+                .SetMessageHandler<RecipeUpload>(OnRecipeDownload);
+
+            clientRedChannel = api.Network.RegisterChannel("redmessages")
+                .RegisterMessageType(typeof(RedWandMessage));
+
             manathing = new AttunementWandGui(api);
+            redthing = new RedWandGui(api);
         }
 
-
+        internal static void LogError(string message)
+        {
+            logger?.Error("(LensStory):{0}",message);
+        }
         #region NetworkingBullshit
 
         private void OnManaMessageS(IPlayer from, ManaWandMessage packet) 
@@ -124,6 +175,59 @@ namespace LensstoryMod {
         {
             storedcapi.ShowChatMessage("You attune the wand to channel " + packet.message);
         }
+        
+        private void OnRecipeDownload(RecipeUpload mes)
+        {
+            if(!storedcapi.PlayerReadyFired) { return; }
+            List<LenShapelessRecipe> succ =  new List<LenShapelessRecipe>();
+
+            if(mes.foodrecipes!=null)
+            {
+                foreach(string rec in mes.foodrecipes)
+                {
+                    using (MemoryStream ms = new MemoryStream(Ascii85.Decode(rec)))
+                    {
+                        BinaryReader reader = new BinaryReader(ms);
+                        LenShapelessRecipe frec = new LenShapelessRecipe();
+                        frec.FromBytes(reader, storedcapi.World);
+
+                        succ.Add(frec);
+                    }
+                }
+            }
+            LenRecipeRegistry.Registry.TinkerRecipies = succ;
+        }
+
+        private RecipeUpload GetRecipeUploadMessage()
+        {
+            List<string> succ = new List<string>();
+
+            foreach(LenShapelessRecipe rec in LenRecipeRegistry.Registry.TinkerRecipies)
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    BinaryWriter writer = new BinaryWriter(ms);
+
+                    rec.ToBytes(writer);
+
+                    string value = Ascii85.Encode(ms.ToArray());
+                    succ.Add(value);
+                }
+            }
+            return new RecipeUpload()
+            {
+                foodrecipes = succ
+            };
+        }
+
+        private void OnRedMessageRec(IPlayer from,RedWandMessage up)
+        {
+            if (from.InventoryManager.ActiveHotbarSlot.Itemstack.Item.Code == AssetLocation.Create("lensstory:redwand"))
+            {
+                from.InventoryManager.ActiveHotbarSlot.Itemstack.Attributes.SetString("channel", up.Channel);
+                from.InventoryManager.ActiveHotbarSlot.MarkDirty();
+            }
+        }
 
         [ProtoContract(ImplicitFields = ImplicitFields.AllPublic)]
         public class ManaWandMessage
@@ -136,6 +240,17 @@ namespace LensstoryMod {
             public int message;
         }
 
+        [ProtoContract(ImplicitFields = ImplicitFields.AllPublic)]
+        public class RecipeUpload
+        {
+            public List<string> foodrecipes;
+        }
+
+        [ProtoContract(ImplicitFields = ImplicitFields.AllPublic)]
+        public class RedWandMessage
+        {
+            public string Channel;
+        }
         #endregion
 
         //Mana stuff start
@@ -343,6 +458,253 @@ namespace LensstoryMod {
             public int ManaID;
         }
 
+        #endregion
+
+        //Yes this is copied from the mana but dumbed down deal with it.
+        #region RedstoneManaCopy
+
+
+        private readonly HashSet<KeyValuePair<RedNetwork, string>> rednetworks = new();
+        private readonly List<RedstoneTaker> receivers = new();
+        private readonly Dictionary<BlockPos, Redpart> RedParts = new();
+        public bool DoRedUpdate(BlockPos pos, string code, bool forced = false)
+        {
+            if (!RedParts.TryGetValue(pos, out var part))
+            {
+                if (code == null) return false;
+                part = RedParts[pos] = new Redpart(pos);
+            }
+            if (code == part.Network && !forced) { return false; }
+
+            part.Network = code;
+
+            this.AddRedConnection(ref part, code);
+
+            if (part.Network == null)
+            {
+                this.RedParts.Remove(pos);
+            }
+
+            return true;
+        }
+        public bool DoOutRedUpdate(BlockPos pos, string code, bool forced = false)
+        {
+
+            if (!RedParts.TryGetValue(pos, out var part))
+            {
+                if (code == null) return false;
+                part = RedParts[pos] = new Redpart(pos);
+            }
+            if (code == part.OutNetwork && !forced) { return false; }
+
+            part.OutNetwork = code;
+
+            this.AddRedConnection(ref part, code);
+
+            if (part.OutNetwork == null)
+            {
+                this.RedParts.Remove(pos);
+            }
+
+            return true;
+        }
+        private void OnRedTick(float _)
+        {
+            foreach (var network in rednetworks)
+            {
+                receivers.Clear();
+
+                if(network.Value == null) 
+                {
+                    rednetworks.Remove(network);
+                    continue;
+                }
+
+                bool Signaled = false;
+
+                foreach(var sender in network.Key.Makers)
+                {
+                    if(sender.Active())
+                    {
+                        Signaled = true; break;
+                    }
+                }
+                foreach (var consumer in network.Key.Consumers.Select(theconsumer => new RedstoneTaker(theconsumer)))
+                {
+                    receivers.Add(consumer);
+                }
+                foreach (var customer in receivers)
+                {
+                    customer.Taker.OnSignal(Signaled);
+                }
+            }
+        }
+
+        public class RedNetwork
+        {
+            public readonly HashSet<IRedstoneSender> Makers = new();
+            public readonly HashSet<IRedstoneTaker> Consumers = new();
+            public readonly HashSet<BlockPos> Positions = new();
+
+            public string Network;
+            public string OutNetwork;
+
+            public RedNetwork(string ManaID)
+            {
+                this.Network = ManaID;
+                OutNetwork = ManaID;
+            }
+
+        }
+        public RedNetwork CreateRedNetwork(string ManaID)
+        {
+            var manaboi = new RedNetwork(ManaID);
+            var compressedboi = new KeyValuePair<RedNetwork, string>(manaboi, ManaID);
+            this.rednetworks.Add(compressedboi);
+            return manaboi;
+        }
+        public void RedRemove(BlockPos pos)
+        {
+            if (this.RedParts.TryGetValue(pos, out var part))
+            {
+                RemoveRedConnection(ref part, part.Network);
+                RemoveRedConnection(ref part, part.OutNetwork);
+                RedParts.Remove(pos);
+            }
+        }
+        private void RemoveRedConnection(ref Redpart part, string networkID)
+        {
+            var targets = rednetworks.Where(net => net.Value == networkID);
+            if (targets.Any())
+            {
+                RedNetwork target = targets.First().Key;
+                target.Positions.Remove(part.Position);
+                if (part.Consumer is { })
+                {
+                    target.Consumers.Remove(part.Consumer);
+                }
+                if (part.Maker is { })
+                {
+                    target.Makers.Remove(part.Maker);
+                }
+                part.Network = null;
+                part.OutNetwork = null;
+            }
+        }
+
+        public void AddRedConnection(ref Redpart part, string manaID)
+        {
+            if (manaID == "")
+            {
+                return;
+            }
+            if (rednetworks.Count >= 1)
+            {
+                if (rednetworks.Where(output => output.Value == manaID).Count() >= 1)
+                {
+                    part.RedNet = rednetworks.Where(output => output.Value == manaID).First().Key;
+                }
+                else
+                {
+                    part.RedNet = CreateRedNetwork(manaID);
+                }
+            }
+            else
+            {
+                part.RedNet = CreateRedNetwork(manaID);
+            }
+        }
+
+
+        public void SetRedTaker(BlockPos pos, IRedstoneTaker? eater)
+        {
+            if (!this.RedParts.TryGetValue(pos, out var part))
+            {
+                if (eater == null)
+                {
+                    return;
+                }
+                part = this.RedParts[pos] = new Redpart(pos);
+            }
+            if (part.Consumer != eater)
+            {
+                if (part.Consumer is not null)
+                {
+                    part.RedNet?.Consumers.Remove(part.Consumer);
+                }
+            }
+
+            if (eater is not null)
+            {
+                part.RedNet?.Consumers.Add(eater);
+            }
+            part.Consumer = eater;
+        }
+        public void SetRedProducer(BlockPos pos, IRedstoneSender? maker)
+        {
+            if (!this.RedParts.TryGetValue(pos, out var part))
+            {
+                if (maker == null)
+                {
+                    return;
+                }
+                part = this.RedParts[pos] = new Redpart(pos);
+            }
+            if (part.Maker != maker)
+            {
+                if (part.Maker is not null)
+                {
+                    part.RedNet?.Makers.Remove(part.Maker);
+                }
+            }
+            if (maker is not null)
+            {
+                part.RedNet?.Makers.Add(maker);
+            }
+            part.Maker = maker;
+        }
+
+        public RedNetInfo GetRedNetInfo(BlockPos pos)
+        {
+            var result = new RedNetInfo();
+
+            if (this.RedParts.TryGetValue(pos, out var part))
+            {
+                if (part.RedNet is { } net)
+                {
+                    result.TotalBlocks = net.Positions.Count;
+                    result.TotalMakers = net.Makers.Count;
+                    result.TotalConsumers = net.Consumers.Count;
+                    result.NetworkID = net.Network;
+                    result.outNetID = net.OutNetwork;
+                }
+            }
+            return result;
+        }
+
+        public class Redpart
+        {
+            public RedNetwork? RedNet = null;
+            public readonly BlockPos Position;
+            public string Network = "";
+            public string OutNetwork = "";
+            public IRedstoneTaker? Consumer;
+            public IRedstoneSender? Maker;
+
+            public Redpart(BlockPos pos)
+            {
+                this.Position = pos;
+            }
+        }
+
+        public class RedNetInfo
+        {
+            public int TotalBlocks;
+            public int TotalConsumers;
+            public int TotalMakers;
+            public string NetworkID;
+            public string outNetID;
+        }
         #endregion
     }
 }

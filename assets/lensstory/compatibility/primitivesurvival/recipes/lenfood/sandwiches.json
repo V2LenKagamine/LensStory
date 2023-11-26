@@ -1,0 +1,70 @@
+﻿{
+    "Ingredients": [
+        {
+            "type": "item",
+            "code": "game:bread-*-perfect"
+        },
+        {
+            "type": "item",
+            "code": "game:vegetable-*",
+            "quantity": 3
+        }
+    ],
+    "ToolType": "knife",
+    "ToolLoss": 2,
+    "Substitutes": [
+        {
+            "FromIngredient": {
+                "type": "item",
+                "code": "game:vegetable-*"
+            },
+            "ToIngredients": [
+                {
+                    "type": "item",
+                    "code": "game:cheese-*"
+                },
+                {
+                    "type": "item",
+                    "code": "game:redmeat-*"
+                },
+                {
+                    "type": "item",
+                    "code": "game:bushmeat-*"
+                },
+                {
+                    "type": "item",
+                    "code": "game:fruit-*"
+                },
+                {
+                    "type": "item",
+                    "code": "primitivesurvival:fishfillet-*"
+                },
+                {
+                    "type": "item",
+                    "code": "primitivesurvival:curedsmokedmeat-*"
+                },
+                {
+                    "type": "item",
+                    "code": "primitivesurvival:smokedmeat-*"
+                },
+                {
+                    "type": "item",
+                    "code": "primitivesurvival:jerky-*"
+                },
+                {
+                    "type": "item",
+                    "code": "primitivesurvival:crabmeat-*"
+                },
+                {
+                    "type": "item",
+                    "code": "primitivesurvival:snakemeat-*"
+                }
+            ]
+        }
+    ],
+    "Output": {
+        "type": "item",
+        "code": "lensstory:sandwich"
+    }
+    
+}

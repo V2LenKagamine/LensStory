@@ -1,0 +1,26 @@
+﻿{
+    "ingredientPattern": "S_,LC",
+    "ingredients": {
+        "S": {
+            "typo": "item",
+            "code": "game:saw-*",
+            "isTool": true
+        },
+        "L": {
+            "type": "block",
+            "code": "game:log-*"
+        },
+        "C": {
+            "type": "item",
+            "code": "game:chisel-*",
+            "isTool": true
+        }
+    },
+    "shapeless": true,
+    "width": 2,
+    "height": 2,
+    "output": {
+        "type": "block",
+        "code": "tinkeringtable"
+    }
+}

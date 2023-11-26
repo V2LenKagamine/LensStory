@@ -5,7 +5,7 @@
         "path": "/-",
         "value": {
             "code": "len-hoarder",
-            "traits": [ "len-fortunate","len-hoarder","nearsighted","ravenous" ],
+            "traits": [ "len-fortunate","len-hoarder","farsighted","ravenous" ],
             "gear": [
                 {
                     "type": "item",

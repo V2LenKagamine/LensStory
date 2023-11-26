@@ -24,7 +24,13 @@
     "materialDensity": 700,
     "resistance": 4,
     "textures": {
-        "all": { "base": "block/concrete" }
+        "all": {
+            "base": "block/concrete",
+            "alternates": [
+                { "base": "block/concrete2" },
+                { "base": "block/concrete3" },
+                { "base": "block/concrete4" } ]
+        }
     },
     "sideopaque": {
         "all": true

@@ -1,0 +1,66 @@
+﻿{
+    "code": "tinkeringtable",
+    "class": "lenstinkertableblock",
+    "entityClass": "lenstinkertable",
+    "creativeinventory": {
+        "general": [ "*" ],
+        "lensstorytab": [ "*" ]
+    },
+    "shape": { "base": "block/tinkertable" },
+    "drawtype": "json",
+    "blockmaterial": "Wood",
+    "replaceable": 600,
+    "attributes": {
+        "handbook": {
+            "extraSections": [
+                {
+                    "title": "handbook-block-tinkeringtable-title",
+                    "text": "handbook-block-tinkeringtable-text"
+                }
+            ],
+            "enabled": false
+        }
+    },
+    "resistance": 3,
+    "lightAbsorption": 0,
+    "heldTpIdleAnimation": "holdbothhandslarge",
+    "heldTpUseAnimation": "twohandplaceblock",
+    "collisionSelectionBoxes": [
+        {
+            "x1": 0.0625,
+            "y1": 0.65,
+            "z1": 0.0625,
+            "x2": 0.5,
+            "y2": 0.8755,
+            "z2": 0.5
+        },
+        {
+            "x1": 0.5,
+            "y1": 0.65,
+            "z1": 0.0625,
+            "x2": 0.9375,
+            "y2": 0.8755,
+            "z2": 0.5
+        },
+        {
+            "x1": 0.0625,
+            "y1": 0.65,
+            "z1": 0.5,
+            "x2": 0.5,
+            "y2": 0.8755,
+            "z2": 0.9375
+        },
+        {
+            "x1": 0.5,
+            "y1": 0.65,
+            "z1": 0.5,
+            "x2": 0.9375,
+            "y2": 0.8755,
+            "z2": 0.9375
+        }
+    ],
+    "sideopaque": { "all": false },
+    "sideao": { "all": true },
+    "emitsideao": { "all": false },
+    "sidesolid": { "all": false }
+}

@@ -23,11 +23,18 @@
         "*-free": 2.4
     },
     "walkspeedmultiplierByType": {
-        "*-free": 1.8,
-        "*-snow": 1.3
+        "*-free": 1.6,
+        "*-snow": 1.2
     },
     "textures": {
-        "all": { "base": "block/concrete" }
+        "sides": {
+            "base": "block/concrete",
+            "alternates": [
+                { "base": "block/concrete2" },
+                { "base": "block/concrete3" },
+                { "base": "block/concrete4" }
+            ]
+        }
     },
     "drops": [
         {

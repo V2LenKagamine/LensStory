@@ -17,7 +17,7 @@
             "surfaceBlockChance": 0.01,
             "radius": {
                 "dist": "gaussian",
-                "avg": 2,
+                "avg": 8,
                 "var": 4
             },
             "yPosRel": {
@@ -27,8 +27,8 @@
             },
             "thickness": {
                 "dist": "invexp",
-                "avg": 2,
-                "var": 1
+                "avg": 8,
+                "var": 4
             }
         }
     }

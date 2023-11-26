@@ -25,21 +25,7 @@
 
     "item-hoardingsack": "Hoarder's Backpack",
 
-    "item-sandwich-*-moist-meaty": "Half-Baked Meat Sandwich",
-    "item-sandwich-*-flawless-meaty": "Flawless Meat Sandwich",
-    "item-sandwich-*-toasted-meaty": "Toasted Meat Sandwich",
-    "item-sandwich-*-moist-cheese": "Half-Baked Cheese Sandwich",
-    "item-sandwich-*-flawless-cheese": "Flawless Cheese Sandwich",
-    "item-sandwich-*-toasted-cheese": "Toasted Cheese Sandwich",
-    "item-sandwich-*-moist-leafy": "Half-Baked Veggie Sandwich",
-    "item-sandwich-*-flawless-leafy": "Flawless Veggie Sandwich",
-    "item-sandwich-*-toasted-leafy": "Toasted Veggie Sandwich",
-    "item-sandwich-*-moist-gamey": "Half-Baked Game Sandwich",
-    "item-sandwich-*-flawless-gamey": "Flawless Game Sandwich",
-    "item-sandwich-*-toasted-gamey": "Toasted Game Sandwich",
-    "item-sandwich-*-moist-deluxe": "Half-Baked Deluxe Sandwich",
-    "item-sandwich-*-flawless-deluxe": "Flawless Deluxe Sandwich",
-    "item-sandwich-*-toasted-deluxe": "Toasted Deluxe Sandwich",
+    "item-sandwich": "Delicious Sandwich",
 
     "item-gear-brass": "Brass Gear",
     "item-gear-copper": "Copper Gear",
@@ -138,7 +124,6 @@
     "item-genericorebloom-platinum": "Platinum Bloom",
     "item-genericorebloom-titanium": "Titanium Bloom",
 
-
     "block-lenorb-medium-sus-*": "Gem-bearing Rock",
     "item-roughgem-green": "Rough Emerald",
     "item-cutgem-green": "Cut Emerald",
@@ -159,6 +144,8 @@
     "itemdesc-cutgem-*": "Shiny stone.",
 
     "block-sturdycasing": "Sturdy Metal Casing",
+    "block-tinkeringtable": "Preparation Station",
+    "blockdesc-tinkeringtable": "Craft with a log,saw,and chisel.",
 
     "block-concretefull": "Concrete Block",
     "block-concretepath-*": "Concrete Path",
@@ -166,7 +153,7 @@
     "block-liquidconcrete-*": "Liquid Concrete",
     "item-concreteportion": "Liquid Concrete",
     "item-concretemix": "Concrete Mix",
-    "block-frame": "Empty Concrete Frame",
+    "block-frame": "Empty Wooden Frame",
     "incontainer-item-concreteportion": "Liquid Concrete",
 
     "block-clearglass-green": "Green Borderless Glass",
@@ -187,9 +174,17 @@
     "block-manarepair": "Mechanical Entropy Siphoner",
     "block-rockmaker": "Geoformic Accelerator",
 
+    "block-heaterblock-*": "Oven Heater",
+
     "block-sturdybucket-*": "Sturdy Bucket",
 
     "block-reinforcedbloomery-*": "Reinforced Bloomery",
+
+    "item-redwand": "Red Attuner",
+    "itemdesc-redwand": "Shift R-click in air to select a name, then R-click things to attune their input, and Shift R-click to attune their output.",
+    "block-redlever-*": "Lever",
+    "block-blockswapper-*": "Block Transposer",
+    "block-blockrotator-*-*": "Diagonal Block Transposer",
 
     "game:traitname-len-fortunate": "Fortunate",
     "game:trait-len-fortunate": "<font color=\"#84ff84\">• Fortunate</font>",
@@ -209,11 +204,24 @@
     "game:characterclass-len-hoarder": "Hoarder",
     "game:characterdesc-len-hoarder": "<font color=\"#99c9f9\"><i>Oh,shiny! Mine!</i></font><br><br>Hoarders can't seem to let go of even the simplest of objects, even if it is worthless to others.To be fair, they find a lot. They start with an unusually large bag, and can craft more later.",
 
+    "game:handbook-block-tinkeringtable-title": "Usage:",
+    "game:handbook-block-tinkeringtable-text": "Simply place up to 4 items onto the table, then, sneak right click on the table, optionally with a tool, to craft. Recipes can be found on the items help page.",
+
+    "game:handbook-block-heater-title": "Usage:",
+    "game:handbook-block-heater-text": "Place an oven above, then, add fuel and light the Heater, the oven will heat up as well! Can use anything with a burn time, not just logs. Can make ovens much hotter than normally allowed.",
+
+    "game:handbook-block-swapper-title": "Usage:",
+    "game:handbook-block-swapper-text": "When given linked to a Red Network,will swap blocks on the indicated faces when powered, and swap them back when de-powered. Won't do anything if it tries to swap something complex, like a chest.",
+
+
+    "game:handbook-item-sandwich-title": "Creation:",
+    "game:handbook-item-sandwich-text": "Place a Perfect bread,as well as any combination of 3 meat, vegetable, cheese, or fruit onto a Tinkering Table, then sneak right click with a knife.",
+
     "game:handbook-block-sturdybucket-title": "Notable Properties:",
     "game:handbook-block-sturdybucket-text": "It's a bucket,but metal. Sturdy enough to contain lava.",
 
     "game:handbook-block-concrete-title": "How to obtain:",
-    "game:handbook-block-concrete-text": "Use a fluid container [like a bucket] filled with atleast 200ml of Liquid Concrete on an Empty Concrete Frame to form a concrete block.",
+    "game:handbook-block-concrete-text": "Use a fluid container [like a bucket] filled with atleast 100ml of Liquid Concrete on an Empty Concrete Frame to form a concrete block.",
 
     "game:handbook-block-reinforcedbloomery-title": "Usage:",
     "game:handbook-block-reinforcedbloomery-text": "Works just like the regular bloomery, but doesnt break,has a max temperature of 2000, and finished products can be removed by shift clicking. Is a little smaller, so it only holds 2/3rds the normal bloomery.",
