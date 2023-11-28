@@ -180,6 +180,8 @@
 
     "block-reinforcedbloomery-*": "Reinforced Bloomery",
 
+    "block-shroomstrate": "Mushroom Growth Substrate",
+
     "item-redwand": "Red Attuner",
     "itemdesc-redwand": "Shift R-click in air to select a name, then R-click things to attune their input, and Shift R-click to attune their output.",
     "block-redlever-*": "Lever",
@@ -204,6 +206,9 @@
     "game:characterclass-len-hoarder": "Hoarder",
     "game:characterdesc-len-hoarder": "<font color=\"#99c9f9\"><i>Oh,shiny! Mine!</i></font><br><br>Hoarders can't seem to let go of even the simplest of objects, even if it is worthless to others.To be fair, they find a lot. They start with an unusually large bag, and can craft more later.",
 
+    "game:handbook-block-shroomstrate-title": "Usage:",
+    "game:handbook-block-shroomstrate-text": "Place in a nice dark place, like a cellar, and place a mushroom inside. For ground mushrooms,place in the floor, and mushrooms will grow on anything grass can grow on up to 3 blocks away. For tree mushrooms, place up to 5 of any log above it. Grows a few mushrooms every 15 or so minutes.",
+
     "game:handbook-block-tinkeringtable-title": "Usage:",
     "game:handbook-block-tinkeringtable-text": "Simply place up to 4 items onto the table, then, sneak right click on the table, optionally with a tool, to craft. Recipes can be found on the items help page.",
 
@@ -227,7 +232,7 @@
     "game:handbook-block-reinforcedbloomery-text": "Works just like the regular bloomery, but doesnt break,has a max temperature of 2000, and finished products can be removed by shift clicking. Is a little smaller, so it only holds 2/3rds the normal bloomery.",
 
     "game:handbook-block-rockmaker-title": "Geformic Accelerator Usage:",
-    "game:handbook-block-rockmaker-text": "To use the machine, insert a sample of geologic material, such as sand, dirt, or even raw ore blocks. Given enough MP, it will produce a sample in the space above it, if there is no obstructions. Sand and Rock are cheap, but raw ore requires significant amounts of MP. You can shift+interact to retreive the sample.",
+    "game:handbook-block-rockmaker-text": "To use the machine, insert a sample of geologic material, such as sand, dirt, gravel, or rock. Given enough MP, it will produce a sample in the space above it, if there is no obstructions. Sand and Rock are cheap, but dirt may require more MP depending on fertility. You can shift+interact to retreive the sample.",
     "game:handbook-block-manarepair-title": "Mechanical Entropy Siphoner Usage:",
     "game:handbook-block-manarepair-text": "To use the machine, insert a damaged tool or object. Given time and MP, it will be repaired. When it's done, you can retreive it with shift+interact.'",
     "game:handbook-block-burnerator-title": "Heat Fuled Potentia Accumulator Usage:",

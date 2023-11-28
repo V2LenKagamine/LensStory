@@ -77,6 +77,9 @@ namespace LensstoryMod {
             api.RegisterBlockEntityClass("lensrotator", typeof(SwapperDiagBE));
             api.RegisterBlockEntityBehaviorClass("lensrotatorbehavior", typeof(SwapperDiagBhv));
 
+            api.RegisterBlockClass("lensshroomstrateblock", typeof(MushroomSubBlock));
+            api.RegisterBlockEntityClass("lensshroomstrate", typeof(MushroomSubBE));
+
             RegisterTrio(api,"creativemana",typeof(CreativeMana),typeof(CreativeManaBE),typeof(CreativeManaBhv));
 
             RegisterTrio(api, "furnacegen", typeof(Burnerator), typeof(BurneratorBE), typeof(BurneratorBhv));
@@ -567,28 +570,30 @@ namespace LensstoryMod {
         {
             if (this.RedParts.TryGetValue(pos, out var part))
             {
-                RemoveRedConnection(ref part, part.Network);
-                RemoveRedConnection(ref part, part.OutNetwork);
+                RemoveRedConnection(ref part, part.Network,part.OutNetwork);
                 RedParts.Remove(pos);
             }
         }
-        private void RemoveRedConnection(ref Redpart part, string networkID)
+        private void RemoveRedConnection(ref Redpart part, string networkID,string outNetworkID)
         {
-            var targets = rednetworks.Where(net => net.Value == networkID);
+            var targets = rednetworks.Where(net => net.Value == networkID || net.Value == outNetworkID);
             if (targets.Any())
             {
-                RedNetwork target = targets.First().Key;
-                target.Positions.Remove(part.Position);
-                if (part.Consumer is { })
+                for (int i = 0; i < targets.Count(); i++)
                 {
-                    target.Consumers.Remove(part.Consumer);
+                    RedNetwork target = targets.ElementAt(i).Key;
+                    target.Positions.Remove(part.Position);
+                    if (part.Consumer is { })
+                    {
+                        target.Consumers.Remove(part.Consumer);
+                    }
+                    if (part.Maker is { })
+                    {
+                        target.Makers.Remove(part.Maker);
+                    }
+                    part.Network = null;
+                    part.OutNetwork = null;
                 }
-                if (part.Maker is { })
-                {
-                    target.Makers.Remove(part.Maker);
-                }
-                part.Network = null;
-                part.OutNetwork = null;
             }
         }
 

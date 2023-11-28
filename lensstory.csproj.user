@@ -6,4 +6,9 @@
   <PropertyGroup>
     <ActiveDebugProfile>Client</ActiveDebugProfile>
   </PropertyGroup>
+  <ItemGroup>
+    <Content Update="assets\lensstory\recipes\grid\blocks\shroomstrate.json">
+      <SubType>Component</SubType>
+    </Content>
+  </ItemGroup>
 </Project>

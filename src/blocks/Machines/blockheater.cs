@@ -98,7 +98,7 @@ namespace LensstoryMod
             if(Api.Side == EnumAppSide.Server)
             {
                 ItemSlot slot = player.InventoryManager.ActiveHotbarSlot;
-                if ((FuelSlot.Empty || FuelSlot.StackSize < FuelSlot.Itemstack?.StackSize) && slot.Itemstack?.Collectible?.CombustibleProps?.BurnDuration != null)
+                if ((FuelSlot.Empty || FuelSlot.StackSize < FuelSlot.Itemstack?.Collectible.MaxStackSize) && slot.Itemstack?.Collectible?.CombustibleProps?.BurnDuration != null)
                 {
                     int moved = 0;
                     if (FuelSlot.Empty)
@@ -107,9 +107,7 @@ namespace LensstoryMod
                     }
                     else if (FuelSlot.Itemstack.Collectible == slot.Itemstack?.Collectible)
                     {
-                        moved = 1;
-                        slot.TakeOut(1);
-                        slot.MarkDirty();
+                        moved = slot.TryPutInto(Api.World,FuelSlot);
                     }
                     if(moved>0)
                     {
@@ -137,9 +135,9 @@ namespace LensstoryMod
             {
                 BlockEntity maybeoven = Api.World.BlockAccessor.GetBlockEntity(Pos.UpCopy());
                 Assembly assembly = Assembly.Load("ACulinaryArtillery");
-                if (assembly != null)
+                if (assembly != null && maybeoven != null)
                 {
-                    Type oventype = assembly.GetType("BlockEntityExpandedOven");
+                    Type oventype = assembly.GetClassType("BlockEntityExpandedOven");
                     if(maybeoven.GetType() == oventype)
                     {
                         var temp = AccessTools.Method(oventype, "ChangeTemperature").Invoke(maybeoven, new float[] { maybeoven.GetField<float>("ovenTemperature"),temperature,dt }.Cast<object>().ToArray());
@@ -228,7 +226,10 @@ namespace LensstoryMod
                     dsc.AppendLine("It's getting colder.");
                 }
             }
-            dsc.AppendLine("Contains: " + FuelSlot.Itemstack?.GetName());
+            if (!FuelSlot.Empty)
+            {
+                dsc.AppendLine("Contains: "+FuelSlot.Itemstack?.StackSize + "x " + FuelSlot.Itemstack?.GetName()); 
+            }
         }
 
     }

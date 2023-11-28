@@ -10,8 +10,8 @@ namespace LensstoryMod
         private IRedstoneTaker? redTaker;
         private IRedstoneSender? redSender;
         private bool dirtyboi = true;
-        private string frequency;
-        private string outfrequency;
+        private string frequency = "";
+        private string outfrequency = "";
 
         public string Frequency
         {

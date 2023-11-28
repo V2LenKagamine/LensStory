@@ -48,6 +48,16 @@ namespace LensstoryMod
             }
             return true;
         }
+        public override void ToTreeAttributes(ITreeAttribute tree)
+        {
+            base.ToTreeAttributes(tree);
+            tree.SetBool("toggled",toggled);
+        }
+        public override void FromTreeAttributes(ITreeAttribute tree, IWorldAccessor worldAccessForResolve)
+        {
+            base.FromTreeAttributes(tree, worldAccessForResolve);
+            toggled = tree.GetBool("toggled");
+        }
     }
     public class LeverBhv : BlockEntityBehavior, IRedstoneSender
     {

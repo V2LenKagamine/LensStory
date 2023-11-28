@@ -68,6 +68,7 @@
   <None Remove="assets\lensstory\blocktypes\regularblocks\concretefull.json" />
   <None Remove="assets\lensstory\blocktypes\regularblocks\concretepath.json" />
   <None Remove="assets\lensstory\blocktypes\regularblocks\concretestair.json" />
+  <None Remove="assets\lensstory\blocktypes\regularblocks\shroomstrate.json" />
   <None Remove="assets\lensstory\blocktypes\regularblocks\sturdybucket.json" />
   <None Remove="assets\lensstory\blocktypes\regularblocks\sturdycasing.json" />
   <None Remove="assets\lensstory\blocktypes\rockmaker.json" />
@@ -103,6 +104,7 @@
   <None Remove="assets\lensstory\recipes\grid\blocks\concretestairs.json" />
   <None Remove="assets\lensstory\recipes\grid\blocks\concretestairsalt.json" />
   <None Remove="assets\lensstory\recipes\grid\blocks\frame.json" />
+  <None Remove="assets\lensstory\recipes\grid\blocks\shroomstrate.json" />
   <None Remove="assets\lensstory\recipes\grid\blocks\sturdybucket.json" />
   <None Remove="assets\lensstory\recipes\grid\blocks\tinkertable.json" />
   <None Remove="assets\lensstory\recipes\grid\concretemix.json" />

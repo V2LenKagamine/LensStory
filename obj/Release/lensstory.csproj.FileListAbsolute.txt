@@ -16,6 +16,7 @@ F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\blocktype
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\blocktypes\regularblocks\concretestair.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\blocktypes\regularblocks\frame.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\blocktypes\regularblocks\lenore.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\blocktypes\regularblocks\shroomstrate.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\blocktypes\regularblocks\sturdybucket.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\blocktypes\regularblocks\sturdycasing.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\compatibility\primitivesurvival\recipes\lenfood\sandwiches.json
@@ -53,6 +54,7 @@ F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\recipes\g
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\recipes\grid\blocks\concretestairs.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\recipes\grid\blocks\concretestairsalt.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\recipes\grid\blocks\frame.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\recipes\grid\blocks\shroomstrate.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\recipes\grid\blocks\sturdybucket.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\recipes\grid\blocks\sturdycasing.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\assets\lensstory\recipes\grid\blocks\tinkertable.json

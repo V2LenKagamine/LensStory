@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
@@ -13,6 +14,7 @@ namespace LensstoryMod
     public class ScrollItem : Item
     {
         public Dictionary<string,float> dic = new Dictionary<string, float>();
+        public Dictionary<string, float> durdic = new Dictionary<string, float>();
 
         public string scrollID;
 
@@ -46,6 +48,18 @@ namespace LensstoryMod
                     dic.Clear();
                 }
             }
+            JsonObject durations = Attributes?["durations"];
+            if(durations.Exists == true)
+            {
+                try
+                {
+                    durdic = durations.AsObject<Dictionary<string, float>>();
+                }catch (Exception e)
+                {
+                    api.World.Logger.Error("No idea what scroll {0}'s durations are,Assuming endless. Exception: {1}", Code, e);
+                    durdic.Clear();
+                }
+            }
         }
 
         public override string GetHeldTpUseAnimation(ItemSlot activeHotbarSlot, Entity forEntity)
@@ -75,7 +89,9 @@ namespace LensstoryMod
             {
                 foreach (var stat in dic)
                 {
-                    if (byEntity.Stats.GetBlended(stat.Key) >= 2.5f)
+                    var statmods = byEntity.Stats.Where(onent => stat.Key == onent.Key).Count();
+                    var totalmod = byEntity.Stats.GetBlended(stat.Key) / statmods;
+                    if (totalmod >= 1.5f || totalmod <= 0.5f)
                     {
                         IServerPlayer player = (byEntity.World.PlayerByUid((byEntity as EntityPlayer).PlayerUID) as IServerPlayer);
                         player.SendMessage(GlobalConstants.InfoLogChatGroup, "You feel like the " + slot.Itemstack.GetName() + " can't change you any further.", EnumChatType.Notification);
@@ -83,7 +99,7 @@ namespace LensstoryMod
                     }
                 }
                 ScrollEffect scrollboi = new ScrollEffect();
-                scrollboi.ScrollStats((byEntity as EntityPlayer), dic, "lensmod", scrollID);
+                scrollboi.ScrollStats((byEntity as EntityPlayer), dic, durdic==null ? "lensmod" : "lensmodtemp", scrollID, durdic);
                 if (byEntity is EntityPlayer)
                 {
                     IServerPlayer player = (byEntity.World.PlayerByUid((byEntity as EntityPlayer).PlayerUID) as IServerPlayer);
