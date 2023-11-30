@@ -32,8 +32,9 @@ namespace LensstoryMod
             ItemSlot slot = player.InventoryManager.ActiveHotbarSlot;
             var shroomaybe = slot.Itemstack?.Block?.Code.Path.Contains("mushroom");
             if(shroomaybe == null) { return true; }
-            if (Api.World.Side == EnumAppSide.Server && growing == null && (bool)shroomaybe)
+            if (growing == null && (bool)shroomaybe)
             {
+                if (Api.World.Side == EnumAppSide.Client) { return true; }
                 growingName = slot.GetStackName();
                 growing = slot.Itemstack.Block;
                 slot.TakeOut(1);
@@ -41,7 +42,7 @@ namespace LensstoryMod
                 MarkDirty();
                 return true;
             }
-            return true;
+            return false;
         }
 
         public override void Initialize(ICoreAPI api)

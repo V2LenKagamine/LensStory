@@ -7,7 +7,6 @@ namespace LensstoryMod
     {
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
         {
-            if(world.Side == EnumAppSide.Client) { return true; }
             ItemSlot slot = byPlayer.InventoryManager.ActiveHotbarSlot;
             if(slot.Itemstack != null && slot.Itemstack.Collectible is BlockLiquidContainerBase container)
             {
@@ -16,6 +15,7 @@ namespace LensstoryMod
                 {
                     if (fluid.StackSize >= 10)
                     {
+                        if (world.Side == EnumAppSide.Client) { return true; }
                         container.TryTakeLiquid(slot.Itemstack, 0.1f);
                         world.BlockAccessor.SetBlock(api.World.GetBlock(AssetLocation.Create("lensstory:concretepath-free")).Id,blockSel.Position);
                         slot.MarkDirty();
