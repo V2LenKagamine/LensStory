@@ -91,6 +91,22 @@
     "item-spareparts-tinbronze": "Tin Bronze Spare Parts",
     "itemdesc-spareparts-*": "Bolts,Rivets and Screws all together in a messy pile.",
 
+    "block-spikestrip-brass-*": "Brass Spikeplate",
+    "block-spikestrip-copper-*": "Copper Spikeplate",
+    "block-spikestrip-silver-*": "Silver Spikeplate",
+    "block-spikestrip-gold-*": "Gold Spikeplate",
+    "block-spikestrip-platinum-*": "Platinum Spikeplate",
+    "block-spikestrip-titanium-*": "Titanium Spikeplate",
+    "block-spikestrip-uranium-*": "Uranium Spikeplate",
+    "block-spikestrip-molybdochalkos-*": "Molybdochalkos Spikeplate",
+    "block-spikestrip-iron-*": "Iron Spikeplate",
+    "block-spikestrip-steel-*": "Steel Spikeplate",
+    "block-spikestrip-stainlesssteel-*": "Stainless Steel Spikeplate",
+    "block-spikestrip-bismuthbronze-*": "Bismuth Bronze Spikeplate",
+    "block-spikestrip-blackbronze-*": "Black Bronze Spikeplate",
+    "block-spikestrip-tinbronze-*": "Tin Bronze Spikeplate",
+    "blockdesc-spikestrip-*": "Doesn't look comfortable to touch. Less so to fall onto.",
+
     "item-statsscroll-referenceall": "Debug Scroll of Eggs",
     "item-statsscroll-rangedacc": "Scroll of Better Aim",
     "item-statsscroll-animalloot": "Scroll of Speedy Butchering",
@@ -115,6 +131,8 @@
     "item-statsbook-traveler": "From Place to Place",
     "item-statsbook-spelunker": "Pyrite's False Promise",
     "item-statsbook-medic": "Field Medicine 101",
+
+    "block-woodenhive-*": "Wooden Bee Hive",
 
     "block-lenorb-*-platiniridium-*": "Platiniridium",
     "item-nugget-platiniridium": "Platiniridium Nugget",

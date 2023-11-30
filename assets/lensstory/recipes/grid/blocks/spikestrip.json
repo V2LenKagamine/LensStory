@@ -1,0 +1,25 @@
+﻿{
+    "ingredientPattern": "SS,PP",
+    "ingredients": {
+        "S": {
+            "type": "item",
+            "code": "rod-*",
+            "name": "metal",
+            "allowedVariants": [ "copper", "silver", "gold", "platinum", "titanium", "uranium", "brass", "molybdochalkos", "iron", "steel", "stainlesssteel", "bismuthbronze", "blackbronze", "tinbronze" ],
+            "quantity": 2
+        },
+        "P": {
+            "type": "item",
+            "code": "game:metalplate-*",
+            "allowedVariants": [ "copper", "silver", "gold", "platinum", "titanium", "uranium", "brass", "molybdochalkos", "iron", "steel", "stainlesssteel", "bismuthbronze", "blackbronze", "tinbronze" ],
+            "name": "metal"
+        }
+    },
+    "width": 2,
+    "height": 2,
+    "output": {
+        "type": "block",
+        "code": "spikestrip-{metal}-up",
+        "quantity": 4
+    }
+}

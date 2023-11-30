@@ -1,5 +1,5 @@
 ﻿{
-    "ingredientPattern": "_C_,PTP,GQG",
+    "ingredientPattern": "_C_,_S_,GQG",
     "width": 3,
     "height": 3,
     "ingredients": {
@@ -11,14 +11,9 @@
             "type": "item",
             "code": "game:chutesection-copper"
         },
-        "P": {
-            "type": "item",
-            "code": "game:ingot-electrum",
-            "quantity": 4
-        },
-        "T": {
-            "type": "item",
-            "code": "game:gear-temporal"
+        "S": {
+            "type": "block",
+            "code": "game:pan-wooden"
         },
         "G": {
             "type": "item",
@@ -28,6 +23,6 @@
     },
     "output": {
         "type": "block",
-        "code": "rockmaker"
+        "code": "autopanner"
     }
 }

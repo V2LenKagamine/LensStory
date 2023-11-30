@@ -80,6 +80,11 @@ namespace LensstoryMod {
             api.RegisterBlockClass("lensshroomstrateblock", typeof(MushroomSubBlock));
             api.RegisterBlockEntityClass("lensshroomstrate", typeof(MushroomSubBE));
 
+            api.RegisterBlockClass("lensspikeblock", typeof(SpikesBlock));
+
+            api.RegisterBlockClass("lensbeehiveblock", typeof(WoodenHiveBlock));
+            api.RegisterBlockEntityClass("lensbeehive", typeof(WoodenHiveBE));
+
             RegisterTrio(api,"creativemana",typeof(CreativeMana),typeof(CreativeManaBE),typeof(CreativeManaBhv));
 
             RegisterTrio(api, "furnacegen", typeof(Burnerator), typeof(BurneratorBE), typeof(BurneratorBhv));

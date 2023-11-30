@@ -60,6 +60,7 @@
   <None Remove="assets\lensstory\blocktypes\machines\heater.json" />
   <None Remove="assets\lensstory\blocktypes\machines\reinforcedbloomery.json" />
   <None Remove="assets\lensstory\blocktypes\machines\tinkeringtable.json" />
+  <None Remove="assets\lensstory\blocktypes\machines\woodenhive.json" />
   <None Remove="assets\lensstory\blocktypes\manarepair.json" />
   <None Remove="assets\lensstory\blocktypes\redstone\lever.json" />
   <None Remove="assets\lensstory\blocktypes\redstone\swapper.json" />
@@ -69,6 +70,7 @@
   <None Remove="assets\lensstory\blocktypes\regularblocks\concretepath.json" />
   <None Remove="assets\lensstory\blocktypes\regularblocks\concretestair.json" />
   <None Remove="assets\lensstory\blocktypes\regularblocks\shroomstrate.json" />
+  <None Remove="assets\lensstory\blocktypes\regularblocks\spikestrip.json" />
   <None Remove="assets\lensstory\blocktypes\regularblocks\sturdybucket.json" />
   <None Remove="assets\lensstory\blocktypes\regularblocks\sturdycasing.json" />
   <None Remove="assets\lensstory\blocktypes\rockmaker.json" />
@@ -105,11 +107,14 @@
   <None Remove="assets\lensstory\recipes\grid\blocks\concretestairsalt.json" />
   <None Remove="assets\lensstory\recipes\grid\blocks\frame.json" />
   <None Remove="assets\lensstory\recipes\grid\blocks\shroomstrate.json" />
+  <None Remove="assets\lensstory\recipes\grid\blocks\spikestrip.json" />
   <None Remove="assets\lensstory\recipes\grid\blocks\sturdybucket.json" />
   <None Remove="assets\lensstory\recipes\grid\blocks\tinkertable.json" />
   <None Remove="assets\lensstory\recipes\grid\concretemix.json" />
   <None Remove="assets\lensstory\recipes\grid\gemcut.json" />
   <None Remove="assets\lensstory\recipes\grid\hoardingsack.json" />
+  <None Remove="assets\lensstory\recipes\grid\machines\autopanner.json" />
+  <None Remove="assets\lensstory\recipes\grid\machines\beehive.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\burnerator.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\heater.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\manarepair.json" />
@@ -146,7 +151,6 @@
 </ItemGroup>
 
 <ItemGroup>
-  <Folder Include="assets\lensstory\recipes\grid\food\" />
   <Folder Include="assets\lensstory\textures\item\ore\" />
 </ItemGroup>
 

@@ -132,3 +132,10 @@ F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\recipes\gri
 F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\recipes\grid\redstone\swappers.json
 F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\blocktypes\regularblocks\shroomstrate.json
 F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\recipes\grid\blocks\shroomstrate.json
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\recipes\grid\machines\autopanner.json
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\blocktypes\regularblocks\spikestrip.json
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\recipes\grid\blocks\spikestrip.json
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\shapes\block\spikes.json
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\blocktypes\machines\woodenhive.json
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\shapes\block\beehut.json
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\recipes\grid\machines\beehive.json

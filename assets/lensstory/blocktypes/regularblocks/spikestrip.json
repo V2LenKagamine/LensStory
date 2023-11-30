@@ -1,0 +1,299 @@
+﻿{
+    "code": "spikestrip",
+    "class": "lensspikeblock",
+    "maxstacksize": 32,
+    "blockmaterial": "Metal",
+    "behaviors": [
+        {
+            "name": "OmniAttachable",
+            "properties ": {
+                "facingCode": "orientation",
+                "attachmentAreas": {
+                    "down": {
+                        "x1": 1,
+                        "y1": 16,
+                        "z1": 1,
+                        "x2": 15,
+                        "y2": 16,
+                        "z2": 15
+                    },
+                    "up": {
+                        "x1": 1,
+                        "y1": 0,
+                        "z1": 1,
+                        "x2": 16,
+                        "y2": 0,
+                        "z2": 16
+                    },
+                    "north": {
+                        "x1": 1,
+                        "y1": 1,
+                        "z1": 0,
+                        "x2": 15,
+                        "y2": 15,
+                        "z2": 0
+                    },
+                    "east": {
+                        "x1": 16,
+                        "y1": 1,
+                        "z1": 1,
+                        "x2": 16,
+                        "y2": 15,
+                        "z2": 1
+                    },
+                    "south": {
+                        "x1": 1,
+                        "y1": 1,
+                        "z1": 16,
+                        "x2": 15,
+                        "y2": 15,
+                        "z2": 16
+                    },
+                    "west": {
+                        "x1": 0,
+                        "y1": 1,
+                        "z1": 1,
+                        "x2": 0,
+                        "y2": 15,
+                        "z2": 15
+                    }
+                }
+            }
+        },
+        {
+            "name": "WrenchOrientable",
+            "properties": {
+                "baseCode": "spikestrip-{metal}-*"
+            }
+        }
+    ],
+    "drawtype": "json",
+    "lightabsorption": 0,
+    "sideopaque": {
+        "all": false
+    },
+    "sidesolid": {
+        "all": false
+    },
+    "attributes": {
+        "handbook": {
+            "groupBy": ["spikestrip-*"]
+        }
+    },
+    "resistance": 4,
+    "requiredminingtier": 1,
+    "variantgroups": [
+        {
+            "code": "metal",
+            "states": [ "copper", "silver", "gold", "platinum", "titanium", "uranium", "brass", "molybdochalkos", "iron", "steel", "stainlesssteel", "bismuthbronze", "blackbronze", "tinbronze" ]
+        },
+        {
+            "code": "orientation",
+            "states": [ "up", "down" ],
+            "loadFromProperties": "abstract/horizontalorientation"
+        }
+    ],
+    "attributesByType": {
+        "spikestrip-copper-*": { "pain": 1.5 },
+        "spikestrip-silver-*": { "pain": 0.4 },
+        "spikestrip-gold-*": { "pain": 0.4 },
+        "spikestrip-platinum-*": { "pain": 0.2 },
+        "spikestrip-titanium-*": { "pain": 6 },
+        "spikestrip-uranium-*": { "pain": 4 },
+        "spikestrip-brass-*": { "pain": 2.5 },
+        "spikestrip-molybdochalkos-*": { "pain": 1.5 },
+        "spikestrip-iron-*": { "pain": 4.5 },
+        "spikestrip-steel-*": { "pain": 5 },
+        "spikestrip-stainlesssteel-*": { "pain": 10 },
+        "spikestrip-bismuthbronze-*": { "pain": 3 },
+        "spikestrip-blackbronze-*": { "pain": 3.5 },
+        "spikestrip-tinbronze-*": { "pain": 3 }
+    },
+    "storageFlags": 5,
+
+    "shapebytype": {
+        "spikestrip-*-up": { "base": "block/spikes" },
+        "spikestrip-*-down": { "base": "block/spikes","rotateX": 180 },
+        "spikestrip-*-north": { "base": "block/spikes","rotateX": 270  },
+        "spikestrip-*-east": { "base": "block/spikes","rotateZ": 270 },
+        "spikestrip-*-south": { "base": "block/spikes", "rotateX": 90 },
+        "spikestrip-*-west": { "base": "block/spikes", "rotateZ": 90 }
+    },
+    "textures": {
+        "iron": { "base": "game:block/metal/plate/{metal}" }
+    },
+    "creativeinventory": {
+        "general": [ "*-*-up" ],
+        "lensstorytab": [ "*-*-up" ]
+    },
+    "drops": [{"code": "spikestrip-{metal}-up"}],
+    "guiTransformByType": {
+        "*": {
+            "translation": {
+                "x": 0,
+                "y": 3,
+                "z": 0
+            },
+            "origin": {
+                "x": 0.5,
+                "y": 0.0625,
+                "z": 0.5
+            },
+            "scale": 1.25
+        }
+    },
+    "fpHandTransform": {
+        "translation": {
+            "x": 0,
+            "y": 0.1,
+            "z": 0
+        },
+        "rotation": {
+            "x": 65,
+            "y": 113,
+            "z": 4
+        },
+        "origin": {
+            "x": 0.5,
+            "y": 0.1,
+            "z": 0.5
+        },
+        "scale": 1.75
+    },
+    "tpHandTransform": {
+        "translation": {
+            "x": -0.77,
+            "y": -0.15,
+            "z": -0.64
+        },
+        "rotation": {
+            "x": 0,
+            "y": -71,
+            "z": 18
+        },
+        "origin": {
+            "x": 0.3,
+            "y": 0.1,
+            "z": 0.5
+        },
+        "scale": 0.71
+    },
+    "groundTransform": {
+        "translation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "rotation": {
+            "x": 0,
+            "y": -45,
+            "z": 0
+        },
+        "origin": {
+            "x": 0.5,
+            "y": 0,
+            "z": 0.5
+        },
+        "scale": 4
+    },
+    "collisionboxbytype": {
+        "*-up": {
+            "x1": 0,
+            "y1": 0,
+            "z1": 0,
+            "x2": 1,
+            "y2": 0.1,
+            "z2": 1
+        },
+        "*-down": {
+            "x1": 0,
+            "y1": 0.9,
+            "z1": 0,
+            "x2": 1,
+            "y2": 1,
+            "z2": 1
+        },
+        "*-south": {
+            "x1": 0,
+            "y1": 0,
+            "z1": 0,
+            "x2": 1,
+            "y2": 1,
+            "z2": 0.1
+        },
+        "*-west": {
+            "x1": 0.9,
+            "y1": 0,
+            "z1": 0,
+            "x2": 1,
+            "y2": 1,
+            "z2": 1
+        },
+        "*-north": {
+            "x1": 0,
+            "y1": 0,
+            "z1": 0.9,
+            "x2": 1,
+            "y2": 1,
+            "z2": 1
+        },
+        "*-east": {
+            "x1": 0,
+            "y1": 0,
+            "z1": 0,
+            "x2": 0.1,
+            "y2": 1,
+            "z2": 1
+        }
+    },
+    "selectionboxbytype": {
+        "*-up": {
+            "x1": 0,
+            "y1": 0,
+            "z1": 0,
+            "x2": 1,
+            "y2": 0.1,
+            "z2": 1
+        },
+        "*-down": {
+            "x1": 0,
+            "y1": 0.9,
+            "z1": 0,
+            "x2": 1,
+            "y2": 1,
+            "z2": 1
+        },
+        "*-south": {
+            "x1": 0,
+            "y1": 0,
+            "z1": 0,
+            "x2": 1,
+            "y2": 1,
+            "z2": 0.1
+        },
+        "*-west": {
+            "x1": 0.9,
+            "y1": 0,
+            "z1": 0,
+            "x2": 1,
+            "y2": 1,
+            "z2": 1
+        },
+        "*-north": {
+            "x1": 0,
+            "y1": 0,
+            "z1": 0.9,
+            "x2": 1,
+            "y2": 1,
+            "z2": 1
+        },
+        "*-east": {
+            "x1": 0,
+            "y1": 0,
+            "z1": 0,
+            "x2": 0.1,
+            "y2": 1,
+            "z2": 1
+        }
+    }
+}

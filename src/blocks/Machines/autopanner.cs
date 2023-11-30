@@ -93,7 +93,7 @@ namespace LensstoryMod
                                 PanningDrop[] drops = null;
                                 foreach (var val in dropsbymat.Keys) //TODO, ensure this works.
                                 {
-                                    if (WildcardUtil.Match(val, contents.Collectible.Code.ToString()))
+                                    if (WildcardUtil.Match(val, contents.Collectible.Code.Path))
                                     {
                                         drops = dropsbymat[val];
                                     }
@@ -102,7 +102,7 @@ namespace LensstoryMod
                                 {
                                     throw new InvalidOperationException("Coding error, no drops defined for source mat " + contents.Collectible.Code.ToString());
                                 }
-                                string rocktype = Api.World.GetBlock(new AssetLocation(contents.Block.Code.ToString()))?.Variant["rock"];
+                                string rocktype = Api.World.GetBlock(new AssetLocation(contents.Block.Code.Path))?.Variant["rock"];
                                 for (int f = 0; f < drops.Length; f++)
                                 {
                                     PanningDrop drop = drops[f];
@@ -169,6 +169,15 @@ namespace LensstoryMod
                 }
                 return new ItemStack(item);
             }
+        }
+
+        public override void OnBlockBroken(IPlayer byPlayer = null)
+        {
+            if (contents != null)
+            {
+                Api.World.SpawnItemEntity(contents, Pos.ToVec3d().Add(0.5, 0.5, 0.5));
+            }
+            base.OnBlockBroken(byPlayer);
         }
 
         internal bool OnPlayerInteract(IPlayer player)
