@@ -21,13 +21,13 @@
     "resistance": 4,
     "attributes": {
         "handbook": {
+            "groupBy": [ "heaterblock-*" ],
             "extraSections": [
                 {
                     "title": "handbook-block-heater-title",
                     "text": "handbook-block-heater-text"
                 }
-            ],
-            "include": true
+            ]
         }
     },
     "shapeByType": {

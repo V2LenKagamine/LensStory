@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
+using Vintagestory.API.MathTools;
 
 namespace LensstoryMod
 {
@@ -45,14 +46,13 @@ namespace LensstoryMod
 
             RegisterGameTickListener(OnCommonTick, 1000);
         }
-
         internal void OnCommonTick(float dt)
         {
             if(Working && contents != null)
             {
-                if (Api.World.BlockAccessor.GetBlock(Pos.X, Pos.Y + 1, Pos.Z).Id == 0)
+                if (Api.World.BlockAccessor.GetBlock(Pos.Copy().Add(0,1,0)).Id == 0)
                 {
-                    Api.World.BlockAccessor.SetBlock(contents.Id,Pos.ToVec3d().Add(0, 1, 0).AsBlockPos);
+                    Api.World.BlockAccessor.SetBlock(contents.Id,Pos.Copy().ToVec3d().Add(0, 1, 0).AsBlockPos);
                 }
             }
         }

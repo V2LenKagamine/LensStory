@@ -34,13 +34,13 @@
     },
     "attributes": {
         "handbook": {
+            "groupBy": [ "reinforcedbloomery-*" ],
             "extraSections": [
                 {
                     "title": "handbook-block-reinforcedbloomery-title",
                     "text": "handbook-block-reinforcedbloomery-text"
                 }
-            ],
-            "include": true
+            ]
         }
     },
     "guiTransform": {

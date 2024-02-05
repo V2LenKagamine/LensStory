@@ -128,6 +128,10 @@ namespace LensstoryMod
             return base.OnBlockInteractStart(world, byPlayer, blockSel);
         }
 
+        public EnumIgniteState OnTryIgniteStack(EntityAgent byEntity, BlockPos pos, ItemSlot slot, float secondsIgniting)
+        {
+            return EnumIgniteState.NotIgnitable;
+        }
     }
 
     public class ReinforcedBloomeryBE : BlockEntity, IHeatSource

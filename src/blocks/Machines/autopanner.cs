@@ -199,9 +199,10 @@ namespace LensstoryMod
                 if(contents?.Collectible == slot.Itemstack?.Collectible)
                 {
                     slot.TakeOut(1);
+                    slot.MarkDirty();
                     contents.StackSize++;
                     MarkDirty();
-                    slot.MarkDirty();
+                    
                 }
             }
             else if (player.Entity.Controls.ShiftKey && contents != null)

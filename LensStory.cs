@@ -85,6 +85,9 @@ namespace LensstoryMod {
             api.RegisterBlockClass("lensbeehiveblock", typeof(WoodenHiveBlock));
             api.RegisterBlockEntityClass("lensbeehive", typeof(WoodenHiveBE));
 
+            api.RegisterBlockEntityClass("lenssimpletoggle", typeof(SimpleToggleBlockBe));
+            api.RegisterBlockEntityBehaviorClass("lenssimpletogglebehavior", typeof(SimpleToggleBlockBhv));
+
             RegisterTrio(api,"creativemana",typeof(CreativeMana),typeof(CreativeManaBE),typeof(CreativeManaBhv));
 
             RegisterTrio(api, "furnacegen", typeof(Burnerator), typeof(BurneratorBE), typeof(BurneratorBhv));
@@ -96,6 +99,9 @@ namespace LensstoryMod {
             RegisterTrio(api, "rockmaker", typeof(RockmakerBlock), typeof(RockmakerBE), typeof(RockmakerBhv));
 
             RegisterTrio(api,"lever",typeof(LeverBlock),typeof(LeverBE),typeof(LeverBhv));
+
+            api.RegisterItemClass("lenskingssword", typeof(KingsSword));
+            api.RegisterEntity("lenssimpleprojectile", typeof(EntitySimpleProjectile));
 
             api.RegisterBlockBehaviorClass("LenBlockCoverWithDirection", typeof(BlockBehaviorCoverWithDirection));
 
@@ -555,12 +561,10 @@ namespace LensstoryMod {
             public readonly HashSet<BlockPos> Positions = new();
 
             public string Network;
-            public string OutNetwork;
 
             public RedNetwork(string ManaID)
             {
                 this.Network = ManaID;
-                OutNetwork = ManaID;
             }
 
         }
@@ -626,7 +630,7 @@ namespace LensstoryMod {
         }
 
 
-        public void SetRedTaker(BlockPos pos, IRedstoneTaker? eater)
+        public void SetRedTaker(BlockPos pos, IRedstoneTaker eater)
         {
             if (!this.RedParts.TryGetValue(pos, out var part))
             {
@@ -685,8 +689,8 @@ namespace LensstoryMod {
                     result.TotalBlocks = net.Positions.Count;
                     result.TotalMakers = net.Makers.Count;
                     result.TotalConsumers = net.Consumers.Count;
-                    result.NetworkID = net.Network;
-                    result.outNetID = net.OutNetwork;
+                    result.NetworkID = part.Network;
+                    result.OutNetworkID = part.OutNetwork;
                 }
             }
             return result;
@@ -713,7 +717,7 @@ namespace LensstoryMod {
             public int TotalConsumers;
             public int TotalMakers;
             public string NetworkID;
-            public string outNetID;
+            public string OutNetworkID;
         }
         #endregion
     }

@@ -34,13 +34,13 @@
     },
     "attributes": {
         "handbook": {
+            "groupBy": [ "woodenhive-*" ],
             "extraSections": [
                 {
                     "title": "handbook-block-woodbeehive-title",
                     "text": "handbook-block-woodbeehive-text"
                 }
-            ],
-            "include": true
+            ]
         }
     },
     "guiTransform": {

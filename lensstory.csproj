@@ -63,6 +63,8 @@
   <None Remove="assets\lensstory\blocktypes\machines\woodenhive.json" />
   <None Remove="assets\lensstory\blocktypes\manarepair.json" />
   <None Remove="assets\lensstory\blocktypes\redstone\lever.json" />
+  <None Remove="assets\lensstory\blocktypes\redstone\redlamp-pipe.json" />
+  <None Remove="assets\lensstory\blocktypes\redstone\redlamp.json" />
   <None Remove="assets\lensstory\blocktypes\redstone\swapper.json" />
   <None Remove="assets\lensstory\blocktypes\redstone\swapperalt.json" />
   <None Remove="assets\lensstory\blocktypes\regularblocks\clearglass.json" />
@@ -75,6 +77,10 @@
   <None Remove="assets\lensstory\blocktypes\regularblocks\sturdycasing.json" />
   <None Remove="assets\lensstory\blocktypes\rockmaker.json" />
   <None Remove="assets\lensstory\compatibility\primitivesurvival\recipes\lenfood\sandwiches.json" />
+  <None Remove="assets\lensstory\config\handbook\30-lensstoryrednet.json" />
+  <None Remove="assets\lensstory\itemtypes\armor\kingsboots.json" />
+  <None Remove="assets\lensstory\itemtypes\armor\kingscrown.json" />
+  <None Remove="assets\lensstory\itemtypes\armor\kingsgloves.json" />
   <None Remove="assets\lensstory\itemtypes\attunementwand.json" />
   <None Remove="assets\lensstory\itemtypes\consumable\sandwich.json" />
   <None Remove="assets\lensstory\itemtypes\misc\concreteportion.json" />
@@ -93,7 +99,10 @@
   <None Remove="assets\lensstory\itemtypes\resource\oreblooms.json" />
   <None Remove="assets\lensstory\itemtypes\resource\roughgem.json" />
   <None Remove="assets\lensstory\itemtypes\scrolls.json" />
+  <None Remove="assets\lensstory\itemtypes\tools\bonearrow.json" />
+  <None Remove="assets\lensstory\itemtypes\tools\kingsword.json" />
   <None Remove="assets\lensstory\itemtypes\tools\sturdyarrow.json" />
+  <None Remove="assets\lensstory\kingsswordproj.json" />
   <None Remove="assets\lensstory\patches\bloommaker.json" />
   <None Remove="assets\lensstory\patches\classes.json" />
   <None Remove="assets\lensstory\patches\tradershenanigans.json" />
@@ -110,9 +119,11 @@
   <None Remove="assets\lensstory\recipes\grid\blocks\spikestrip.json" />
   <None Remove="assets\lensstory\recipes\grid\blocks\sturdybucket.json" />
   <None Remove="assets\lensstory\recipes\grid\blocks\tinkertable.json" />
+  <None Remove="assets\lensstory\recipes\grid\bonearrow.json" />
   <None Remove="assets\lensstory\recipes\grid\concretemix.json" />
   <None Remove="assets\lensstory\recipes\grid\gemcut.json" />
   <None Remove="assets\lensstory\recipes\grid\hoardingsack.json" />
+  <None Remove="assets\lensstory\recipes\grid\kingssword.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\autopanner.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\beehive.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\burnerator.json" />
@@ -123,6 +134,7 @@
   <None Remove="assets\lensstory\recipes\grid\nuggetjank.json" />
   <None Remove="assets\lensstory\recipes\grid\parts.json" />
   <None Remove="assets\lensstory\recipes\grid\redstone\lever.json" />
+  <None Remove="assets\lensstory\recipes\grid\redstone\redlamp.json" />
   <None Remove="assets\lensstory\recipes\grid\redstone\swappers.json" />
   <None Remove="assets\lensstory\recipes\grid\redwand.json" />
   <None Remove="assets\lensstory\recipes\grid\sturdyarrow.json" />
@@ -152,6 +164,10 @@
 
 <ItemGroup>
   <Folder Include="assets\lensstory\textures\item\ore\" />
+</ItemGroup>
+
+<ItemGroup>
+  <PackageReference Include="SkiaSharp" Version="2.88.7" />
 </ItemGroup>
 
 <ProjectExtensions><VisualStudio><UserProperties assets_4lensstory_4recipes_4grid_4machines_4manarepair_1json__JsonSchema="json" /></VisualStudio></ProjectExtensions>

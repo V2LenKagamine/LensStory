@@ -94,7 +94,7 @@
             "*-steel": 0
         },
         "handbook": {
-            "groupBy": [ "sturdyarrow-*" ]
+            "groupBy": [ "arrow-sturdy-*" ]
         }
     }
 }

@@ -1,0 +1,82 @@
+{
+  "editor": {
+    "allAngles": false,
+    "entityTextureMode": false
+  },
+  "textureWidth": 16,
+  "textureHeight": 16,
+  "textureSizes": {},
+  "textures": {
+    "yellow": "game:block/glass/yellow"
+  },
+  "elements": [
+    {
+      "name": "Cube2",
+      "from": [4.0, 4.0, 4.0],
+      "to": [12.0, 12.0, 12.0],
+      "rotationOrigin": [8.0, 8.0, 8.0],
+      "rotationX": 45.0,
+      "rotationY": 45.0,
+      "faces": {
+        "north": {
+          "texture": "#yellow",
+          "uv": [0.0, 0.0, 8.0, 8.0],
+          "glow": 128
+        },
+        "east": {
+          "texture": "#yellow",
+          "uv": [0.0, 0.0, 8.0, 8.0],
+          "glow": 128
+        },
+        "south": {
+          "texture": "#yellow",
+          "uv": [0.0, 0.0, 8.0, 8.0],
+          "glow": 128
+        },
+        "west": {
+          "texture": "#yellow",
+          "uv": [0.0, 0.0, 8.0, 8.0],
+          "glow": 128
+        },
+        "up": { "texture": "#yellow", "uv": [0.0, 0.0, 8.0, 8.0], "glow": 128 },
+        "down": {
+          "texture": "#yellow",
+          "uv": [0.0, 0.0, 8.0, 8.0],
+          "glow": 128
+        }
+      }
+    },
+    {
+      "name": "Cube3",
+      "from": [4.0, 4.0, 4.0],
+      "to": [12.0, 12.0, 12.0],
+      "rotationOrigin": [8.0, 8.0, 8.0],
+      "rotationX": -45.0,
+      "rotationY": -45.0,
+      "faces": {
+        "north": { "texture": "#yellow", "uv": [0.0, 0.0, 8.0, 8.0] },
+        "east": {
+          "texture": "#yellow",
+          "uv": [0.0, 0.0, 8.0, 8.0],
+          "glow": 128
+        },
+        "south": {
+          "texture": "#yellow",
+          "uv": [0.0, 0.0, 8.0, 8.0],
+          "glow": 128
+        },
+        "west": {
+          "texture": "#yellow",
+          "uv": [0.0, 0.0, 8.0, 8.0],
+          "glow": 128
+        },
+        "up": { "texture": "#yellow", "uv": [0.0, 0.0, 8.0, 8.0], "glow": 128 },
+        "down": {
+          "texture": "#yellow",
+          "uv": [0.0, 0.0, 8.0, 8.0],
+          "glow": 128
+        }
+      }
+    }
+  ]
+}

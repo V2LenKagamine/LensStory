@@ -34,6 +34,11 @@ namespace LensstoryMod
             HeaterBE babs = byEntity.World.BlockAccessor.GetBlockEntity(pos) as HeaterBE;
             babs?.TryIgnite();
         }
+
+        public EnumIgniteState OnTryIgniteStack(EntityAgent byEntity, BlockPos pos, ItemSlot slot, float secondsIgniting)
+        {
+            return EnumIgniteState.NotIgnitable;
+        }
     }
 
     public class HeaterBE : BlockEntity, IHeatSource
@@ -98,7 +103,7 @@ namespace LensstoryMod
             if(Api.Side == EnumAppSide.Server)
             {
                 ItemSlot slot = player.InventoryManager.ActiveHotbarSlot;
-                if ((FuelSlot.Empty || FuelSlot.StackSize < FuelSlot.Itemstack?.Collectible.MaxStackSize) && slot.Itemstack?.Collectible?.CombustibleProps?.BurnDuration != null)
+                if ((FuelSlot.Empty || FuelSlot.StackSize < FuelSlot.Itemstack?.Collectible.MaxStackSize) && slot.Itemstack?.Collectible?.CombustibleProps?.BurnDuration != null && !isBurning)
                 {
                     int moved = 0;
                     if (FuelSlot.Empty)

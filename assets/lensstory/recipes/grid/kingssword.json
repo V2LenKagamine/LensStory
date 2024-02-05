@@ -1,0 +1,24 @@
+﻿{
+    "ingredientPattern": "TO_,OTO,_OG",
+    "ingredients": {
+        "T": {
+            "type": "item",
+            "code": "roughgem-yellow"
+        },
+        "O": {
+            "type": "block",
+            "code": "game:rock-obsidian",
+            "quantity": 4
+        },
+        "G": {
+            "type": "item",
+            "code": "rod-gold"
+        }
+    },
+    "width": 3,
+    "height": 3,
+    "output": {
+        "type": "item",
+        "code": "kingssword"
+    }
+}

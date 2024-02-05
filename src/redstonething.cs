@@ -69,13 +69,16 @@ namespace LensstoryMod
                             case IRedstoneSender { } maker:
                                 this.redSender = maker;
                                 break;
-
                         }
                     }
-
-                    System.SetRedTaker(Blockentity.Pos, redTaker);
-                    System.SetRedProducer(Blockentity.Pos, redSender);
-
+                    if (redTaker is not null) 
+                    {
+                        System.SetRedTaker(Blockentity.Pos, redTaker);
+                    }
+                    if (redSender is not null)
+                    {
+                        System.SetRedProducer(Blockentity.Pos, redSender);
+                    }
                     if (thesys.DoRedUpdate(Blockentity.Pos, frequency, true) || forced)
                     {
                         Blockentity.MarkDirty(true);
@@ -84,7 +87,6 @@ namespace LensstoryMod
                     {
                         Blockentity.MarkDirty(true);
                     }
-
                 }
                 else
                 {
@@ -103,8 +105,8 @@ namespace LensstoryMod
             var mananetInfo = System?.GetRedNetInfo(Blockentity.Pos);
 
             dsc.AppendLine("RedNet:")
-                .AppendLine("NetID: " + mananetInfo?.NetworkID)
-                .AppendLine("OutNetID: " + mananetInfo?.outNetID);
+                .AppendLine("InNetID: " + mananetInfo?.NetworkID)
+                .AppendLine("OutNetID: " + mananetInfo?.OutNetworkID);
         }
 
         public override void ToTreeAttributes(ITreeAttribute tree)
@@ -121,14 +123,14 @@ namespace LensstoryMod
 
             var freq = tree.GetString("frequency");
 
-            if (frequency != freq)
+            if (Frequency != freq)
             {
                 Frequency = freq;
                 dirtyboi = true;
             }
             var outfreq = tree.GetString("outfreqency");
 
-            if(outfrequency != outfreq)
+            if(OutFrequency != outfreq)
             {
                 OutFrequency = outfreq;
                 dirtyboi = true;

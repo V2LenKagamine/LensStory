@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "bAYOWPD1XBatqNpSmg01/H6T7vLsQJa24JAya51EjFR1NJpWYyWjSkfgpYoeF+tpkV+BgUh9JR5jE86Py3nekA==",
+  "dgSpecHash": "ZN77+2kJmeHJSikHGpbocuEryZ28Ms0kDP6yq2B46LQkW87tA7aoi3t+qxJRs2y12BtpK27ZjP313GIw47x/6w==",
   "success": true,
   "projectFilePath": "F:\\LensStoryVintageMod\\lensstory\\lensstory.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\skiasharp\\2.88.7\\skiasharp.2.88.7.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\skiasharp.nativeassets.macos\\2.88.7\\skiasharp.nativeassets.macos.2.88.7.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\skiasharp.nativeassets.win32\\2.88.7\\skiasharp.nativeassets.win32.2.88.7.nupkg.sha512"
+  ],
   "logs": []
 }

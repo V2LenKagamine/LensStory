@@ -76,7 +76,7 @@ namespace LensstoryMod
         {
            
             var togen = 1;
-            var posholder = new BlockPos();
+            var posholder = new BlockPos(Pos.dimension);
             var blockyboi = Api.World.BlockAccessor;
             while(togen-- >0)
             {
@@ -95,7 +95,7 @@ namespace LensstoryMod
 
         private void GrowSide()
         {
-            var posholder = new BlockPos();
+            var posholder = new BlockPos(Pos.dimension);
             var blockyboi = Api.World.BlockAccessor;
             var togen = 1;
             while (togen-- > 0)

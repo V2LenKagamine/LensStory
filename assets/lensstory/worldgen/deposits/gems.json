@@ -1,7 +1,7 @@
 ﻿[
     {
         "code": "gemrock",
-        "triesPerChunk": 0.05,
+        "triesPerChunk": 0.01,
         "generator": "disc-anywhere",
         "attributes": {
             "inblock": {

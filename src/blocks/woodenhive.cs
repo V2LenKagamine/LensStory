@@ -83,7 +83,7 @@ namespace LensstoryMod
             if (slot.Itemstack?.Collectible?.Code.Path.StartsWith("knife") == true && HoneyAmt > 0)
             {
                 if (Api.World.Side == EnumAppSide.Client) { return true; }
-                player.InventoryManager.TryGiveItemstack(new(Api.World.GetBlock(AssetLocation.Create("game:honeycomb")), HoneyAmt * 3));
+                player.InventoryManager.TryGiveItemstack(new(Api.World.GetItem(AssetLocation.Create("game:honeycomb")), HoneyAmt * 3));
                 HoneyAmt = 0;
                 MarkDirty();
                 int olddura = slot.Itemstack.Attributes.GetInt("durablility", -1);
@@ -120,7 +120,12 @@ namespace LensstoryMod
             {
                 tempNearFlowers = 0;
             }
-            Api.World.BlockAccessor.WalkBlocks(Pos.AddCopy(-7, -2, -7), Pos.AddCopy(7, 2, 7), (block, x, y, z) =>
+
+            int minx = -8 + 8 * (walkCounter / 2);
+            int minz = -8 + 8 * (walkCounter % 2);
+            int size = 8;
+
+            Api.World.BlockAccessor.WalkBlocks(Pos.AddCopy(minx, -3, minz), Pos.AddCopy(minx + size - 1, 3,minz + size -1), (block, x, y, z) =>
             {
                 if (block.Id == 0) return;
 
@@ -139,11 +144,11 @@ namespace LensstoryMod
                 walkCounter = 0;
                 OnQuadWalk();
             }
-        }
+        } 
 
         private void OnQuadWalk()
         {
-            nearFlowers = tempNearFlowers / 4;
+            nearFlowers = tempNearFlowers;
             bees = GameMath.Clamp(nearFlowers - 24, 0, 2);
 
             MarkDirty();

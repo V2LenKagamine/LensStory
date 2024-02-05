@@ -32,12 +32,13 @@ namespace LensstoryMod
 
             AssetLocation OnLoc = Block.CodeWithPart("on",1);
             AssetLocation offLoc = Block.CodeWithPart("off",1);
-            OnBlock = Api.World.GetBlock(OnLoc);
+            OnBlock = api.World.GetBlock(OnLoc);
             Offblock = api.World.GetBlock(offLoc);
-
+            GetBehavior<Redstone>().begin(true);
         }
         public bool OnPlayerInteract(IPlayer player)
         {
+            if(player.InventoryManager.ActiveHotbarSlot.Itemstack != null) { return false; }
             toggled = !toggled;
             if (toggled && OnBlock != null)
             {
@@ -47,6 +48,11 @@ namespace LensstoryMod
                 Api.World.BlockAccessor.ExchangeBlock(Offblock.BlockId, Pos);
             }
             return true;
+        }
+        public override void GetBlockInfo(IPlayer forPlayer, StringBuilder dsc)
+        {
+            base.GetBlockInfo(forPlayer, dsc);
+            dsc.AppendLine("It's toggled " + (toggled == true ? "on." : "off."));
         }
         public override void ToTreeAttributes(ITreeAttribute tree)
         {

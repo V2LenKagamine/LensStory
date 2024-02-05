@@ -12,6 +12,12 @@ namespace LensstoryMod
     public class SwapperBE : BlockEntity
     {
         public bool toggle = false;
+
+        public override void Initialize(ICoreAPI api)
+        {
+            base.Initialize(api);
+            GetBehavior<Redstone>().begin(true);
+        }
         public void SwapBlocks(bool activate)
         {
             if (activate != toggle) { return; }
@@ -83,6 +89,12 @@ namespace LensstoryMod
     public class SwapperDiagBE : BlockEntity
     {
         public bool toggle = false;
+
+        public override void Initialize(ICoreAPI api)
+        {
+            base.Initialize(api);
+            GetBehavior<Redstone>().begin(true);
+        }
         public void SwapBlocks(bool activate)
         {
             if (activate != toggle) { return; }
