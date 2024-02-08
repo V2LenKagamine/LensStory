@@ -14,7 +14,8 @@
     ],
     "creativeinventory": {
         "general": [ "" ],
-        "plants": [ "" ]
+        "plants": [ "" ],
+        "lensstorytab": [ "" ]
     },
     "renderpass": "OpaqueNoCull",
     "shape": { "base": "game:block/plant/crop/default*" },

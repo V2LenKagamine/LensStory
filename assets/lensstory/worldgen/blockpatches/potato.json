@@ -1,0 +1,16 @@
+﻿[
+    {
+        "comment": "Small patches of potato",
+        "blockCodes": [ "lensstory:crop-potato-2", "lensstory:crop-potato-3", "lensstory:crop-potato-4" ],
+        "minTemp": 0,
+        "maxTemp": 40,
+        "minRain": 0.18,
+        "maxRain": 0.95,
+        "maxForest": 0.9,
+        "quantity": {
+            "avg": 5,
+            "var": 5
+        },
+        "chance": 0.02
+    }
+]

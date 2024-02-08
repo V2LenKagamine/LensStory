@@ -180,3 +180,4 @@ F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\textures\bl
 F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\textures\block\crop\potato\6.png
 F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\textures\block\crop\potato\7.png
 F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\textures\item\seeds\potato.png
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\worldgen\blockpatches\potato.json
