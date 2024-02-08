@@ -57,7 +57,7 @@
     },
     "rainPermeable": false,
     "dropsByType": {
-        "*-9": [
+        "*-5": [
             {
                 "type": "item",
                 "code": "seeds-potato",
