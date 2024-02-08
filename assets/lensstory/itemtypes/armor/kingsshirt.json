@@ -1,0 +1,31 @@
+﻿{
+    "code": "kingsshirt",
+    "class": "ItemWearable",
+    "shape": {
+        "base": "armor/kingsshirt"
+    },
+    "storageFlags": 128,
+    "attributes": {
+        "clothescategory": "armorbody",
+        "wearableAttachment": true,
+        "protectionModifiers": {
+            "relativeProtection": 0.75,
+            "flatDamageReduction": 0.75,
+            "highDamageTierResistant": true,
+            "protectionTier": 2
+        },
+        "statModifiers": {
+            "meleeWeaponsDamage": 0.5,
+            "wholeVesselLootChance": 0.1
+        }
+    },
+    "creativeinventory": {
+        "general": [ "*" ],
+        "lensstorytab": [ "*" ]
+    },
+    "texturesByType": {
+        "*": {
+            "seraph": { "base": "game:block/transparent" }
+        }
+    }
+}

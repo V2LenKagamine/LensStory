@@ -1,0 +1,94 @@
+{
+  "editor": {
+    "allAngles": false,
+    "entityTextureMode": false
+  },
+  "textureWidth": 16,
+  "textureHeight": 16,
+  "textureSizes": {},
+  "textures": {
+    "potato": "game:item/food/vegetable/potato"
+  },
+  "elements": [
+    {
+      "name": "Cube0",
+      "from": [7.5, 2.3, 7.0],
+      "to": [10.5, 4.1, 9.0],
+      "rotationOrigin": [9.0, 2.2, 8.0],
+      "rotationZ": 22.5,
+      "faces": {
+        "north": {
+          "texture": "#potato",
+          "uv": [0.0, 0.0, 12.0, 2.5],
+          "autoUv": false
+        },
+        "east": {
+          "texture": "#potato",
+          "uv": [0.0, 0.0, 12.0, 2.5],
+          "autoUv": false
+        },
+        "south": {
+          "texture": "#potato",
+          "uv": [0.0, 0.0, 12.0, 2.5],
+          "autoUv": false
+        },
+        "west": {
+          "texture": "#potato",
+          "uv": [0.0, 0.0, 12.0, 2.5],
+          "autoUv": false
+        },
+        "up": {
+          "texture": "#potato",
+          "uv": [0.0, 0.0, 12.0, 12.0],
+          "autoUv": false
+        },
+        "down": {
+          "texture": "#potato",
+          "uv": [0.0, 0.0, 12.0, 12.0],
+          "autoUv": false
+        }
+      },
+      "children": [
+        {
+          "name": "Cube1",
+          "from": [-4.5201, 2.47, 0.0],
+          "to": [-1.5201, 4.27, 2.0],
+          "rotationOrigin": [-3.4201, -1.5257, -12.0],
+          "rotationZ": -45.0,
+          "faces": {
+            "north": {
+              "texture": "#potato",
+              "uv": [0.0, 0.0, 12.0, 2.5],
+              "autoUv": false
+            },
+            "east": {
+              "texture": "#potato",
+              "uv": [0.0, 0.0, 12.0, 2.5],
+              "autoUv": false
+            },
+            "south": {
+              "texture": "#potato",
+              "uv": [0.0, 0.0, 12.0, 2.5],
+              "autoUv": false
+            },
+            "west": {
+              "texture": "#potato",
+              "uv": [0.0, 0.0, 12.0, 2.5],
+              "autoUv": false
+            },
+            "up": {
+              "texture": "#potato",
+              "uv": [0.0, 0.0, 12.0, 12.0],
+              "autoUv": false
+            },
+            "down": {
+              "texture": "#potato",
+              "uv": [0.0, 0.0, 12.0, 12.0],
+              "autoUv": false
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

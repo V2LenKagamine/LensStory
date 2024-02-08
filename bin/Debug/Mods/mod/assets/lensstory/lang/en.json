@@ -166,10 +166,18 @@
     "item-kingssword": "King's Longsword",
     "item-kingscrown": "King's Crown",
     "item-kingsboots": "King's Boots",
+    "item-kingsgloves": "King's Gloves",
+    "item-kingsshirt": "King's Shirt",
 
     "block-sturdycasing": "Sturdy Metal Casing",
     "block-tinkeringtable": "Preparation Station",
     "blockdesc-tinkeringtable": "Craft with a log,saw,and chisel.",
+
+    "block-rustpipe-tpose-*": "Rusty T Pipe",
+    "block-rustpipe-straight-*": "Rusty Straight Pipe",
+    "block-rustpipe-lmode-*": "Rusty L Pipe",
+    "block-rustpipe-fourway-*": "Rusty Fourway Pipe",
+    "blockdesc-rustpipe-*": "A decorative pipe.",
 
     "block-concretefull": "Concrete Block",
     "block-concretepath-*": "Concrete Path",
@@ -205,6 +213,10 @@
     "block-reinforcedbloomery-*": "Reinforced Bloomery",
 
     "block-shroomstrate": "Mushroom Growth Substrate",
+
+    "block-crop-potato-*": "Potato Crop",
+    "item-seeds-potato": "Potato Seeds",
+    "item-vegetable-potato": "Potato",
 
     "item-redwand": "Red Attuner",
     "itemdesc-redwand": "Shift R-click in air to select a name, then R-click things to attune their input, and Shift R-click to attune their output.",

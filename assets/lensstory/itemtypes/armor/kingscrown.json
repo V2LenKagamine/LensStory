@@ -7,7 +7,8 @@
     "storageFlags": 128,
     "attributes": {
         "clothescategory": "head",
-        "wearableAttachment": true
+        "wearableAttachment": true,
+        "warmth": 1
     },
     "creativeinventory": {
         "general": [ "*" ],

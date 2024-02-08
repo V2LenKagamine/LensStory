@@ -163,11 +163,21 @@
     "item-cutgem-pink": "Cut Spinel",
     "itemdesc-cutgem-*": "Shiny stone.",
 
-    "item-kingssword":"King's Longsword",
+    "item-kingssword": "King's Longsword",
+    "item-kingscrown": "King's Crown",
+    "item-kingsboots": "King's Boots",
+    "item-kingsgloves": "King's Gloves",
+    "item-kingsshirt": "King's Shirt",
 
     "block-sturdycasing": "Sturdy Metal Casing",
     "block-tinkeringtable": "Preparation Station",
     "blockdesc-tinkeringtable": "Craft with a log,saw,and chisel.",
+
+    "block-rustpipe-tpose-*": "Rusty T Pipe",
+    "block-rustpipe-straight-*": "Rusty Straight Pipe",
+    "block-rustpipe-lmode-*": "Rusty L Pipe",
+    "block-rustpipe-fourway-*": "Rusty Fourway Pipe",
+    "blockdesc-rustpipe-*": "A decorative pipe.",
 
     "block-concretefull": "Concrete Block",
     "block-concretepath-*": "Concrete Path",

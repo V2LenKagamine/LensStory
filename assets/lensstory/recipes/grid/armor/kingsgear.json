@@ -1,0 +1,82 @@
+﻿[
+    {
+        "ingredientPattern": "G_G,O_O",
+        "width": 3,
+        "height": 2,
+        "ingredients": {
+            "G": {
+                "type": "block",
+                "code": "clearglass-yellow"
+            },
+            "O": {
+                "type": "block",
+                "code": "game:rock-obsidian"
+            }
+        },
+        "output": {
+            "type": "item",
+            "code": "kingsboots"
+        }
+    },
+    {
+        "ingredientPattern": "O_O,G_G",
+        "width": 3,
+        "height": 2,
+        "ingredients": {
+            "G": {
+                "type": "block",
+                "code": "clearglass-yellow"
+            },
+            "O": {
+                "type": "block",
+                "code": "game:rock-obsidian"
+            }
+        },
+        "output": {
+            "type": "item",
+            "code": "kingsgloves"
+        }
+    },
+    {
+        "ingredientPattern": "GGG,O_O",
+        "width": 3,
+        "height": 2,
+        "ingredients": {
+            "G": {
+                "type": "block",
+                "code": "clearglass-yellow"
+            },
+            "O": {
+                "type": "block",
+                "code": "game:rock-obsidian"
+            }
+        },
+        "output": {
+            "type": "item",
+            "code": "kingscrown"
+        }
+    },
+    {
+        "ingredientPattern": "OOO,GBG",
+        "width": 3,
+        "height": 2,
+        "ingredients": {
+            "G": {
+                "type": "item",
+                "code": "cutgem-yellow"
+            },
+            "O": {
+                "type": "block",
+                "code": "game:rock-obsidian"
+            },
+            "B": {
+                "type": "item",
+                "code": "game:armor-body-scale-blackbronze"
+            }
+        },
+        "output": {
+            "type": "item",
+            "code": "kingsshirt"
+        }
+    }
+]

@@ -7,60 +7,8 @@
   "targets": {
     ".NETCoreApp,Version=v7.0": {
       "lensstory/1.0.0": {
-        "dependencies": {
-          "SkiaSharp": "2.88.7",
-          "Newtonsoft.Json": "13.0.0.0"
-        },
         "runtime": {
           "lensstory.dll": {}
-        }
-      },
-      "SkiaSharp/2.88.7": {
-        "dependencies": {
-          "SkiaSharp.NativeAssets.Win32": "2.88.7",
-          "SkiaSharp.NativeAssets.macOS": "2.88.7"
-        },
-        "runtime": {
-          "lib/net6.0/SkiaSharp.dll": {
-            "assemblyVersion": "2.88.0.0",
-            "fileVersion": "2.88.7.0"
-          }
-        }
-      },
-      "SkiaSharp.NativeAssets.macOS/2.88.7": {
-        "runtimeTargets": {
-          "runtimes/osx/native/libSkiaSharp.dylib": {
-            "rid": "osx",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "SkiaSharp.NativeAssets.Win32/2.88.7": {
-        "runtimeTargets": {
-          "runtimes/win-arm64/native/libSkiaSharp.dll": {
-            "rid": "win-arm64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/win-x64/native/libSkiaSharp.dll": {
-            "rid": "win-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/win-x86/native/libSkiaSharp.dll": {
-            "rid": "win-x86",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "Newtonsoft.Json/13.0.0.0": {
-        "runtime": {
-          "Newtonsoft.Json.dll": {
-            "assemblyVersion": "13.0.0.0",
-            "fileVersion": "13.0.3.27908"
-          }
         }
       }
     }
@@ -68,32 +16,6 @@
   "libraries": {
     "lensstory/1.0.0": {
       "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "SkiaSharp/2.88.7": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-LJHAMrbWO00J7jXWLWehyjqFo29T4VzABimfJb4nICqpEe3c/KvQGWL4ItON8ymzhxYOeFgyxeRzuNzO4GHSug==",
-      "path": "skiasharp/2.88.7",
-      "hashPath": "skiasharp.2.88.7.nupkg.sha512"
-    },
-    "SkiaSharp.NativeAssets.macOS/2.88.7": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-3jNzco4VjcYPFNxR9aNWcgweFXbTSdM1VpNRzCS4X0i1A1OuNqcaulrAvmntNpujeWxHo9e6WGh6FN8Jf5+XhA==",
-      "path": "skiasharp.nativeassets.macos/2.88.7",
-      "hashPath": "skiasharp.nativeassets.macos.2.88.7.nupkg.sha512"
-    },
-    "SkiaSharp.NativeAssets.Win32/2.88.7": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-BCXmWdQ0oVck9vRwC8U3ocSaTHEx28VB+6qw9OxGIMQ86iO5bp4Flqk3IXH0l9Pbr7vWAUOpI212iaL9mTaUZQ==",
-      "path": "skiasharp.nativeassets.win32/2.88.7",
-      "hashPath": "skiasharp.nativeassets.win32.2.88.7.nupkg.sha512"
-    },
-    "Newtonsoft.Json/13.0.0.0": {
-      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

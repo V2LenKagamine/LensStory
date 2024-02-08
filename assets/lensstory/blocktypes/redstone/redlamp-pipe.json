@@ -76,28 +76,22 @@
     },
     "sidesolidByType": {
         "*-down": {
-            "all": false,
-            "down": true
+            "all": true
         },
         "*-up": {
-            "all": false,
-            "up": true
+            "all": true
         },
         "*-north": {
-            "all": false,
-            "north": true
+            "all": true
         },
         "*-east": {
-            "all": false,
-            "east": true
+            "all": true
         },
         "*-west": {
-            "all": false,
-            "west": true
+            "all": true
         },
         "*-south": {
-            "all": false,
-            "south": true
+            "all": true
         }
     },
     "sideopaque": {

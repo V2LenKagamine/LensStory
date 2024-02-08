@@ -1,0 +1,166 @@
+﻿[
+    {
+        "ingredientPattern": "W,I,C",
+        "ingredients": {
+            "W": {
+                "type": "item",
+                "code": "game:wrench-*",
+                "isTool": true,
+                "toolDurabilityCost": 1
+            },
+            "I": {
+                "type": "item",
+                "code": "game:metalplate-iron"
+            },
+            "C": {
+                "type": "item",
+                "code": "game:metalplate-copper"
+            }
+        },
+        "width": 1,
+        "height": 3,
+        "output": {
+            "type": "block",
+            "code": "rustpipe-straight-north-down",
+            "quantity": 32
+        }
+    },
+    {
+        "ingredientPattern": "W_,I_,_C",
+        "ingredients": {
+            "W": {
+                "type": "item",
+                "code": "game:wrench-*",
+                "isTool": true,
+                "toolDurabilityCost": 1
+            },
+            "I": {
+                "type": "item",
+                "code": "game:metalplate-iron"
+            },
+            "C": {
+                "type": "item",
+                "code": "game:metalplate-copper"
+            }
+        },
+        "width": 2,
+        "height": 3,
+        "output": {
+            "type": "block",
+            "code": "rustpipe-lmode-north-down",
+            "quantity": 32
+        }
+    },
+    {
+        "ingredientPattern": "IW,IC,C_",
+        "ingredients": {
+            "W": {
+                "type": "item",
+                "code": "game:wrench-*",
+                "isTool": true,
+                "toolDurabilityCost": 1
+            },
+            "I": {
+                "type": "item",
+                "code": "game:metalplate-iron"
+            },
+            "C": {
+                "type": "item",
+                "code": "game:metalplate-copper"
+            }
+        },
+        "width": 2,
+        "height": 3,
+        "output": {
+            "type": "block",
+            "code": "rustpipe-tpose-north-down",
+            "quantity": 64
+        }
+    },
+    {
+        "ingredientPattern": "_I_,CWC,_I_",
+        "ingredients": {
+            "W": {
+                "type": "item",
+                "code": "game:wrench-*",
+                "isTool": true,
+                "toolDurabilityCost": 1
+            },
+            "I": {
+                "type": "item",
+                "code": "game:metalplate-iron"
+            },
+            "C": {
+                "type": "item",
+                "code": "game:metalplate-copper"
+            }
+        },
+        "width": 3,
+        "height": 3,
+        "output": {
+            "type": "block",
+            "code": "rustpipe-fourway-north-down",
+            "quantity": 64
+        }
+    },
+    {
+        "ingredientPattern": "W",
+        "ingredients": {
+            "W": {
+                "type": "block",
+                "code": "rustpipe-straight-north-down"
+            }
+        },
+        "width": 1,
+        "height": 1,
+        "output": {
+            "type": "block",
+            "code": "rustpipe-lmode-north-down"
+        }
+    },
+    {
+        "ingredientPattern": "W",
+        "ingredients": {
+            "W": {
+                "type": "block",
+                "code": "rustpipe-lmode-north-down"
+            }
+        },
+        "width": 1,
+        "height": 1,
+        "output": {
+            "type": "block",
+            "code": "rustpipe-tpose-north-down"
+        }
+    },
+    {
+        "ingredientPattern": "W",
+        "ingredients": {
+            "W": {
+                "type": "block",
+                "code": "rustpipe-tpose-north-down"
+            }
+        },
+        "width": 1,
+        "height": 1,
+        "output": {
+            "type": "block",
+            "code": "rustpipe-fourway-north-down"
+        }
+    },
+    {
+        "ingredientPattern": "W",
+        "ingredients": {
+            "W": {
+                "type": "block",
+                "code": "rustpipe-fourway-north-down"
+            }
+        },
+        "width": 1,
+        "height": 1,
+        "output": {
+            "type": "block",
+            "code": "rustpipe-straight-north-down"
+        }
+    }
+]

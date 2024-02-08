@@ -1,0 +1,103 @@
+﻿{
+    "code": "crop",
+    "class": "BlockCrop",
+    "behaviors": [ { "name": "Unstable" } ],
+    "variantgroups": [
+        {
+            "code": "type",
+            "states": [ "potato" ]
+        },
+        {
+            "code": "stage",
+            "states": [ "1", "2", "3", "4", "5" ]
+        }
+    ],
+    "creativeinventory": {
+        "general": [ "" ],
+        "plants": [ "" ]
+    },
+    "renderpass": "OpaqueNoCull",
+    "shape": { "base": "game:block/plant/crop/default*" },
+    "blockmaterial": "Plant",
+    "textures": {
+        "crop": { "base": "block/crop/{type}/{stage}" }
+    },
+    "attributes": {
+        "foodTags": [ "nibbleCrop" ],
+        "butterflyFeedByType": {
+            "*-1": false,
+            "*-5": false,
+            "*": true
+        },
+        "beeFeedByType": {
+            "*-1": false,
+            "*-5": false,
+            "*": true
+        },
+        "sitHeight": 0.55,
+        "tickGrowthProbability": 0.05,
+        "handbook": {
+            "include": true
+        }
+    },
+    "sideopaque": {
+        "all": false
+    },
+    "sidesolid": {
+        "all": false
+    },
+    "replaceable": 3000,
+    "lightAbsorption": 0,
+    "resistance": 0.5,
+    "sounds": {
+        "place": "game:block/plant",
+        "break": "game:block/plant",
+        "hit": "game:block/plant"
+    },
+    "rainPermeable": false,
+    "dropsByType": {
+        "*-9": [
+            {
+                "type": "item",
+                "code": "seeds-potato",
+                "quantity": { "avg": 2 }
+            },
+            {
+                "type": "item",
+                "code": "vegetable-potato",
+                "quantity": {
+                    "avg": 20,
+                    "var": 6
+                }
+            }
+        ],
+        "*": [
+            {
+                "type": "item",
+                "code": "seeds-potato",
+                "quantity": { "avg": 1 }
+            }
+        ]
+    },
+    "cropProps": {
+        "__comment": "http://www.haifa-group.com/knowledge_center/crop_guides/rice/fertilization_practices/",
+        "requiredNutrient": "K",
+        "nutrientConsumption": 50,
+        "growthStages": 5,
+        "totalGrowthMonths": 4.0
+    },
+    "collisionbox": null,
+    "selectionbox": {
+        "x1": 0.0625,
+        "y1": 0,
+        "z1": 0.0625,
+        "x2": 0.9375,
+        "y2": 0.25,
+        "z2": 0.9375
+    },
+    "materialDensity": 200,
+    "combustibleProps": {
+        "burnTemperature": 600,
+        "burnDuration": 10
+    }
+}

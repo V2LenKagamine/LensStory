@@ -1,0 +1,78 @@
+﻿{
+    "code": "vegetable-potato",
+    "maxstacksize": 64,
+    "attributes": {
+        "foodTags": [ "cabbage" ],
+        "nutritionPropsWhenInMeal": {
+            "satiety": 250,
+            "foodcategory": "Vegetable"
+        }
+    },
+    "shape": { "base": "item/potato" },
+    "creativeinventory": {
+        "general": [ "*" ],
+        "items": [ "*" ],
+        "lensstorytab": [ "*" ]
+    },
+    "nutritionProps": {
+        "satiety": 150,
+        "foodcategory": "Vegetable"
+    },
+    "transitionableProps": [
+        {
+            "type": "Perish",
+            "freshHours": { "avg": 1008 },
+            "transitionHours": { "avg": 192 },
+            "transitionedStack": {
+                "type": "item",
+                "code": "game:rot"
+            },
+            "transitionRatio": 1
+        }
+    ],
+    "materialDensity": 600,
+    "guiTransform": {
+        "translation": {
+            "x": -14,
+            "y": 25.7,
+            "z": 0
+        },
+        "rotation": {
+            "x": -11,
+            "y": 24,
+            "z": 12
+        },
+        "scale": 3.41
+    },
+    "tpHandTransform": {
+        "translation": {
+            "x": -0.4,
+            "y": -0.2,
+            "z": -0.5
+        },
+        "rotation": {
+            "x": 0,
+            "y": 11,
+            "z": 18
+        },
+        "scale": 1.19
+    },
+    "groundTransform": {
+        "translation": {
+            "x": 0,
+            "y": 0.05,
+            "z": 0
+        },
+        "rotation": {
+            "x": 90,
+            "y": 0,
+            "z": 0
+        },
+        "origin": {
+            "x": 0.5,
+            "y": 0.5,
+            "z": 0.5299
+        },
+        "scale": 6
+    }
+}
