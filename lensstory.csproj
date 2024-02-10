@@ -64,6 +64,7 @@
   <None Remove="assets\lensstory\blocktypes\crops\potato.json" />
   <None Remove="assets\lensstory\blocktypes\liquids\liquidconcrete.json" />
   <None Remove="assets\lensstory\blocktypes\machines\heater.json" />
+  <None Remove="assets\lensstory\blocktypes\machines\magmanator.json" />
   <None Remove="assets\lensstory\blocktypes\machines\reinforcedbloomery.json" />
   <None Remove="assets\lensstory\blocktypes\machines\tinkeringtable.json" />
   <None Remove="assets\lensstory\blocktypes\machines\woodenhive.json" />
@@ -85,6 +86,7 @@
   <None Remove="assets\lensstory\blocktypes\rockmaker.json" />
   <None Remove="assets\lensstory\compatibility\primitivesurvival\recipes\lenfood\sandwiches.json" />
   <None Remove="assets\lensstory\config\handbook\30-lensstoryrednet.json" />
+  <None Remove="assets\lensstory\entities\blowdart.json" />
   <None Remove="assets\lensstory\itemtypes\armor\kingsboots.json" />
   <None Remove="assets\lensstory\itemtypes\armor\kingscrown.json" />
   <None Remove="assets\lensstory\itemtypes\armor\kingsgloves.json" />
@@ -108,6 +110,7 @@
   <None Remove="assets\lensstory\itemtypes\resource\oreblooms.json" />
   <None Remove="assets\lensstory\itemtypes\resource\roughgem.json" />
   <None Remove="assets\lensstory\itemtypes\scrolls.json" />
+  <None Remove="assets\lensstory\itemtypes\tools\blowdartgun.json" />
   <None Remove="assets\lensstory\itemtypes\tools\bonearrow.json" />
   <None Remove="assets\lensstory\itemtypes\tools\kingsword.json" />
   <None Remove="assets\lensstory\itemtypes\tools\sturdyarrow.json" />
@@ -129,6 +132,7 @@
   <None Remove="assets\lensstory\recipes\grid\blocks\spikestrip.json" />
   <None Remove="assets\lensstory\recipes\grid\blocks\sturdybucket.json" />
   <None Remove="assets\lensstory\recipes\grid\blocks\tinkertable.json" />
+  <None Remove="assets\lensstory\recipes\grid\blowdartgun.json" />
   <None Remove="assets\lensstory\recipes\grid\bonearrow.json" />
   <None Remove="assets\lensstory\recipes\grid\concretemix.json" />
   <None Remove="assets\lensstory\recipes\grid\gemcut.json" />
@@ -138,6 +142,7 @@
   <None Remove="assets\lensstory\recipes\grid\machines\beehive.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\burnerator.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\heater.json" />
+  <None Remove="assets\lensstory\recipes\grid\machines\magmanator.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\manarepair.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\reinforcedbloomery.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\rockmaker.json" />
@@ -148,6 +153,7 @@
   <None Remove="assets\lensstory\recipes\grid\redstone\redlamp.json" />
   <None Remove="assets\lensstory\recipes\grid\redstone\swappers.json" />
   <None Remove="assets\lensstory\recipes\grid\redwand.json" />
+  <None Remove="assets\lensstory\recipes\grid\scrolls.json" />
   <None Remove="assets\lensstory\recipes\grid\sturdyarrow.json" />
   <None Remove="assets\lensstory\recipes\grid\sturdycasing.json" />
   <None Remove="assets\lensstory\recipes\lenfood\sandwiches.json" />

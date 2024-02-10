@@ -73,6 +73,8 @@ namespace LensstoryMod
             }
 
             RegisterGameTickListener(OnCommonTick, 1000);
+
+            GetBehavior<Mana>().begin(true);
         }
 
         private void OnCommonTick(float dt)

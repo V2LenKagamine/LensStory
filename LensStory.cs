@@ -100,7 +100,11 @@ namespace LensstoryMod {
 
             RegisterTrio(api,"lever",typeof(LeverBlock),typeof(LeverBE),typeof(LeverBhv));
 
+            api.RegisterBlockEntityClass("lensmagmanator", typeof(MagmanatorBe));
+            api.RegisterBlockEntityBehaviorClass("lensmagmanatorbehavior", typeof(MagmanatorBhv));
+
             api.RegisterItemClass("lenskingssword", typeof(KingsSword));
+            api.RegisterItemClass("lensblowdartgun", typeof(Blowdartgun));
             api.RegisterEntity("lenssimpleprojectile", typeof(EntitySimpleProjectile));
 
             api.RegisterBlockBehaviorClass("LenBlockCoverWithDirection", typeof(BlockBehaviorCoverWithDirection));

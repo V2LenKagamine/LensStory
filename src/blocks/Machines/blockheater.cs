@@ -220,13 +220,14 @@ namespace LensstoryMod
         public override void GetBlockInfo(IPlayer forPlayer, StringBuilder dsc)
         {
             base.GetBlockInfo(forPlayer, dsc);
+            if(burning) { dsc.AppendLine("A fire burns inside."); }
             if(temperature <=25)
             {
                 dsc.AppendLine("Temperature: Cold");
             }else
             {
                 dsc.AppendLine("Temperature: " + (int)temperature + "C");
-                if(temperature < 100 && !burning)
+                if(temperature < 150 && !burning)
                 {
                     dsc.AppendLine("It's getting colder.");
                 }

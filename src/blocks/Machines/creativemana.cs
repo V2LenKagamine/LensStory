@@ -23,6 +23,13 @@ namespace LensstoryMod
             }
         }
 
+        public override void Initialize(ICoreAPI api)
+        {
+            base.Initialize(api);
+
+            GetBehavior<Mana>().begin(true);
+        }
+
         public override void ToTreeAttributes(ITreeAttribute tree)
         {
             base.ToTreeAttributes(tree);

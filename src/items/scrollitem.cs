@@ -87,19 +87,23 @@ namespace LensstoryMod
         {
             if (byEntity.World.Side == EnumAppSide.Server && secondsUsed >= 1.5f)
             {
-                foreach (var stat in dic)
+                if (scrollID.Contains("book"))
                 {
-                    var statmods = byEntity.Stats.Where(onent => stat.Key == onent.Key).Count();
-                    var totalmod = byEntity.Stats.GetBlended(stat.Key) / statmods;
-                    if (totalmod >= 1.5f || totalmod <= 0.5f)
+                    foreach (var stat in dic)
                     {
-                        IServerPlayer player = (byEntity.World.PlayerByUid((byEntity as EntityPlayer).PlayerUID) as IServerPlayer);
-                        player.SendMessage(GlobalConstants.InfoLogChatGroup, "You feel like the " + slot.Itemstack.GetName() + " can't change you any further.", EnumChatType.Notification);
-                        return;
+
+                        var statmods = byEntity.Stats.Where(onent => stat.Key == onent.Key).Count();
+                        var totalmod = byEntity.Stats.GetBlended(stat.Key) / statmods;
+                        if (totalmod >= 1.5f || totalmod <= 0.5f)
+                        {
+                            IServerPlayer player = (byEntity.World.PlayerByUid((byEntity as EntityPlayer).PlayerUID) as IServerPlayer);
+                            player.SendMessage(GlobalConstants.InfoLogChatGroup, "You feel like the " + slot.Itemstack.GetName() + " can't change you any further.", EnumChatType.Notification);
+                            return;
+                        }
                     }
                 }
                 ScrollEffect scrollboi = new ScrollEffect();
-                scrollboi.ScrollStats((byEntity as EntityPlayer), dic, durdic==null ? "lensmod" : "lensmodtemp", scrollID, durdic);
+                scrollboi.ScrollStats((byEntity as EntityPlayer), dic, scrollID.Contains("book") ? "lensmod" : "lensmodtemp", scrollID, durdic);
                 if (byEntity is EntityPlayer)
                 {
                     IServerPlayer player = (byEntity.World.PlayerByUid((byEntity as EntityPlayer).PlayerUID) as IServerPlayer);
@@ -121,59 +125,59 @@ namespace LensstoryMod
 
                 if(dic.ContainsKey("rangedWeaponsAcc"))
                 {
-                    dsc.AppendLine(Lang.Get("When used, {0}% ranged accuracy till death do you part.", dic["rangedWeaponsAcc"] * 100));
+                    dsc.AppendLine(Lang.Get("When used, {0}% ranged accuracy {1}.", dic["rangedWeaponsAcc"] * 100,durdic.ContainsKey("rangedWeaponsAcc") ? Lang.Get("for {0} minutes",durdic["rangedWeaponsAcc"]) :"till death do you part"));
                 }
                 if (dic.ContainsKey("animalLootDropRate"))
                 {
-                    dsc.AppendLine(Lang.Get("When used, {0}% bonus animal loot till death do you part.", dic["animalLootDropRate"] * 100));
+                    dsc.AppendLine(Lang.Get("When used, {0}% bonus animal loot {1}.", dic["animalLootDropRate"] * 100,durdic.ContainsKey("animalLootDropRate") ? Lang.Get("for {0} minutes",durdic["animalLootDropRate"]) :"till death do you part"));
                 }
                 if (dic.ContainsKey("animalHarvestingTime"))
                 {
-                    dsc.AppendLine(Lang.Get("When used, {0}% animal gather speed till death do you part.", dic["animalHarvestingTime"] * 100));
+                    dsc.AppendLine(Lang.Get("When used, {0}% animal gather speed {1}.", dic["animalHarvestingTime"] * 100,durdic.ContainsKey("animalHarvestingTime") ? Lang.Get("for {0} minutes",durdic["animalHarvestingTime"]) :"till death do you part"));
                 }
                 if (dic.ContainsKey("animalSeekingRange"))
                 {
-                    dsc.AppendLine(Lang.Get("When used, {0}% animal seek range till death do you part.", dic["animalSeekingRange"] * 100));
+                    dsc.AppendLine(Lang.Get("When used, {0}% animal seek range {1}.", dic["animalSeekingRange"] * 100,durdic.ContainsKey("animalSeekingRange") ? Lang.Get("for {0} minutes",durdic["animalSeekingRange"]) :"till death do you part"));
                 }
                 if (dic.ContainsKey("forageDropRate"))
                 {
-                    dsc.AppendLine(Lang.Get("When used, {0}% bonus forage till death do you part.", dic["forageDropRate"] * 100));
+                    dsc.AppendLine(Lang.Get("When used, {0}% bonus forage {1}.", dic["forageDropRate"] * 100,durdic.ContainsKey("forageDropRate") ? Lang.Get("for {0} minutes",durdic["forageDropRate"]) :"till death do you part"));
                 }
                 if (dic.ContainsKey("healingeffectivness"))
                 {
-                    dsc.AppendLine(Lang.Get("When used, {0}% healing effectiveness till death do you part.", dic["healingeffectivness"] * 100));
+                    dsc.AppendLine(Lang.Get("When used, {0}% healing effectiveness {1}.", dic["healingeffectivness"] * 100,durdic.ContainsKey("healingeffectivness") ? Lang.Get("for {0} minutes",durdic["healingeffectivness"]) :"till death do you part"));
                 }
                 if (dic.ContainsKey("hungerrate"))
                 {
-                    dsc.AppendLine(Lang.Get("When used, {0}% hunger rate till death do you part.", dic["hungerrate"] * 100));
+                    dsc.AppendLine(Lang.Get("When used, {0}% hunger rate {1}.", dic["hungerrate"] * 100, durdic.ContainsKey("hungerrate") ? Lang.Get("for {0} minutes.",durdic["hungerrate"]):"till death do you part."));
                 }
                 if (dic.ContainsKey("meleeWeaponsDamage"))
                 {
-                    dsc.AppendLine(Lang.Get("When used, {0}% melee damage till death do you part.", dic["meleeWeaponsDamage"] * 100));
+                    dsc.AppendLine(Lang.Get("When used, {0}% melee damage {1}.", dic["meleeWeaponsDamage"] * 100,durdic.ContainsKey("meleeWeaponsDamage") ? Lang.Get("for {0} minutes",durdic["meleeWeaponsDamage"]) :"till death do you part"));
                 }
                 if (dic.ContainsKey("miningSpeedMul"))
                 {
-                    dsc.AppendLine(Lang.Get("When used, {0}% mining speed till death do you part.", dic["miningSpeedMul"] * 100));
+                    dsc.AppendLine(Lang.Get("When used, {0}% mining speed {1}.", dic["miningSpeedMul"] * 100,durdic.ContainsKey("miningSpeedMul") ? Lang.Get("for {0} minutes",durdic["miningSpeedMul"]) :"till death do you part"));
                 }
                 if (dic.ContainsKey("oreDropRate"))
                 {
-                    dsc.AppendLine(Lang.Get("When used, {0}% bonus ore till death do you part.", dic["oreDropRate"] * 100));
+                    dsc.AppendLine(Lang.Get("When used, {0}% bonus ore {1}.", dic["oreDropRate"] * 100,durdic.ContainsKey("oreDropRate") ? Lang.Get("for {0} minutes",durdic["oreDropRate"]) :"till death do you part"));
                 }
                 if (dic.ContainsKey("rangedWeaponsDamage"))
                 {
-                    dsc.AppendLine(Lang.Get("When used, {0}% ranged damage till death do you part.", dic["rangedWeaponsDamage"] * 100));
+                    dsc.AppendLine(Lang.Get("When used, {0}% ranged damage {1}.", dic["rangedWeaponsDamage"] * 100,durdic.ContainsKey("rangedWeaponsDamage") ? Lang.Get("for {0} minutes",durdic["rangedWeaponsDamage"]) :"till death do you part"));
                 }
                 if (dic.ContainsKey("rangedWeaponsSpeed"))
                 {
-                    dsc.AppendLine(Lang.Get("When used, {0}% ranged speed till death do you part.", dic["rangedWeaponsSpeed"] * 100));
+                    dsc.AppendLine(Lang.Get("When used, {0}% ranged speed {1}.", dic["rangedWeaponsSpeed"] * 100,durdic.ContainsKey("rangedWeaponsSpeed") ? Lang.Get("for {0} minutes",durdic["rangedWeaponsSpeed"]) :"till death do you part"));
                 }
                 if (dic.ContainsKey("walkspeed"))
                 {
-                    dsc.AppendLine(Lang.Get("When used, {0}% walk speed till death do you part.", dic["walkspeed"] * 100));
+                    dsc.AppendLine(Lang.Get("When used, {0}% walk speed {1}.", dic["walkspeed"] * 100,durdic.ContainsKey("walkspeed") ? Lang.Get("for {0} minutes",durdic["walkspeed"]) :"till death do you part"));
                 }
                 if (dic.ContainsKey("wildCropDropRate"))
                 {
-                    dsc.AppendLine(Lang.Get("When used, {0}% bonus wild crops till death do you part.", dic["wildCropDropRate"] * 100));
+                    dsc.AppendLine(Lang.Get("When used, {0}% bonus wild crops {1}.", dic["wildCropDropRate"] * 100,durdic.ContainsKey("wildCropDropRate") ? Lang.Get("for {0} minutes",durdic["wildCropDropRate"]) :"till death do you part"));
                 }
             }
         }

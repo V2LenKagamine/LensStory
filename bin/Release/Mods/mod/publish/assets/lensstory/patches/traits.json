@@ -38,10 +38,9 @@
             "type": "negative",
             "attributes": {
                 "walkspeed": -0.05,
-                "healingeffectiveness": -0.1,
-                "maxhealthExtraPoints": -7,
-                "mechanicalsDamage": -0.25,
-                "animalSeekingRange": 0.5
+                "healingeffectiveness": -0.05,
+                "maxhealthExtraPoints": -1,
+                "animalSeekingRange": 0.1
             }
         }
     },

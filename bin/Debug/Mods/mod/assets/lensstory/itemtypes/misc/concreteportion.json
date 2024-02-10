@@ -11,6 +11,7 @@
             "itemsPerLitre": 100,
             "texture": { "base": "block/concrete" },
             "tintIndex": 2,
+            "allowSpill": true,
             "whenSpilled": {
                 "action": "PlaceBlock",
                 "stack": {

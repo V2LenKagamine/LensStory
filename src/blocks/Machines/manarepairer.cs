@@ -47,6 +47,8 @@ namespace LensstoryMod
             contents?.ResolveBlockOrItem(api.World);
 
             RegisterGameTickListener(OnCommonTick, 1000);
+
+            GetBehavior<Mana>().begin(true);
         }
 
         internal void OnCommonTick(float dt)

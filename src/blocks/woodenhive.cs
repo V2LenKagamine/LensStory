@@ -149,8 +149,10 @@ namespace LensstoryMod
         private void OnQuadWalk()
         {
             nearFlowers = tempNearFlowers;
-            bees = GameMath.Clamp(nearFlowers - 24, 0, 2);
-
+            if (bees != 0)
+            {
+                bees = GameMath.Clamp(nearFlowers - 23, 1, 2);
+            }
             MarkDirty();
         }
 
@@ -181,7 +183,7 @@ namespace LensstoryMod
                         dsc.AppendLine("There's a large amount of honey inside.");
                         break;
                     }
-                case int x when x >= 1:
+                case int x when x >= 16:
                     {
                         dsc.AppendLine("There's an obscene amount of honey inside");
                         break;

@@ -4,6 +4,7 @@ F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\b
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\blocktypes\machines\burnerator.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\blocktypes\machines\creativemana.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\blocktypes\machines\heater.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\blocktypes\machines\magmanator.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\blocktypes\machines\manarepair.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\blocktypes\machines\reinforcedbloomery.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\blocktypes\machines\rockmaker.json
@@ -27,6 +28,7 @@ F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\b
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\blocktypes\regularblocks\sturdycasing.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\compatibility\primitivesurvival\recipes\lenfood\sandwiches.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\config\handbook\30-lensstoryrednet.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\entities\blowdart.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\entities\kingsswordproj.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\itemtypes\armor\kingsboots.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\itemtypes\armor\kingscrown.json
@@ -54,6 +56,7 @@ F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\i
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\itemtypes\resource\oreblooms.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\itemtypes\resource\roughgem.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\itemtypes\seeds\potatoseeds.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\itemtypes\tools\blowdartgun.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\itemtypes\tools\bonearrow.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\itemtypes\tools\kingsword.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\itemtypes\tools\sturdyarrow.json
@@ -76,6 +79,7 @@ F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\r
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\recipes\grid\blocks\sturdybucket.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\recipes\grid\blocks\sturdycasing.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\recipes\grid\blocks\tinkertable.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\recipes\grid\blowdartgun.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\recipes\grid\bonearrow.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\recipes\grid\concretemix.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\recipes\grid\fluidskimmer.json
@@ -86,6 +90,7 @@ F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\r
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\recipes\grid\machines\beehive.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\recipes\grid\machines\burnerator.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\recipes\grid\machines\heater.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\recipes\grid\machines\magmanator.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\recipes\grid\machines\manarepair.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\recipes\grid\machines\reinforcedbloomery.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\recipes\grid\machines\rockmaker.json
@@ -96,6 +101,7 @@ F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\r
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\recipes\grid\redstone\redlamp.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\recipes\grid\redstone\redwand.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\recipes\grid\redstone\swappers.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\recipes\grid\scrolls.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\recipes\grid\sturdyarrow.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\recipes\lenfood\sandwiches.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\recipes\smithing\gears.json
@@ -125,11 +131,12 @@ F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\s
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\shapes\block\sturdybucket\empty.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\shapes\block\sturdybucket\filled.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\shapes\block\tinkertable.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\shapes\entity\blowdart.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\shapes\entity\kingsswordproj.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\shapes\item\blowdartgun.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\shapes\item\coinshp.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\shapes\item\cutgem.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\shapes\item\gear-restored.json
-F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\shapes\item\kingsswordproj.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\shapes\item\kingsword.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\shapes\item\longrod.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\shapes\item\ore\generic-bountiful.json

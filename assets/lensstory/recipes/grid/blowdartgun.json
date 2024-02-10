@@ -1,0 +1,27 @@
+﻿[
+    {
+        "ingredientPattern": "__S,MSK,S__",
+        "width": 3,
+        "height": 3,
+        "ingredients": {
+            "S": {
+                "type": "item",
+                "code": "game:stick"
+            },
+            "K": {
+                "type": "item",
+                "code": "game:knife-generic-*",
+                "isTool": true,
+                "toolDurabilityCost": 10
+            },
+            "M": {
+                "type": "block",
+                "code": "game:mushroom-deathcap-normal"
+            }
+        },
+        "output": {
+            "type": "item",
+            "code": "blowdart-tube"
+        }
+    }
+]

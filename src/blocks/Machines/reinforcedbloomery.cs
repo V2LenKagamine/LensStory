@@ -176,27 +176,31 @@ namespace LensstoryMod
             contents.LateInitialize("reinforcedbloomery-1", api);
 
             RegisterGameTickListener(OnCommonTick, 1000);
+            RegisterGameTickListener(OnClientTick, 100);
         }
 
         private void OnCommonTick(float dt)
         {
             if (!burning) { return; }
 
+            if (Api.Side == EnumAppSide.Server && burningUntil < Api.World.Calendar.TotalDays)
+            {
+                Smelt();
+            }
+        }
+
+        private void OnClientTick(float dt)
+        {
+            if(!burning) { return; }
             if (Api.Side == EnumAppSide.Client)
             {
-                if (Api.World.Rand.Next(10) != 0)
+                if (Api.World.Rand.Next(2) != 0)
                 {
                     smoke.MinPos.Set(Pos.X + 0.5 - 2 / 16.0, Pos.Y + 0.1 + 10 / 16f, Pos.Z + 0.5 - 2 / 16.0);
                     smoke.AddPos.Set(4 / 16.0, 0, 4 / 16.0);
                     Api.World.SpawnParticles(smoke, null);
                 }
             }
-
-            if (Api.Side == EnumAppSide.Server && burningUntil < Api.World.Calendar.TotalDays)
-            {
-                Smelt();
-            }
-
         }
 
         public bool OnInteract(IWorldAccessor world,IPlayer player,BlockSelection blockSel)

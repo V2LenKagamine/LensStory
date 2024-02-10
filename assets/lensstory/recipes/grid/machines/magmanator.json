@@ -1,5 +1,5 @@
 ﻿{
-    "ingredientPattern": "_C_,PTP,GQG",
+    "ingredientPattern": "S_S,S_S,GQG",
     "width": 3,
     "height": 3,
     "ingredients": {
@@ -7,18 +7,9 @@
             "type": "block",
             "code": "sturdycasing"
         },
-        "C": {
+        "S": {
             "type": "item",
-            "code": "game:chutesection-copper"
-        },
-        "P": {
-            "type": "item",
-            "code": "game:ingot-electrum",
-            "quantity": 2
-        },
-        "T": {
-            "type": "item",
-            "code": "game:gear-temporal"
+            "code": "rod-copper"
         },
         "G": {
             "type": "item",
@@ -28,6 +19,6 @@
     },
     "output": {
         "type": "block",
-        "code": "rockmaker"
+        "code": "magmanator"
     }
 }

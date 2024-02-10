@@ -1,5 +1,5 @@
 ﻿{
-    "code": "kingsswordprojectile",
+    "code": "blowdartprojectile",
     "class": "lenssimpleprojectile",
     "hitboxSize": {
         "x": 0.25,
@@ -10,7 +10,7 @@
         "size": 0.75,
         "renderer": "Shape",
         "shapeByType": {
-            "*": { "base": "entity/kingsswordproj" }
+            "*": { "base": "entity/blowdart" }
         },
         "behaviors": [
             { "code": "passivephysics" },

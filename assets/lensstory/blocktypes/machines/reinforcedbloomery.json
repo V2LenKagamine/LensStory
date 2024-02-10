@@ -57,27 +57,27 @@
     "resistance": 4,
     "sideopaqueByType": {
         "*-north": {
-            "down": false,
+            "down": true,
             "up": false,
-            "horizontals": true,
+            "horizontals": false,
             "north": false
         },
         "*-east": {
-            "down": false,
+            "down": true,
             "up": false,
-            "horizontals": true,
+            "horizontals": false,
             "east": false
         },
         "*-south": {
-            "down": false,
+            "down": true,
             "up": false,
-            "horizontals": true,
+            "horizontals": false,
             "south": false
         },
         "*-west": {
-            "down": false,
+            "down": true,
             "up": false,
-            "horizontals": true,
+            "horizontals": false,
             "west": false
         }
     },

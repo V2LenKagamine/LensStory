@@ -7,6 +7,7 @@ using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Config;
 using Vintagestory.API.Server;
+using Vintagestory.API.Util;
 using Vintagestory.GameContent;
 
 namespace LensstoryMod
@@ -23,6 +24,7 @@ namespace LensstoryMod
 
             ScrollEffect scroll = new ScrollEffect();
             scroll.removeAll((P.Entity), "lensmod");
+            scroll.removeAll((P.Entity), "lensmodtemp");
 
             base.OnEntityDeath(damageSourceForDeath);
         }
@@ -68,10 +70,10 @@ namespace LensstoryMod
 
         public void Dissapate() //Experimental Code, may crash, must check.
         {
-            var takefrom = EPDL.Where(trio => effectPowerList.Contains(new(trio.Effect,trio.Power)) && effectTimeList.Contains(new(trio.Effect,trio.Duration)));
+            var takefrom = EPDL.Where(trio => effectPowerList.ContainsKey(trio.Effect) && effectTimeList.ContainsKey(trio.Effect));
             foreach (EffectPowerDuration trio in takefrom)
             {
-                affected.Stats.Remove(trio.Effect, effectID);
+                affected.Stats.Remove(trio.Effect, "lensmodtemp");
                 affected.WatchedAttributes.RemoveAttribute(effectID);
             }
             IServerPlayer player = (
@@ -89,13 +91,19 @@ namespace LensstoryMod
         {
             foreach(KeyValuePair<string,float> stat in effectPowerList)
             {
-                var preval = affected.Stats.GetBlended(stat.Key)/affected.Stats.Where(onent => onent.Key == stat.Key).Count();
-                affected.Stats.Set(stat.Key,effectCode,preval + (stat.Value-1),true);
+                var statslist = affected.Stats.Where(stat2 => stat2.Key == stat.Key);
+                var foundstatbonus = 0f;
+                statslist.Foreach(stat =>
+                {
+                    stat.Value.ValuesByKey.TryGetValue(effectCode,out var possiblestats);
+                    foundstatbonus += possiblestats != null ? possiblestats.Value : 0;
+                });
+                affected.Stats.Set(stat.Key,effectCode,stat.Value + foundstatbonus,true);
                 if(effectTimeList == null) { continue; }
                 if(effectTimeList.ContainsKey(stat.Key))
                 {
                     EPDL.Add(new(stat.Key,stat.Value, effectTimeList[stat.Key]));
-                    long discallback = affected.World.RegisterCallback(DissapateEffect, (int)Math.Floor(effectTimeList[stat.Key]) * 1000);
+                    long discallback = affected.World.RegisterCallback(DissapateEffect, (int)Math.Floor(effectTimeList[stat.Key]) * 1000 * 60);// in minutes
                     affected.WatchedAttributes.SetLong(effectID, discallback);
                 }
             }

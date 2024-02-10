@@ -14,7 +14,7 @@
         "P": {
             "type": "item",
             "code": "game:ingot-electrum",
-            "quantity": 4
+            "quantity": 2
         },
         "T": {
             "type": "item",

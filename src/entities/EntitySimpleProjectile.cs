@@ -4,6 +4,7 @@ using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Config;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
+using Vintagestory.GameContent;
 
 namespace LensstoryMod
 {
@@ -20,36 +21,68 @@ namespace LensstoryMod
         public Entity FiredBy;
         public float Damage;
 
-        
+        EntityPartitioning ep;
 
         public override void Initialize(EntityProperties properties, ICoreAPI api, long InChunkIndex3d)
         {
             base.Initialize(properties, api, InChunkIndex3d);
 
             msLaunch = World.ElapsedMilliseconds;
+
+            GetBehavior<EntityBehaviorPassivePhysics>().OnPhysicsTickCallback = OnPhysTick;
+            ep = api.ModLoader.GetModSystem<EntityPartitioning>();
         }
         public override void OnGameTick(float dt)
         {
             base.OnGameTick(dt);
             if (ShouldDespawn) return;
             if(TryAttackEntity()) { return; }
-            motionBeforeCollide.Set(Pos.Motion.X, Pos.Motion.Y, Pos.Motion.Z);
+            motionBeforeCollide.Set(ServerPos.Motion.X, ServerPos.Motion.Y, ServerPos.Motion.Z);
             beforeCollided = false;
         }
         public override void OnCollided()
         {
+            TryAttackEntity();
             Die();
+        }
+
+        void OnPhysTick(float dtFac)
+        {
+            if (ShouldDespawn || !Alive) { return; }
+            var pos = SidedPos;
+            Cuboidd projectileBox = SelectionBox.ToDouble().Translate(pos.X, pos.Y, pos.Z);
+
+            if (pos.Motion.X < 0) projectileBox.X1 += pos.Motion.X * dtFac;
+            else projectileBox.X2 += pos.Motion.X * dtFac;
+            if (pos.Motion.Y < 0) projectileBox.Y1 += pos.Motion.Y * dtFac;
+            else projectileBox.Y2 += pos.Motion.Y * dtFac;
+            if (pos.Motion.Z < 0) projectileBox.Z1 += pos.Motion.Z * dtFac;
+            else projectileBox.Z2 += pos.Motion.Z * dtFac;
+
+            ep.WalkInteractableEntities(pos.XYZ, 5f, (e) => {
+                if (e.EntityId == this.EntityId || (FiredBy != null && e.EntityId == FiredBy.EntityId && World.ElapsedMilliseconds - msLaunch < 250)) return true;
+
+                Cuboidd eBox = e.SelectionBox.ToDouble().Translate(e.ServerPos.X, e.ServerPos.Y, e.ServerPos.Z);
+
+                if (eBox.IntersectsOrTouches(projectileBox))
+                {
+                    DoAttackEntity(e);
+                    return false;
+                }
+
+                return true;
+            });
         }
 
         bool TryAttackEntity()
         {
-            if (World is IClientWorldAccessor || World.ElapsedMilliseconds <= msLaunch + 250) return false;
+            if (World is IClientWorldAccessor || World.ElapsedMilliseconds <= msLaunch + 5) return false;
 
             Cuboidd projectileBox = SelectionBox.ToDouble().Translate(ServerPos.X, ServerPos.Y, ServerPos.Z);
 
             Entity attacked = World.GetNearestEntity(ServerPos.XYZ,5f,5f, (e) => {
                 if(e.EntityId == this.EntityId || !e.IsInteractable) return false;
-                if (FiredBy != null && e.EntityId == FiredBy.EntityId && World.ElapsedMilliseconds - msLaunch < 500)
+                if (FiredBy != null && e.EntityId == FiredBy.EntityId && World.ElapsedMilliseconds - msLaunch < 5)
                 {
                     return false;
                 }
@@ -70,7 +103,7 @@ namespace LensstoryMod
         {
             if(!Alive) return;
 
-            EntityPos pos = SidedPos;
+            EntityPos pos = ServerPos;
 
             IServerPlayer fromPlayer = null;
             if (FiredBy is EntityPlayer)
