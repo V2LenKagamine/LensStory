@@ -188,3 +188,4 @@ F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\shapes\item
 F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\entities\blowdart.json
 F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\shapes\entity\blowdart.json
 F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\recipes\grid\blowdartgun.json
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\patches\foodstuff.json

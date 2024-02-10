@@ -24,6 +24,12 @@ namespace LensstoryMod
             return;
         }
 
+        public override void OnCreatedByCrafting(ItemSlot[] allInputslots, ItemSlot outputSlot, GridRecipe byRecipe)
+        {
+            outputSlot.Itemstack.Attributes.SetFloat("lastshroomdmg",6f);
+            base.OnCreatedByCrafting(allInputslots, outputSlot, byRecipe);
+        }
+
         public override void OnHeldInteractStop(float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel)
         {
             if (nextshot > 1) { return; }
@@ -33,17 +39,18 @@ namespace LensstoryMod
                 ItemSlot mushroom = null;
                 byEntity.WalkInventory((invslot) =>
                 {
-                    if (invslot.Itemstack != null && invslot.Itemstack.Collectible.NutritionProps?.Health != null)
+                    if (invslot.Itemstack != null && invslot.Itemstack.Collectible.NutritionProps?.Health != null && invslot.Itemstack.Collectible.NutritionProps.Health < 0)
                     {
                         mushroom = invslot;
-                        return true;
+                        return false;
                     }
-                    return false;
+                    return true;
                 });
                 if(mushroom == null) { return; }
                 int olddura = GetRemainingDurability(slot.Itemstack);
-                if (olddura >=51) { return; }
-                slot.Itemstack.Attributes.SetInt("durability", Math.Min(olddura + (int)Math.Floor(Math.Abs(mushroom.Itemstack.Collectible.NutritionProps.Health)), 51));
+                if (olddura >=21) { return; }
+                slot.Itemstack.Attributes.SetFloat("lastshroomdmg", mushroom.Itemstack.Collectible.NutritionProps.Health);
+                slot.Itemstack.Attributes.SetInt("durability", 21);
                 slot.MarkDirty();
                 mushroom.TakeOut(1);
                 mushroom.MarkDirty();
@@ -53,7 +60,13 @@ namespace LensstoryMod
             if (slot.Itemstack.Collectible.Attributes != null)
             {
                 damage += slot.Itemstack.Collectible.Attributes["attackpower"].AsFloat();
+                if (slot.Itemstack.Attributes["lastshroomdmg"]!=null)
+                {
+                    float lastshroom = slot.Itemstack.Attributes.GetFloat("lastshroomdmg");
+                    damage += (float)Math.Clamp(Math.Ceiling(Math.Abs(lastshroom))/2f,1f,6.75f);
+                }
             }
+            damage *= byEntity.Stats.GetBlended("rangedWeaponsDamage");
             EntityProperties type = byEntity.World.GetEntityType(new AssetLocation("lensstory:blowdartprojectile"));
             var projectile = byEntity.World.ClassRegistry.CreateEntity(type) as EntitySimpleProjectile;
             projectile.FiredBy = byEntity;
@@ -70,7 +83,7 @@ namespace LensstoryMod
 
             byEntity.World.SpawnEntity(projectile);
 
-            nextshot = 80;
+            nextshot = 40;
             if (GetRemainingDurability(slot.Itemstack) > 1) {
                 slot.Itemstack.Collectible.DamageItem(byEntity.World, byEntity, slot, 1);
             }

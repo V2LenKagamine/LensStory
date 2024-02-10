@@ -11,9 +11,9 @@
         "tools": [ "*" ],
         "lensstorytab": [ "*" ]
     },
-    "durability": 51,
+    "durability": 21,
     "attributes": {
-        "attackpower": 3.5
+        "attackpower": 1
     },
     "tpHandTransform": {
         "translation": {

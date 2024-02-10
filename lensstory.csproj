@@ -117,6 +117,7 @@
   <None Remove="assets\lensstory\kingsswordproj.json" />
   <None Remove="assets\lensstory\patches\bloommaker.json" />
   <None Remove="assets\lensstory\patches\classes.json" />
+  <None Remove="assets\lensstory\patches\foodstuff.json" />
   <None Remove="assets\lensstory\patches\tradershenanigans.json" />
   <None Remove="assets\lensstory\patches\traits.json" />
   <None Remove="assets\lensstory\recipes\barrel\liquidconcrete.json" />

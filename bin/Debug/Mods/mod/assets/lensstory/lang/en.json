@@ -218,6 +218,7 @@
     "block-crop-potato-*": "Potato Crop",
     "item-seeds-potato": "Potato Seeds",
     "item-vegetable-potato": "Potato",
+    "game:meal-ingredient-stew-*-vegetable-potato":"potato" ,
 
     "item-blowdart-tube": "Blow-Dart Tube",
     "itemdesc-blowdart-tube": "Can be reloaded by sneaking with deadly mushrooms, or auto-reloads with them when out of ammo.",

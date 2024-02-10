@@ -167,7 +167,7 @@ namespace LensstoryMod
             }
             if (fromTemp > toTemp)
             {
-                dt = -dt / 2;
+                dt = -dt / 1.25f;
             }
             if (Math.Abs(fromTemp - toTemp) < 1)
             {
@@ -186,7 +186,7 @@ namespace LensstoryMod
             if (burning || !CanIgnite()) { return false; }
 
             burning = true;
-            fuelleft = FuelSlot.Itemstack.Collectible.CombustibleProps.BurnDuration * FuelSlot.Itemstack.StackSize;
+            fuelleft = FuelSlot.Itemstack.Collectible.CombustibleProps.BurnDuration * FuelSlot.Itemstack.StackSize * 1.25f;
             MarkDirty();
             return true;
 
