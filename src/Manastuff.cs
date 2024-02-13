@@ -73,7 +73,7 @@ namespace LensstoryMod
         public override void OnBlockRemoved()
         {
             base.OnBlockRemoved();
-            this.System?.Remove(this.Blockentity.Pos);
+            System?.Remove(Blockentity.Pos);
         }
         public override void GetBlockInfo(IPlayer forPlayer, StringBuilder dsc)
         {

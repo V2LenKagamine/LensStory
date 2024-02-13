@@ -4,6 +4,7 @@ F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\b
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\blocktypes\machines\burnerator.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\blocktypes\machines\creativemana.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\blocktypes\machines\heater.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\blocktypes\machines\kineticmpgen.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\blocktypes\machines\magmanator.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\blocktypes\machines\manarepair.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\blocktypes\machines\reinforcedbloomery.json
@@ -26,7 +27,10 @@ F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\b
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\blocktypes\regularblocks\spikestrip.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\blocktypes\regularblocks\sturdybucket.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\blocktypes\regularblocks\sturdycasing.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\compatibility\abcsreborn\recipes\grid\hoardingsack.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\compatibility\primitivesurvival\recipes\lenfood\sandwiches.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\compatibility\toolworks\recipes\grid\blowdartgun.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\compatibility\toolworks\recipes\grid\bonearrow.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\config\handbook\30-lensstoryrednet.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\entities\blowdart.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\entities\kingsswordproj.json
@@ -63,6 +67,8 @@ F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\i
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\lang\en.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\patches\bloommaker.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\patches\classes.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\patches\soups.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\patches\stew.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\patches\tradershenanigans.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\patches\traits.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\recipes\barrel\liquidconcrete.json
@@ -90,6 +96,7 @@ F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\r
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\recipes\grid\machines\beehive.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\recipes\grid\machines\burnerator.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\recipes\grid\machines\heater.json
+F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\recipes\grid\machines\kineticmp.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\recipes\grid\machines\magmanator.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\recipes\grid\machines\manarepair.json
 F:\LensStoryVintageMod\lensstory\bin\Release\Mods\mod\publish\assets\lensstory\recipes\grid\machines\reinforcedbloomery.json

@@ -1,0 +1,57 @@
+﻿[
+    {
+        "ingredientPattern": "LL_,LLL,LLL",
+        "ingredients": {
+            "L": {
+                "type": "item",
+                "code": "game:leather-plain",
+                "quantity": 2
+            }
+        },
+        "width": 3,
+        "height": 3,
+        "output": {
+            "type": "item",
+            "code": "hoardingsack"
+        },
+        "requiresTrait": "len-hoarder"
+    },
+    {
+        "ingredientPattern": "SFR,LBL,_L_",
+        "ingredients": {
+
+            "S": {
+                "type": "item",
+                "code": "game:shears-*",
+                "isTool": true,
+                "toolDurabilityCost": 10
+            },
+            "F": {
+                "type": "item",
+                "code": "game:firewood",
+                "quantity": 2
+            },
+            "R": {
+                "type": "item",
+                "code": "game:rope",
+                "quantity": 2
+            },
+
+            "L": {
+                "type": "item",
+                "code": "game:leather-plain",
+                "quantity": 2
+            },
+            "B": {
+                "type": "item",
+                "code": "hoardingsack"
+            }
+        },
+        "width": 3,
+        "height": 3,
+        "output": {
+            "type": "item",
+            "code": "abcsreborn:tallleatherbackpack"
+        }
+    }
+]

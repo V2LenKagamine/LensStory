@@ -1,17 +1,18 @@
-﻿{
-    "ingredientPattern": "LL_,LLL,LLL",
-    "ingredients": {
-        "L": {
+﻿
+    {
+        "ingredientPattern": "LL_,LLL,LLL",
+        "ingredients": {
+            "L": {
+                "type": "item",
+                "code": "game:leather-plain",
+                "quantity": 2
+            }
+        },
+        "width": 3,
+        "height": 3,
+        "output": {
             "type": "item",
-            "code": "game:leather-plain",
-            "quantity": 2
-        }
-    },
-    "width": 3,
-    "height": 3,
-    "output": {
-        "type": "item",
-        "code": "hoardingsack"
-    },
-    "requiresTrait": "len-hoarder"
-}
+            "code": "hoardingsack"
+        },
+        "requiresTrait": "len-hoarder"
+    }

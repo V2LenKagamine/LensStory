@@ -188,4 +188,13 @@ F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\shapes\item
 F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\entities\blowdart.json
 F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\shapes\entity\blowdart.json
 F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\recipes\grid\blowdartgun.json
-F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\patches\foodstuff.json
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\patches\soups.json
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\patches\stew.json
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\compatibility\abcsreborn\recipes\grid\hoardingsack.json
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\compatibility\toolworks\recipes\grid\blowdartgun.json
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\compatibility\toolworks\recipes\grid\bonearrow.json
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\blocktypes\machines\kineticmpgen.json
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\recipes\grid\machines\kineticmp.json
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\shapes\block\machines\kineticmpgen.json
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\shapes\block\machines\kineticmpgen-base.json
+F:\LensStoryVintageMod\lensstory\bin\Debug\Mods\mod\assets\lensstory\shapes\block\machines\kineticmpgen-orb.json

@@ -86,7 +86,7 @@ namespace LensstoryMod
                 player.InventoryManager.TryGiveItemstack(new(Api.World.GetItem(AssetLocation.Create("game:honeycomb")), HoneyAmt * 3));
                 HoneyAmt = 0;
                 MarkDirty();
-                int olddura = slot.Itemstack.Attributes.GetInt("durablility", -1);
+                int olddura = slot.Itemstack.Attributes.GetInt("durability", -1);
                 if (olddura == -1)
                 {
                     olddura = slot.Itemstack.Collectible.Durability;
@@ -170,22 +170,22 @@ namespace LensstoryMod
             {
                 case int x when x < 1:
                     {
-                        dsc.AppendLine("There doesn't appear to be much honey inside.");
+                        dsc.AppendLine("There's barely enough honey for the bees.");
                         break;
                     }
                 case int x when x >= 1 && x < 8:
                     {
-                        dsc.AppendLine("There's an amount of honey inside.");
+                        dsc.AppendLine("There's a small excess of honey inside.");
                         break;
                     }
                 case int x when x >= 8 && x < 16:
                     {
-                        dsc.AppendLine("There's a large amount of honey inside.");
+                        dsc.AppendLine("There's a large excess of honey inside.");
                         break;
                     }
                 case int x when x >= 16:
                     {
-                        dsc.AppendLine("There's an obscene amount of honey inside");
+                        dsc.AppendLine("There's an obscene excess of honey inside.");
                         break;
                     }
                 default:

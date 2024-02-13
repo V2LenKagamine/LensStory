@@ -84,7 +84,7 @@ namespace LensstoryMod
             { return false; }
             var maybeblock = slot.Itemstack.Collectible;
             var type = maybeblock.FirstCodePart();
-            if (maybeblock != null && (type == "rock" || type == "gravel" || type == "sand" || type == "soil")) 
+            if (maybeblock != null && (type == "rock" || type == "gravel" || type == "sand" || type == "soil" || type == "cobblestone" || type == "rockpolished")) 
             {
                 contents = slot.Itemstack;
                 slot.TakeOut(1);
@@ -147,9 +147,17 @@ namespace LensstoryMod
                 }
                 switch (entity.contents.Collectible.FirstCodePart())
                 {
-                    case string x when x == "rock" || x == "gravel" || x == "sand":
+                    case string x when x == "cobblestone" || x == "gravel" || x == "sand":
                         {
                             return 1;
+                        }
+                    case "rock":
+                        {
+                            return 2;
+                        }
+                    case "rockpolished":
+                        {
+                            return 3;
                         }
                     case "soil":
                         {

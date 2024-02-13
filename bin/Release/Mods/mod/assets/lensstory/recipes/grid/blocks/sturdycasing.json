@@ -10,8 +10,7 @@
         },
         "G": {
             "type": "item",
-            "code": "gear-*",
-            "quantity": 2
+            "code": "gear-*"
         },
         "P": {
             "type": "item",

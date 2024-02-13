@@ -206,6 +206,7 @@
     "block-manarepair": "Mechanical Entropy Siphoner",
     "block-rockmaker": "Geoformic Accelerator",
     "block-magmanator": "Magmanator",
+    "block-kineticmpgen": "Kinetic Potentia-Accumulator",
 
     "block-heaterblock-*": "Oven Heater",
 
@@ -218,7 +219,10 @@
     "block-crop-potato-*": "Potato Crop",
     "item-seeds-potato": "Potato Seeds",
     "item-vegetable-potato": "Potato",
-    "game:meal-ingredient-stew-*-vegetable-potato":"potato" ,
+    "game:meal-ingredient-stew-*-vegetable-potato": "potato",
+    "game:meal-ingredient-soup-*-vegetable-potato": "potato",
+    "lensstory:recipeingredient-item-vegetable-potato": "potato",
+    "game:recipeingredient-item-ciderportion-*": "mulled cider",
 
     "item-blowdart-tube": "Blow-Dart Tube",
     "itemdesc-blowdart-tube": "Can be reloaded by sneaking with deadly mushrooms, or auto-reloads with them when out of ammo.",
@@ -292,6 +296,9 @@
 
     "game:handbook-block-concrete-title": "How to obtain:",
     "game:handbook-block-concrete-text": "Use a fluid container [like a bucket] filled with atleast 100ml of Liquid Concrete on an Empty Concrete Frame to form a concrete block.",
+
+    "game:handbook-block-kineticmpgen-title": "Usage:",
+    "game:handbook-block-kineticmpgen-text": "Connect to a vanilla Wooden Axle or other Mechanical Power source via the top or bottom, and supply power, rotational speed determines output.",
 
     "game:handbook-block-reinforcedbloomery-title": "Usage:",
     "game:handbook-block-reinforcedbloomery-text": "Works just like the regular bloomery, but doesnt break,has a max temperature of 2000, and finished products can be removed by shift clicking. Is a little smaller, so it only holds 2/3rds the normal bloomery.",

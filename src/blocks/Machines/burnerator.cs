@@ -62,7 +62,7 @@ namespace LensstoryMod
             {
                 ticker += hourspast * 100;
                 var workdone = (int)Math.Floor(ticker);
-                if (Api.World.BlockAccessor.GetBlock(Pos.DownCopy()).FirstCodePart() == "lava" && fuel <= 300)
+                if (Api.World.BlockAccessor.GetBlock(Pos.DownCopy()).FirstCodePart() == "lava" && fuel <= 150)
                 {
                     fuel += 2 * workdone;
                     MarkDirty();
@@ -134,7 +134,7 @@ namespace LensstoryMod
             {
                 BurneratorBE yep = here as BurneratorBE;
                 fuelAmt = yep.fuel;
-                if(yep.fuel >= 1) { return (yep.fuel / 600) + 1; }
+                if(yep.fuel >= 1) { return (yep.fuel / 200) + 1; }
             }
             return 0;
         }

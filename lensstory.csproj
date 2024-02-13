@@ -64,6 +64,7 @@
   <None Remove="assets\lensstory\blocktypes\crops\potato.json" />
   <None Remove="assets\lensstory\blocktypes\liquids\liquidconcrete.json" />
   <None Remove="assets\lensstory\blocktypes\machines\heater.json" />
+  <None Remove="assets\lensstory\blocktypes\machines\kineticmpgen.json" />
   <None Remove="assets\lensstory\blocktypes\machines\magmanator.json" />
   <None Remove="assets\lensstory\blocktypes\machines\reinforcedbloomery.json" />
   <None Remove="assets\lensstory\blocktypes\machines\tinkeringtable.json" />
@@ -84,7 +85,10 @@
   <None Remove="assets\lensstory\blocktypes\regularblocks\sturdybucket.json" />
   <None Remove="assets\lensstory\blocktypes\regularblocks\sturdycasing.json" />
   <None Remove="assets\lensstory\blocktypes\rockmaker.json" />
+  <None Remove="assets\lensstory\compatibility\abcsreborn\recipes\hoardingsack.json" />
   <None Remove="assets\lensstory\compatibility\primitivesurvival\recipes\lenfood\sandwiches.json" />
+  <None Remove="assets\lensstory\compatibility\toolworks\recipes\grid\blowdartgun.json" />
+  <None Remove="assets\lensstory\compatibility\toolworks\recipes\grid\bonearrow.json" />
   <None Remove="assets\lensstory\config\handbook\30-lensstoryrednet.json" />
   <None Remove="assets\lensstory\entities\blowdart.json" />
   <None Remove="assets\lensstory\itemtypes\armor\kingsboots.json" />
@@ -117,7 +121,8 @@
   <None Remove="assets\lensstory\kingsswordproj.json" />
   <None Remove="assets\lensstory\patches\bloommaker.json" />
   <None Remove="assets\lensstory\patches\classes.json" />
-  <None Remove="assets\lensstory\patches\foodstuff.json" />
+  <None Remove="assets\lensstory\patches\soups.json" />
+  <None Remove="assets\lensstory\patches\stew.json" />
   <None Remove="assets\lensstory\patches\tradershenanigans.json" />
   <None Remove="assets\lensstory\patches\traits.json" />
   <None Remove="assets\lensstory\recipes\barrel\liquidconcrete.json" />
@@ -143,6 +148,7 @@
   <None Remove="assets\lensstory\recipes\grid\machines\beehive.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\burnerator.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\heater.json" />
+  <None Remove="assets\lensstory\recipes\grid\machines\kineticmp.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\magmanator.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\manarepair.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\reinforcedbloomery.json" />

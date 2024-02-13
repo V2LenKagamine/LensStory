@@ -66,5 +66,39 @@
         ],
         "side": "server",
         "file": "game:recipes/cooking/vegetablestew.json"
+    },
+    {
+        "op": "addeach",
+        "path": "/ingredients/4/validStacks/-",
+        "value": [
+            {
+                "type": "item",
+                "code": "lensstory:vegetable-potato",
+                "shapeElement": "bowl/vegetable 1/*",
+                "textureMapping": [
+                    "vegetable",
+                    "group1"
+                ]
+            }
+        ],
+        "side": "server",
+        "file": "game:recipes/cooking/meatystew.json"
+    },
+    {
+        "op": "addeach",
+        "path": "/ingredients/5/validStacks/-",
+        "value": [
+            {
+                "type": "item",
+                "code": "lensstory:vegetable-potato",
+                "shapeElement": "bowl/vegetable 2/*",
+                "textureMapping": [
+                    "vegetable",
+                    "group1"
+                ]
+            }
+        ],
+        "side": "server",
+        "file": "game:recipes/cookingmeatysstew.json"
     }
 ]

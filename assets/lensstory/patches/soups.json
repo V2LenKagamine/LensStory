@@ -1,0 +1,90 @@
+﻿[
+    {
+        "op": "addeach",
+        "path": "/ingredients/0/validStacks/-",
+        "value": [
+            {
+                "type": "item",
+                "code": "ciderportion-*",
+                "shapeElement": "bowl/water"
+            }
+        ],
+        "side": "server",
+        "file": "game:recipes/cooking/soup.json"
+    },
+    {
+        "op": "addeach",
+        "path": "/ingredients/1/validStacks/-",
+        "value": [
+            {
+                "type": "item",
+                "code": "lensstory:vegetable-potato",
+                "shapeElement": "bowl/vegetable 2/*",
+                "textureMapping": [
+                    "vegetable",
+                    "group1"
+                ]
+            }
+        ],
+        "side": "server",
+        "file": "game:recipes/cooking/soup.json"
+    },
+    {
+        "op": "addeach",
+        "path": "/ingredients/2/validStacks/-",
+        "value": [
+            {
+                "type": "item",
+                "code": "lensstory:vegetable-potato",
+                "shapeElement": "bowl/vegetable 3/*",
+                "textureMapping": [
+                    "vegetable",
+                    "group1"
+                ]
+            }
+        ],
+        "side": "server",
+        "file": "game:recipes/cooking/soup.json"
+    },
+    {
+        "op": "addeach",
+        "path": "/ingredients/3/validStacks/-",
+        "value": [
+            {
+                "type": "item",
+                "code": "lensstory:vegetable-potato",
+                "shapeElement": "bowl/vegetable 4/*",
+                "textureMapping": [
+                    "vegetable",
+                    "group1"
+                ]
+            }
+        ],
+        "side": "server",
+        "file": "game:recipes/cooking/soup.json"
+    },
+    {
+        "op": "add",
+        "path": "/attributes/nutritionPropsWhenInMeal",
+        "value": {
+            "saturation": 160,
+            "foodcategoryByType": {
+                "*-spelt": "grain",
+                "*-rice": "grain",
+                "*-rye": "grain",
+                "*-amaranth": "grain",
+                "*-cassava": "grain",
+                "*-breadfruit": "grain",
+                "*": "fruit"
+            }
+        },
+        "side": "server",
+        "file": "game:itemtypes/liquid/cider.json",
+        "dependsOn": [
+            {
+                "modid": "expandedfoods",
+                "invert": true
+            }
+        ]
+    }
+]

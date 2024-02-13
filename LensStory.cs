@@ -100,6 +100,8 @@ namespace LensstoryMod {
 
             RegisterTrio(api,"lever",typeof(LeverBlock),typeof(LeverBE),typeof(LeverBhv));
 
+            RegisterTrio(api, "kineticmpgen", typeof(KineticpotentianatorBlock), typeof(KineticpotentianatorBe), typeof(KineticpotentianatorBhv));
+
             api.RegisterBlockEntityClass("lensmagmanator", typeof(MagmanatorBe));
             api.RegisterBlockEntityBehaviorClass("lensmagmanatorbehavior", typeof(MagmanatorBhv));
 
@@ -275,7 +277,6 @@ namespace LensstoryMod {
         #region Manastuff
         public bool DoUpdate(BlockPos pos,int code,bool forced = false)
         {
-            
             if(!this.ManaParts.TryGetValue(pos,out var part)) {
                 if (code == 0) return false;
                 part = this.ManaParts[pos] = new ManaPart(pos);
@@ -299,7 +300,7 @@ namespace LensstoryMod {
             {
                 consumers.Clear();
 
-                var totalMana = network.Key.Makers.Sum(maker=> maker.MakeMana());
+                var totalMana = network.Key.Makers.Sum(maker => maker.MakeMana());
 
                 var neededMana = 0;
 
@@ -308,18 +309,25 @@ namespace LensstoryMod {
                     neededMana += consumer.ManaNeeded;
                     consumers.Add(consumer);
                 }
-                if (totalMana >= 1)
+
+                do
                 {
-                    do
+                    foreach (var customer in this.consumers)
                     {
-                        foreach (var customer in this.consumers)
+                        if (neededMana > totalMana)
+                        {
+                            customer.ManaEater.EatMana(0);
+                        }
+                        else
                         {
                             customer.ManaEater.EatMana(customer.ManaNeeded);
                             neededMana -= customer.ManaNeeded;
                         }
+                        
                     }
-                    while (totalMana >= neededMana && neededMana > 0);
                 }
+                while (totalMana >= neededMana && neededMana > 0);
+
             }
         }
 
@@ -348,17 +356,31 @@ namespace LensstoryMod {
         }
         public void Remove(BlockPos pos)
         {
-            if(this.ManaParts.TryGetValue(pos,out var part))
+            if(ManaParts.TryGetValue(pos,out var part))
             {
-                this.ManaParts.Remove(pos);
-                this.RemoveManaConnection(ref part, part.ManaCode);
+                ManaParts.Remove(pos);
+                RemoveManaConnection(ref part, part.ManaCode);
             }
         }
         private void RemoveManaConnection(ref ManaPart part, int manaID)
         {
-            if (manaID == 0)
+            var targets = mananetworks.Where(net => net.Value == manaID);
+            if (targets.Any())
             {
-                return;
+                for (int i = 0; i < targets.Count(); i++)
+                {
+                    ManaNetwork target = targets.ElementAt(i).Key;
+                    target.Positions.Remove(part.Position);
+                    if (part.Consumer is { })
+                    {
+                        target.Consumers.Remove(part.Consumer);
+                    }
+                    if (part.Maker is { })
+                    {
+                        target.Makers.Remove(part.Maker);
+                    }
+                    part.ManaNet = null;
+                }
             }
         }
 

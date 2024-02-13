@@ -50,7 +50,7 @@ namespace LensstoryMod
                 int olddura = GetRemainingDurability(slot.Itemstack);
                 if (olddura >=21) { return; }
                 slot.Itemstack.Attributes.SetFloat("lastshroomdmg", mushroom.Itemstack.Collectible.NutritionProps.Health);
-                slot.Itemstack.Attributes.SetInt("durability", 21);
+                slot.Itemstack.Attributes.SetInt("durability", GetMaxDurability(slot.Itemstack)); ;
                 slot.MarkDirty();
                 mushroom.TakeOut(1);
                 mushroom.MarkDirty();

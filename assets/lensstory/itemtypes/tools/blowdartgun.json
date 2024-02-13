@@ -11,7 +11,7 @@
         "tools": [ "*" ],
         "lensstorytab": [ "*" ]
     },
-    "durability": 21,
+    "durability": 9,
     "attributes": {
         "attackpower": 1
     },
