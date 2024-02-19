@@ -1,7 +1,6 @@
 {
     "code": "manarepair",
-    "shape": { "base": "game:block/basic/cube" },
-    "drawtype": "cube",
+    "shape": { "base": "block/machines/entropysiphoner" },
     "creativeinventory": {
         "general": [ "*" ],
         "lensstorytab": [ "*" ]
@@ -29,22 +28,12 @@
     "maxStackSize": 32,
     "materialDensity": 700,
     "resistance": 4,
-    "textures": {
-        "verticals": { "base": "game:block/metal/lantern/meteoriciron" },
-        "horizontals": {
-            "base": "game:block/metal/lantern/blackbronze",
-            "blendedoverlays": [
-                {
-                    "base": "game:block/metal/lantern/lining-gold",
-                    "blendMode": "Overlay"
-                }
-            ]
-        }
-    },
     "sideopaque": {
-        "all": true
+        "all": false,
+        "down": true
     },
     "sidesolid": {
-        "all": true
+        "all": false,
+        "down": true
     }
 }

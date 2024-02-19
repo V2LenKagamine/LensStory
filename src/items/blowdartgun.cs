@@ -48,7 +48,7 @@ namespace LensstoryMod
                 });
                 if(mushroom == null) { return; }
                 int olddura = GetRemainingDurability(slot.Itemstack);
-                if (olddura >=21) { return; }
+                if (olddura >= GetMaxDurability(slot.Itemstack)) { return; }
                 slot.Itemstack.Attributes.SetFloat("lastshroomdmg", mushroom.Itemstack.Collectible.NutritionProps.Health);
                 slot.Itemstack.Attributes.SetInt("durability", GetMaxDurability(slot.Itemstack)); ;
                 slot.MarkDirty();
@@ -63,7 +63,11 @@ namespace LensstoryMod
                 if (slot.Itemstack.Attributes["lastshroomdmg"]!=null)
                 {
                     float lastshroom = slot.Itemstack.Attributes.GetFloat("lastshroomdmg");
-                    damage += (float)Math.Clamp(Math.Ceiling(Math.Abs(lastshroom))/2f,1f,6.75f);
+                    damage += (float)Math.Clamp(Math.Ceiling(Math.Abs(lastshroom))/2f,1f,5f);
+                    if (Math.Abs(lastshroom) > 75)
+                    {
+                        damage += 3f;
+                    }
                 }
             }
             damage *= byEntity.Stats.GetBlended("rangedWeaponsDamage");
@@ -74,12 +78,13 @@ namespace LensstoryMod
 
             Vec3d pos = byEntity.ServerPos.XYZ.Add(0, byEntity.LocalEyePos.Y, 0);
             Vec3d aheadPos = pos.AheadCopy(1, byEntity.SidedPos.Pitch, byEntity.SidedPos.Yaw);
-            Vec3d velocity = (aheadPos - pos) * 1.2;
+            Vec3d velocity = (aheadPos - pos) * 1.25f;
 
             projectile.ServerPos.SetPos(byEntity.SidedPos.BehindCopy(0.21).XYZ.Add(0, byEntity.LocalEyePos.Y, 0));
             projectile.ServerPos.Motion.Set(velocity);
             projectile.Pos.SetFrom(projectile.ServerPos);
             projectile.World = byEntity.World;
+            projectile.SetRotation();
 
             byEntity.World.SpawnEntity(projectile);
 

@@ -1,4 +1,5 @@
-﻿using Vintagestory.API.Client;
+﻿using System;
+using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Config;
@@ -76,13 +77,13 @@ namespace LensstoryMod
 
         bool TryAttackEntity()
         {
-            if (World is IClientWorldAccessor || World.ElapsedMilliseconds <= msLaunch + 5) return false;
+            if (World is IClientWorldAccessor || World.ElapsedMilliseconds <= msLaunch + 250) return false;
 
             Cuboidd projectileBox = SelectionBox.ToDouble().Translate(ServerPos.X, ServerPos.Y, ServerPos.Z);
 
             Entity attacked = World.GetNearestEntity(ServerPos.XYZ,5f,5f, (e) => {
                 if(e.EntityId == this.EntityId || !e.IsInteractable) return false;
-                if (FiredBy != null && e.EntityId == FiredBy.EntityId && World.ElapsedMilliseconds - msLaunch < 5)
+                if (FiredBy != null && e.EntityId == FiredBy.EntityId && World.ElapsedMilliseconds - msLaunch < 250)
                 {
                     return false;
                 }
@@ -98,6 +99,26 @@ namespace LensstoryMod
                 return true;
             }
             return false;
+        }
+
+        public virtual void SetRotation()
+        {
+            EntityPos pos = SidedPos;
+
+            double speed = pos.Motion.Length();
+
+            if (speed > 0.01)
+            {
+                pos.Pitch = 0;
+                pos.Yaw =
+                    GameMath.PI + (float)Math.Atan2(pos.Motion.X / speed, pos.Motion.Z / speed)
+                    + GameMath.Cos((World.ElapsedMilliseconds - msLaunch) / 200f) * 0.03f
+                ;
+                pos.Roll =
+                    -(float)Math.Asin(GameMath.Clamp(-pos.Motion.Y / speed, -1, 1))
+                    + GameMath.Sin((World.ElapsedMilliseconds - msLaunch) / 200f) * 0.03f
+                ;
+            }
         }
         void DoAttackEntity(Entity entity)
         {

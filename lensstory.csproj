@@ -79,6 +79,7 @@
   <None Remove="assets\lensstory\blocktypes\regularblocks\concretefull.json" />
   <None Remove="assets\lensstory\blocktypes\regularblocks\concretepath.json" />
   <None Remove="assets\lensstory\blocktypes\regularblocks\concretestair.json" />
+  <None Remove="assets\lensstory\blocktypes\regularblocks\magmaforge.json" />
   <None Remove="assets\lensstory\blocktypes\regularblocks\shroomstrate.json" />
   <None Remove="assets\lensstory\blocktypes\regularblocks\spikestrip.json" />
   <None Remove="assets\lensstory\blocktypes\regularblocks\straightpipe.json" />
@@ -91,6 +92,7 @@
   <None Remove="assets\lensstory\compatibility\toolworks\recipes\grid\bonearrow.json" />
   <None Remove="assets\lensstory\config\handbook\30-lensstoryrednet.json" />
   <None Remove="assets\lensstory\entities\blowdart.json" />
+  <None Remove="assets\lensstory\entities\windslash.json" />
   <None Remove="assets\lensstory\itemtypes\armor\kingsboots.json" />
   <None Remove="assets\lensstory\itemtypes\armor\kingscrown.json" />
   <None Remove="assets\lensstory\itemtypes\armor\kingsgloves.json" />
@@ -98,6 +100,8 @@
   <None Remove="assets\lensstory\itemtypes\attunementwand.json" />
   <None Remove="assets\lensstory\itemtypes\consumable\potato.json" />
   <None Remove="assets\lensstory\itemtypes\consumable\sandwich.json" />
+  <None Remove="assets\lensstory\itemtypes\consumable\toxicconcoction.json" />
+  <None Remove="assets\lensstory\itemtypes\memery\realknife.json" />
   <None Remove="assets\lensstory\itemtypes\misc\concreteportion.json" />
   <None Remove="assets\lensstory\itemtypes\misc\hoardingsack.json" />
   <None Remove="assets\lensstory\itemtypes\misc\lencrystalore.json" />
@@ -117,6 +121,7 @@
   <None Remove="assets\lensstory\itemtypes\tools\blowdartgun.json" />
   <None Remove="assets\lensstory\itemtypes\tools\bonearrow.json" />
   <None Remove="assets\lensstory\itemtypes\tools\kingsword.json" />
+  <None Remove="assets\lensstory\itemtypes\tools\pruningscissors.json" />
   <None Remove="assets\lensstory\itemtypes\tools\sturdyarrow.json" />
   <None Remove="assets\lensstory\kingsswordproj.json" />
   <None Remove="assets\lensstory\patches\bloommaker.json" />
@@ -125,6 +130,7 @@
   <None Remove="assets\lensstory\patches\stew.json" />
   <None Remove="assets\lensstory\patches\tradershenanigans.json" />
   <None Remove="assets\lensstory\patches\traits.json" />
+  <None Remove="assets\lensstory\recipes\barrel\glass.json" />
   <None Remove="assets\lensstory\recipes\barrel\liquidconcrete.json" />
   <None Remove="assets\lensstory\recipes\grid\armor\kingsgear.json" />
   <None Remove="assets\lensstory\recipes\grid\attunementwand.json" />
@@ -141,6 +147,7 @@
   <None Remove="assets\lensstory\recipes\grid\blowdartgun.json" />
   <None Remove="assets\lensstory\recipes\grid\bonearrow.json" />
   <None Remove="assets\lensstory\recipes\grid\concretemix.json" />
+  <None Remove="assets\lensstory\recipes\grid\de-cobble.json" />
   <None Remove="assets\lensstory\recipes\grid\gemcut.json" />
   <None Remove="assets\lensstory\recipes\grid\hoardingsack.json" />
   <None Remove="assets\lensstory\recipes\grid\kingssword.json" />
@@ -153,9 +160,11 @@
   <None Remove="assets\lensstory\recipes\grid\machines\manarepair.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\reinforcedbloomery.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\rockmaker.json" />
+  <None Remove="assets\lensstory\recipes\grid\magmaforge.json" />
   <None Remove="assets\lensstory\recipes\grid\nuggetjank.json" />
   <None Remove="assets\lensstory\recipes\grid\parts.json" />
   <None Remove="assets\lensstory\recipes\grid\pipes.json" />
+  <None Remove="assets\lensstory\recipes\grid\pruningscissors.json" />
   <None Remove="assets\lensstory\recipes\grid\redstone\lever.json" />
   <None Remove="assets\lensstory\recipes\grid\redstone\redlamp.json" />
   <None Remove="assets\lensstory\recipes\grid\redstone\swappers.json" />
@@ -163,6 +172,7 @@
   <None Remove="assets\lensstory\recipes\grid\scrolls.json" />
   <None Remove="assets\lensstory\recipes\grid\sturdyarrow.json" />
   <None Remove="assets\lensstory\recipes\grid\sturdycasing.json" />
+  <None Remove="assets\lensstory\recipes\grid\toxicconcoction.json" />
   <None Remove="assets\lensstory\recipes\lenfood\sandwiches.json" />
   <None Remove="assets\lensstory\recipes\smithing\gears.json" />
   <None Remove="assets\lensstory\recipes\smithing\longrods.json" />
@@ -176,6 +186,7 @@
   <None Remove="assets\lensstory\shapes\item\ore\genericcrystal-poor.json" />
   <None Remove="assets\lensstory\shapes\item\ore\genericcrystal-rich.json" />
   <None Remove="assets\lensstory\shapes\item\powderedconcrete.json" />
+  <None Remove="assets\lensstory\sounds\slash.ogg" />
   <None Remove="assets\lensstory\textures\block\ore\platiniridium.png" />
   <None Remove="assets\lensstory\textures\item\parts\feather2.png" />
   <None Remove="assets\lensstory\worldgen\blockpatches\potato.json" />

@@ -1,0 +1,67 @@
+﻿{
+    "code": "underknife",
+    "class": "lensunderknife",
+    "creativeinventory": {
+        "lensstorytab": [ "*" ]
+    },
+    "tool": "knife",
+    "attributes": {
+        "handbook": {
+            "exclude": true
+        }
+    },
+    "attackpower": 9,
+    "attackrange": 1.75,
+    "shape": { "base": "item/realknife" },
+    "guiTransform": {
+        "rotate": false,
+        "translation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "rotation": {
+            "x": -158,
+            "y": 0,
+            "z": 48
+        },
+        "origin": {
+            "x": 0.48,
+            "y": 0.1,
+            "z": 0.5
+        },
+        "scale": 2.41
+    },
+    "groundTransform": {
+        "translation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "rotation": {
+            "x": -90,
+            "y": 0,
+            "z": 0
+        },
+        "origin": {
+            "x": 0.5,
+            "y": 0.5,
+            "z": 0.45
+        },
+        "scale": 3.6
+    },
+    "tpHandTransform": {
+        "translation": {
+            "x": -0.84,
+            "y": -0.11,
+            "z": -0.48
+        },
+        "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": -15
+        },
+        "scale": 1
+    }
+    
+}

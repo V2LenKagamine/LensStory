@@ -137,10 +137,8 @@ namespace LensstoryMod
             Working = tree.GetBool("powered");
             storedDura = tree.GetDouble("storeddura");
             contents = tree.GetItemstack("contents");
-            if(Api != null)
-            {
-                contents?.ResolveBlockOrItem(Api.World);
-            }
+            contents?.ResolveBlockOrItem(worldAccessForResolve) ;
+
         }
         public override void ToTreeAttributes(ITreeAttribute tree)
         {

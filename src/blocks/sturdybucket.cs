@@ -13,13 +13,6 @@ using Vintagestory.GameContent;
 
 namespace LensstoryMod
 {
-
-
-    /* This code brought to you by:
-     * https://github.com/SpearAndFang/primitive-survival/
-     * Because my ass was actually too fucking lazy to code this shit.
-     * I really hope this isn't fucking illegal or some shit.
-     */
     public class SturdyBucketBlock : BlockLiquidContainerTopOpened
     {
         public override float CapacityLitres => 10;

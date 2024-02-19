@@ -4,8 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Vintagestory.API.Common;
+using Vintagestory.API.Config;
 using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
+using Vintagestory.API.Util;
+using Vintagestory.GameContent;
+using Vintagestory.ServerMods;
 
 namespace LensstoryMod
 {
@@ -24,6 +28,7 @@ namespace LensstoryMod
     {
         public ItemStack? contents { get; private set; }
         private bool Powered;
+        private BlockPos[][] TowerPos;
         public bool Working
         {
             get => Powered; set
@@ -38,11 +43,69 @@ namespace LensstoryMod
                 };
             }
         }
+        public int oreCycles;
+        private bool oremode;
+        public bool OreGenMode
+        {
+            get
+            {
+                if(oremode != true) 
+                {
+                    oremode = Api.World.BlockAccessor.GetBlock(Pos.DownCopy()).FirstCodePart() == "mantle";
+                    return oremode;
+                }
+                return oremode;
+            }
+            set
+            {
+                oremode = value;
+            }
+        }
+        private float workdone;
+        public double LastTickTotalHours;
+        ProPickWorkSpace ppws;
+        PropickReading theOreReading;
+        int boostTowers;
         public override void Initialize(ICoreAPI api)
         {
             base.Initialize(api);
 
             contents?.ResolveBlockOrItem(api.World);
+
+            TowerPos = new BlockPos[][]
+            {
+                new BlockPos[]
+                {
+                    Pos.NorthCopy().West(),
+                    Pos.NorthCopy().East(),
+                    Pos.SouthCopy().West(),
+                    Pos.SouthCopy().East()
+                },
+                new BlockPos[]
+                {
+                    Pos.UpCopy().North().West(),
+                    Pos.UpCopy().North().East(),
+                    Pos.UpCopy().South().West(),
+                    Pos.UpCopy().South().East()
+                },
+                new BlockPos[]
+                {
+                    Pos.UpCopy(2).North().West(),
+                    Pos.UpCopy(2).North().East(),
+                    Pos.UpCopy(2).South().West(),
+                    Pos.UpCopy(2).South().East()
+                }
+            };
+
+            if (api.Side == EnumAppSide.Server)
+            {
+                ppws = ObjectCacheUtil.GetOrCreate(api, "propickworkspace", () =>
+                {
+                    ProPickWorkSpace ppws = new ProPickWorkSpace();
+                    ppws.OnLoaded(api);
+                    return ppws;
+                });
+            }
 
             RegisterGameTickListener(OnCommonTick, 1000);
 
@@ -50,13 +113,110 @@ namespace LensstoryMod
         }
         internal void OnCommonTick(float dt)
         {
-            if(Working && contents != null)
+            if (OreGenMode && Working && Api.World.BlockAccessor.GetBlock(Pos.UpCopy()).Id == 0)
             {
-                if (Api.World.BlockAccessor.GetBlock(Pos.Copy().Add(0,1,0)).Id == 0)
+                DoOreGeneration();
+            }
+            else if (Working && contents != null)
+            {
+                if (Api.World.BlockAccessor.GetBlock(Pos.Copy().Add(0, 1, 0)).Id == 0)
                 {
-                    Api.World.BlockAccessor.SetBlock(contents.Id,Pos.Copy().ToVec3d().Add(0, 1, 0).AsBlockPos);
+                    Api.World.BlockAccessor.SetBlock(contents.Id, Pos.Copy().ToVec3d().Add(0, 1, 0).AsBlockPos);
                 }
             }
+        }
+
+        internal void DoOreGeneration()
+        {
+            workdone = (float)((Api.World.Calendar.TotalHours - LastTickTotalHours) * 100);
+            if (workdone > 1)
+            {
+                if(oreCycles >= 4)
+                {
+                    boostTowers = CheckBoosts();
+                    oreCycles = 0;
+                }
+                
+                if(theOreReading == null)
+                {
+                    theOreReading = GetTheReading();
+                }
+
+                KeyValuePair<string,OreReading> chosen = theOreReading.OreReadings.ElementAt(Api.World.Rand.Next(0, theOreReading.OreReadings.Count));
+
+                if(Api.World.Rand.Next(100) <= chosen.Value.PartsPerThousand * ((boostTowers / 3f) + 1f ))
+                {
+                    Api.World.BlockAccessor.SetBlock(Api.World.GetBlock(new AssetLocation(chosen.Key)).Id,Pos.UpCopy());
+                }
+
+                oreCycles++;
+            }
+            LastTickTotalHours = Api.World.Calendar.TotalHours;
+        }
+
+        internal PropickReading GetTheReading()
+        {
+            DepositVariant[] deposits = Api.ModLoader.GetModSystem<GenDeposits>()?.Deposits;
+            if (deposits == null) return null;
+
+            IBlockAccessor blockAccess = Api.World.BlockAccessor;
+            int regsize = blockAccess.RegionSize;
+            IMapRegion reg = Api.World.BlockAccessor.GetMapRegion(Pos.X / regsize, Pos.Z / regsize);
+            int lx = Pos.X % regsize;
+            int lz = Pos.Z % regsize;
+
+            Pos = Pos.Copy();
+            Pos.Y = Api.World.BlockAccessor.GetTerrainMapheightAt(Pos);
+            int[] blockColumn = ppws.GetRockColumn(Pos.X, Pos.Z);
+
+            PropickReading readings = new PropickReading();
+            readings.Position = new Vec3d(Pos.X, Pos.Y, Pos.Z);
+
+            foreach (var val in reg.OreMaps)
+            {
+                IntDataMap2D map = val.Value;
+                int noiseSize = map.InnerSize;
+
+                float posXInRegionOre = (float)lx / regsize * noiseSize;
+                float posZInRegionOre = (float)lz / regsize * noiseSize;
+
+                int oreDist = map.GetUnpaddedColorLerped(posXInRegionOre, posZInRegionOre);
+
+                double ppt;
+                double totalFactor;
+
+                if (!ppws.depositsByCode.ContainsKey(val.Key))
+                {
+                    continue;
+                }
+
+                ppws.depositsByCode[val.Key].GetPropickReading(Pos, oreDist, blockColumn, out ppt, out totalFactor);
+
+                if (totalFactor > 0)
+                {
+                    var reading = new OreReading();
+                    reading.TotalFactor = totalFactor;
+                    reading.PartsPerThousand = ppt;
+                    readings.OreReadings[val.Key] = reading;
+                }
+            }
+
+            return readings;
+        }
+    
+
+        internal int CheckBoosts()
+        {
+            var boost = 0;
+            for (int i = 0; i < TowerPos.Length; i++)
+            {
+                foreach (var block in TowerPos[i])
+                {
+                    if (Api.World.BlockAccessor.GetBlock(block).FirstCodePart() != "metalblock") { return boost; }
+                }
+                boost++;
+            }
+            return boost;
         }
         internal bool OnPlayerInteract(IWorldAccessor world,IPlayer player,BlockSelection blocksel) 
         {
@@ -119,16 +279,17 @@ namespace LensstoryMod
             base.FromTreeAttributes(tree, worldAccessForResolve);
             contents = tree.GetItemstack("contents");
             Working = tree.GetBool("working");
-            if(Api != null)
-            {
-                contents?.ResolveBlockOrItem(Api.World);
-            }
+            LastTickTotalHours = tree.GetFloat("lasttick");
+            workdone = tree.GetFloat("workdone");
+            contents?.ResolveBlockOrItem(worldAccessForResolve);
         }
         public override void ToTreeAttributes(ITreeAttribute tree)
         {
             base.ToTreeAttributes(tree);
             tree.SetItemstack("contents", contents);
             tree.SetBool("working", Powered);
+            tree.SetDouble("lasttick",LastTickTotalHours);
+            tree.SetFloat("workdone",workdone);
         }
 
     }
@@ -141,6 +302,10 @@ namespace LensstoryMod
         {
             if (Blockentity is RockmakerBE entity)
             {
+                if(entity.OreGenMode)
+                {
+                    return 10;
+                }
                 if (entity.contents == null)
                 {
                     return 0;
@@ -191,7 +356,7 @@ namespace LensstoryMod
         {
             if (Blockentity is RockmakerBE entity) 
             {
-                entity.Working = mana == ToVoid();
+                entity.Working = mana >= ToVoid();
             }
         }
     }

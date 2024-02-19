@@ -1,13 +1,15 @@
 ﻿{
     "code": "blockrotator",
-    "entityclass": "lensrotator",
+    "class": "lensswapperblock",
+    "entityclass": "lensswapper",
+    "drawtype": "json",
     "behaviors": [
         {
             "name": "LenBlockCoverWithDirection"
         }
     ],
     "entityBehaviors": [
-        { "name": "lensrotatorbehavior" },
+        { "name": "lensswapperbehavior" },
         { "name": "Redstone" }
     ],
     "variantgroups": [
@@ -37,7 +39,6 @@
         "lensstorytab": [ "*-north-down" ]
     },
     "shape": { "base": "game:block/basic/cube" },
-    "drawtype": "cube",
     "blockmaterial": "Metal",
     "replaceable": 900,
     "resistance": 4,

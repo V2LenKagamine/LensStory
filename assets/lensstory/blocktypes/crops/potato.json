@@ -67,7 +67,7 @@
                 "type": "item",
                 "code": "vegetable-potato",
                 "quantity": {
-                    "avg": 20,
+                    "avg": 10,
                     "var": 6
                 }
             }
@@ -85,7 +85,7 @@
         "requiredNutrient": "K",
         "nutrientConsumption": 50,
         "growthStages": 5,
-        "totalGrowthMonths": 4.0
+        "totalGrowthMonths": 2.0
     },
     "collisionbox": null,
     "selectionbox": {

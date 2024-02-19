@@ -1,7 +1,9 @@
 ﻿{
     "code": "blockswapper",
+    "class": "lensswapperblock",
     "entityclass": "lensswapper",
     "behaviors": [ { "name": "Pillar" } ],
+    "drawtype": "json",
     "entityBehaviors": [
         { "name": "lensswapperbehavior" },
         { "name": "Redstone" }
@@ -17,7 +19,6 @@
         "lensstorytab": [ "*-ud" ]
     },
     "shape": { "base": "game:block/basic/cube" },
-    "drawtype": "cube",
     "blockmaterial": "Metal",
     "replaceable": 900,
     "resistance": 4,

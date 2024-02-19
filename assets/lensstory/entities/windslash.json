@@ -1,0 +1,31 @@
+﻿{
+    "code": "windslashprojectile",
+    "class": "lenssimpleprojectile",
+    "hitboxSize": {
+        "x": 1.25,
+        "y": 0.25,
+        "z": 1.25
+    },
+    "client": {
+        "size": 1,
+        "renderer": "Shape",
+        "shapeByType": {
+            "*": { "base": "entity/windslash" }
+        },
+        "behaviors": [
+            { "code": "passivephysics" },
+            { "code": "interpolateposition" }
+        ]
+    },
+    "server": {
+        "behaviors": [
+            { "code": "passivephysics" },
+            {
+                "code": "despawn",
+                "minSeconds": 5
+            }
+        ]
+    },
+    "sounds": {
+    }
+}

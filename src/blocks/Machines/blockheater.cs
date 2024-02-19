@@ -160,14 +160,14 @@ namespace LensstoryMod
         {
             float diff = Math.Abs(fromTemp - toTemp);
             diff *= GameMath.Sqrt(diff);
-            dt += dt * (diff / 240);
+            dt += dt * (diff / 45);
             if (diff < dt)
             {
                 return toTemp;
             }
             if (fromTemp > toTemp)
             {
-                dt = -dt / 1.25f;
+                dt = -dt / 5f;
             }
             if (Math.Abs(fromTemp - toTemp) < 1)
             {
@@ -186,7 +186,7 @@ namespace LensstoryMod
             if (burning || !CanIgnite()) { return false; }
 
             burning = true;
-            fuelleft = FuelSlot.Itemstack.Collectible.CombustibleProps.BurnDuration * FuelSlot.Itemstack.StackSize * 1.25f;
+            fuelleft = FuelSlot.Itemstack.Collectible.CombustibleProps.BurnDuration * FuelSlot.Itemstack.StackSize;
             MarkDirty();
             return true;
 

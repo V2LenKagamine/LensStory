@@ -126,9 +126,6 @@
             "price": {
                 "avg": 14,
                 "var": 6
-            },
-            "attributes": {
-                "potential": "medium"
             }
         }
     },
@@ -147,9 +144,6 @@
             "price": {
                 "avg": 14,
                 "var": 6
-            },
-            "attributes": {
-                "potential": "medium"
             }
         }
     },
@@ -168,9 +162,6 @@
             "price": {
                 "avg": 14,
                 "var": 6
-            },
-            "attributes": {
-                "potential": "medium"
             }
         }
     },
@@ -189,9 +180,6 @@
             "price": {
                 "avg": 14,
                 "var": 6
-            },
-            "attributes": {
-                "potential": "medium"
             }
         }
     },
@@ -210,9 +198,6 @@
             "price": {
                 "avg": 14,
                 "var": 6
-            },
-            "attributes": {
-                "potential": "medium"
             }
         }
     },
@@ -231,9 +216,6 @@
             "price": {
                 "avg": 14,
                 "var": 6
-            },
-            "attributes": {
-                "potential": "medium"
             }
         }
     },
@@ -252,9 +234,6 @@
             "price": {
                 "avg": 14,
                 "var": 6
-            },
-            "attributes": {
-                "potential": "medium"
             }
         }
     },
@@ -273,9 +252,6 @@
             "price": {
                 "avg": 14,
                 "var": 6
-            },
-            "attributes": {
-                "potential": "medium"
             }
         }
     }

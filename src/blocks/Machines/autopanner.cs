@@ -28,28 +28,28 @@ namespace LensstoryMod
 
     public class AutoPannerBE : BlockEntity
     {
-
-        Dictionary<string, PanningDrop[]> dropsbymat;
         private bool Powered;
 
         public ItemStack? contents;
         public bool Working
         {
-            get => this.Powered; set
+            get => Powered; set
             {
-                if (this.Powered != value)
+                if (Powered != value)
                 {
-                    if (value && !this.Powered)
+                    if (value && !Powered)
                     {
-                        this.MarkDirty();
+                        MarkDirty();
                     }
-                    this.Powered = value;
+                    Powered = value;
                 };
             }
         }
         private double ticker;
 
         private double LastTickTotalHours;
+
+        public Dictionary<string, PanningDrop[]> sluicedrops;
 
         public override void Initialize(ICoreAPI api)
         {
@@ -59,17 +59,7 @@ namespace LensstoryMod
 
             if (pan?.Attributes?["panningDrops"]?.Exists == true)
             {
-                dropsbymat = pan.Attributes["panningDrops"].AsObject<Dictionary<string, PanningDrop[]>>();
-
-                foreach (var drops in dropsbymat.Values)
-                {
-                    for (int i = 0; i < drops.Length; i++)
-                    {
-                        if (drops[i].Code.Path.Contains("{rocktype}")) continue;
-                        drops[i].Resolve(api.World, "panningdrop");
-                    }
-                }
-
+                sluicedrops = pan.Attributes["panningDrops"].AsObject<Dictionary<string, PanningDrop[]>>();
             }
 
             RegisterGameTickListener(OnCommonTick, 1000);
@@ -79,12 +69,12 @@ namespace LensstoryMod
 
         private void OnCommonTick(float dt)
         {
-            if (Working && Api.World.Side == EnumAppSide.Server)
+            if (Powered && Api.World.Side == EnumAppSide.Server)
             {
                 var hourspast = Api.World.Calendar.TotalHours - LastTickTotalHours;
                 if(contents != null)
                 {
-                    ticker += hourspast * 25; 
+                    ticker += hourspast * 50; 
                     if (ticker >= 1)
                     {
                         int workdone = (int)Math.Floor(ticker);
@@ -93,11 +83,13 @@ namespace LensstoryMod
                             if (Api.World.Rand.Next(100) <= 25)
                             {
                                 PanningDrop[] drops = null;
-                                foreach (var val in dropsbymat.Keys) //TODO, ensure this works.
+                                if(contents == null) { break; }
+                                string fromblock = contents.Block.Code.ToShortString();
+                                foreach (var val in sluicedrops.Keys) //TODO, ensure this works.
                                 {
-                                    if (WildcardUtil.Match(val, contents.Collectible.Code.Path))
+                                    if (WildcardUtil.Match(val, fromblock))
                                     {
-                                        drops = dropsbymat[val];
+                                        drops = sluicedrops[val];
                                     }
                                 }
                                 if(drops == null)
@@ -116,11 +108,16 @@ namespace LensstoryMod
                                     float val = drop.Chance.nextFloat() * extraMul;
 
 
-                                    ItemStack stack = drop.ResolvedItemstack;
+                                    ItemStack stack;
 
                                     if (drops[f].Code.Path.Contains("{rocktype}"))
                                     {
                                         stack = Resolve(drops[i].Type, drops[f].Code.Path.Replace("{rocktype}", rocktype));
+                                    }
+                                    else
+                                    {
+                                        drop.Resolve(Api.World, "AutoPanner", false);
+                                        stack = drop.ResolvedItemstack;
                                     }
 
                                     if (rnd < val && stack != null)
@@ -131,7 +128,7 @@ namespace LensstoryMod
                                     }
                                 }
                             }
-                            if (Api.World.Rand.Next(100) <= 10)
+                            if (Api.World.Rand.Next(40) <= 1)
                             {
                                 contents.StackSize--;
                                 if(contents.StackSize <=0)
@@ -204,7 +201,7 @@ namespace LensstoryMod
                     slot.MarkDirty();
                     contents.StackSize++;
                     MarkDirty();
-                    
+                    return true;
                 }
             }
             else if (player.Entity.Controls.ShiftKey && contents != null)
@@ -271,7 +268,7 @@ namespace LensstoryMod
         {
             if (this.Blockentity is AutoPannerBE entity)
             {
-                entity.Working = mana == ToVoid();
+                entity.Working = mana >= ToVoid();
             }
         }
 

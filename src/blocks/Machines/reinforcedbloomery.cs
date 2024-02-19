@@ -25,7 +25,7 @@ namespace LensstoryMod
             if (api.Side != EnumAppSide.Client) return;
             ICoreClientAPI capi = api as ICoreClientAPI;
 
-            interactions = ObjectCacheUtil.GetOrCreate(api, "bloomeryBlockInteractions", () =>
+            interactions = ObjectCacheUtil.GetOrCreate(api, "reinfbloomeryBlockInteractions", () =>
             {
                 List<ItemStack> heatableStacklist = new List<ItemStack>();
                 List<ItemStack> fuelStacklist = new List<ItemStack>();
@@ -52,7 +52,7 @@ namespace LensstoryMod
                 return new WorldInteraction[] {
                     new WorldInteraction()
                     {
-                        ActionLangCode = "game:blockhelp-bloomery-heatable",
+                        ActionLangCode = "Insert Burnable",
                         HotKeyCode = null,
                         MouseButton = EnumMouseButton.Right,
                         Itemstacks = heatableStacklist.ToArray(),
@@ -60,7 +60,7 @@ namespace LensstoryMod
                     },
                     new WorldInteraction()
                     {
-                        ActionLangCode = "game:blockhelp-bloomery-heatablex4",
+                        ActionLangCode = "Insert Burnable x5",
                         HotKeyCode = "ctrl",
                         MouseButton = EnumMouseButton.Right,
                         Itemstacks = heatableStacklist.ToArray(),
@@ -68,7 +68,7 @@ namespace LensstoryMod
                     },
                     new WorldInteraction()
                     {
-                        ActionLangCode = "game:blockhelp-bloomery-fuel",
+                        ActionLangCode = "Insert Fuel",
                         HotKeyCode = null,
                         MouseButton = EnumMouseButton.Right,
                         Itemstacks = fuelStacklist.ToArray(),
@@ -76,7 +76,7 @@ namespace LensstoryMod
                     },
                     new WorldInteraction()
                     {
-                        ActionLangCode = "game:blockhelp-bloomery-ignite",
+                        ActionLangCode = "Ignite",
                         HotKeyCode = "shift",
                         MouseButton = EnumMouseButton.Right,
                         Itemstacks = canIgniteStacks.ToArray(),
@@ -131,6 +131,10 @@ namespace LensstoryMod
         public EnumIgniteState OnTryIgniteStack(EntityAgent byEntity, BlockPos pos, ItemSlot slot, float secondsIgniting)
         {
             return EnumIgniteState.NotIgnitable;
+        }
+        public override WorldInteraction[] GetPlacedBlockInteractionHelp(IWorldAccessor world, BlockSelection selection, IPlayer forPlayer)
+        {
+            return interactions.Append(base.GetPlacedBlockInteractionHelp(world, selection, forPlayer));
         }
     }
 
@@ -261,7 +265,7 @@ namespace LensstoryMod
             if(coll.CombustibleProps?.SmeltedStack != null && coll.CombustibleProps.MeltingPoint < 2000 && coll.CombustibleProps.MeltingPoint >= 1000)
             {
                 if(InputSlot.StackSize + amt > InputCap) { return false; }
-                if(!InputSlot.Empty && !FuelSlot.Itemstack.Equals(Api.World,stacc,GlobalConstants.IgnoredStackAttributes)) { return false; }
+                if(!InputSlot.Empty && FuelSlot.Itemstack?.Equals(Api.World,stacc,GlobalConstants.IgnoredStackAttributes) != true) { return false; }
                 return true;
             }
             if(coll.CombustibleProps?.BurnTemperature >=1200 && coll.CombustibleProps.BurnDuration > 30)

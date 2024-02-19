@@ -56,6 +56,8 @@ namespace LensstoryMod {
             api.RegisterItemClass("lenssimplenugget", typeof(SimpleItemNugget));
             api.RegisterItemClass("lenssimplebloom", typeof(GenericOreBloom));
 
+            api.RegisterItemClass("lenspruningscissors", typeof(PruningScissors));
+
             api.RegisterItemClass("lenssimplefood",typeof(SimpleFoodItem));
             api.RegisterBlockClass("lenstinkertableblock", typeof(TinkeringTable));
             api.RegisterBlockEntityClass("lenstinkertable", typeof(TinkeringTableBe));
@@ -71,11 +73,8 @@ namespace LensstoryMod {
             api.RegisterBlockClass("lensheaterblock", typeof(HeaterBlock));
             api.RegisterBlockEntityClass("lensheater",typeof(HeaterBE));
 
-            api.RegisterBlockEntityClass("lensswapper", typeof(SwapperBE));
-            api.RegisterBlockEntityBehaviorClass("lensswapperbehavior", typeof(SwapperBhv));
-
-            api.RegisterBlockEntityClass("lensrotator", typeof(SwapperDiagBE));
-            api.RegisterBlockEntityBehaviorClass("lensrotatorbehavior", typeof(SwapperDiagBhv));
+            api.RegisterBlockClass("lensmagmaforgeblock", typeof(MagmaForgeBlock));
+            api.RegisterBlockEntityClass("lensmagmaforge",typeof (MagmaForgeBe));
 
             api.RegisterBlockClass("lensshroomstrateblock", typeof(MushroomSubBlock));
             api.RegisterBlockEntityClass("lensshroomstrate", typeof(MushroomSubBE));
@@ -87,6 +86,10 @@ namespace LensstoryMod {
 
             api.RegisterBlockEntityClass("lenssimpletoggle", typeof(SimpleToggleBlockBe));
             api.RegisterBlockEntityBehaviorClass("lenssimpletogglebehavior", typeof(SimpleToggleBlockBhv));
+
+            api.RegisterItemClass("lensunderknife", typeof(RealKnife));
+
+            RegisterTrio(api, "swapper", typeof(SwapperBlock), typeof(SwapperBE), typeof(SwapperBhv));
 
             RegisterTrio(api,"creativemana",typeof(CreativeMana),typeof(CreativeManaBE),typeof(CreativeManaBhv));
 

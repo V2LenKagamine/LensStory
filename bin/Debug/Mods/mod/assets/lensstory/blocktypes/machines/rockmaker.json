@@ -1,7 +1,6 @@
 {
     "code": "rockmaker",
-    "shape": { "base": "game:block/basic/cube" },
-    "drawtype": "cube",
+    "shape": { "base": "block/machines/rockmaker" },
     "creativeinventory": {
         "general": [ "*" ],
         "lensstorytab": [ "*" ]
@@ -29,18 +28,6 @@
     "maxStackSize": 32,
     "materialDensity": 700,
     "resistance": 4,
-    "textures": {
-        "verticals": { "base": "game:block/metal/lantern/steel" },
-        "horizontals": {
-            "base": "game:block/metal/plate/titanium",
-            "blendedoverlays": [
-                {
-                    "base": "game:block/metal/lantern/silver-deco",
-                    "blendMode": "Overlay"
-                }
-            ]
-        }
-    },
     "sideopaque": {
         "all": true
     },

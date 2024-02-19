@@ -169,6 +169,17 @@
     "item-kingsgloves": "King's Gloves",
     "item-kingsshirt": "King's Shirt",
 
+    "item-pruningscissors-copper": "Copper Pruning Scissors",
+    "item-pruningscissors-iron": "Iron Pruning Scissors",
+    "item-pruningscissors-meteoriciron": "Meteoric Iron Pruning Scissors",
+    "item-pruningscissors-steel": "Steel Pruning Scissors",
+    "item-pruningscissors-bismuthbronze": "Bismuth Bronze Pruning Scissors",
+    "item-pruningscissors-blackbronze": "Black Bronze Pruning Scissors",
+    "item-pruningscissors-tinbronze": "Tin Bronze Pruning Scissors",
+    "item-pruningscissors-gold": "Golden Pruning Scissors",
+    "item-pruningscissors-silver": "Silver Pruning Scissors",
+    "itemdesc-pruningscissors-*": "Break branchy or regular leaves to guarentee a sapling drop.",
+
     "block-sturdycasing": "Sturdy Metal Casing",
     "block-tinkeringtable": "Preparation Station",
     "blockdesc-tinkeringtable": "Craft with a log,saw,and chisel.",
@@ -211,6 +222,7 @@
     "block-heaterblock-*": "Oven Heater",
 
     "block-sturdybucket-*": "Sturdy Bucket",
+    "block-magmaforge": "Magmatic Forge",
 
     "block-reinforcedbloomery-*": "Reinforced Bloomery",
 
@@ -222,10 +234,16 @@
     "game:meal-ingredient-stew-*-vegetable-potato": "potato",
     "game:meal-ingredient-soup-*-vegetable-potato": "potato",
     "lensstory:recipeingredient-item-vegetable-potato": "potato",
+    "lensstory:recipeingredient-item-vegetable-potato-insturmentalcase": "potato",
     "game:recipeingredient-item-ciderportion-*": "mulled cider",
 
+    "item-underknife": "Real Knife",
+    "itemdesc-underknife": "Fills you with <font color=\"#ff8484\">DETERMINATION</font>,hold right click to toggle slash attacks.",
+
     "item-blowdart-tube": "Blow-Dart Tube",
-    "itemdesc-blowdart-tube": "Can be reloaded by sneaking with deadly mushrooms, or auto-reloads with them when out of ammo.",
+    "itemdesc-blowdart-tube": "Can be reloaded by sneaking with anything poisonous, or auto-reloads with them when out of ammo.",
+    "item-toxic-concoction": "Toxic Concoction",
+    "itemdesc-toxic-concoction": "Makes great blowdart ammo, or a method of Easy-Peasy-Euthanasia!",
 
     "item-redwand": "Red Attuner",
     "itemdesc-redwand": "Shift R-click in air to select a name, then R-click things to attune their input, and Shift R-click to attune their output.",
@@ -233,6 +251,8 @@
     "blockdesc-redlever-*": "A simple lever, for toggling things. Input Currently Unused.",
     "block-blockswapper-*": "Block Transposer",
     "block-blockrotator-*-*": "Diagonal Block Transposer",
+    "blockdesc-blockswapper-*": "Swaps the two blocks of the indicated faces. Can be camoflaged by clicking with a block, or removed with Shift + empty hand.",
+    "blockdesc-blockrotator-*-*": "Swaps the two blocks of the indicated faces. Can be camoflaged by clicking with a block, or removed with Shift + empty hand.",
     "block-redlamp-*": "Redlamp",
     "block-redlamppipe-*": "Redlamp",
     "blockdesc-redlamp-*": "A lamp that can be turned off and on.",
@@ -272,6 +292,9 @@
     "game:characterclass-len-scrollmaker": "Scroll-Maker",
     "game:characterdesc-len-scrollmaker": "<font color=\"#99c9f9\"><i>What makes you tick, hmm?</i></font><br><br>Scroll makers were once feared for their knowledge of the world and its workings, but most vanished shortly before some unknown event. They start with a few scroll-making materials.",
 
+
+    "game:handbook-block-magmaforge-title": "Usage:",
+    "game:handbook-block-magmaforge-text": "Place in lava to fuel, otherwise, works just like a vanilla forge!",
 
     "game:handbook-block-woodbeehive-title": "Usage:",
     "game:handbook-block-woodbeehive-text": "Place in a nice,flowery place, optionally a greenhouse, then add bees using a skep. You can relocate the bees using an enpty skep. You can harvest the honeycombs from the hive by using a knife.",

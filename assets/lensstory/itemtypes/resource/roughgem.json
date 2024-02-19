@@ -1,6 +1,7 @@
 ﻿{
     "code": "roughgem",
     "shape": { "base": "item/ore/genericcrystal-bountiful" },
+    "maxstacksize": 16,
     "creativeinventory": {
         "general": [ "*" ],
         "items": [ "*" ],

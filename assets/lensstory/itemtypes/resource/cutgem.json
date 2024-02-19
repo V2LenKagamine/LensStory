@@ -2,6 +2,7 @@
 
     "code": "cutgem",
     "shape": { "base": "item/cutgem" },
+    "maxstacksize": 16,
     "creativeinventory": {
         "general": [ "*" ],
         "items": [ "*" ],

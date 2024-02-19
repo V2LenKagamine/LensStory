@@ -1,7 +1,6 @@
 {
     "code": "burnerator",
-    "shape": { "base": "game:block/basic/cube" },
-    "drawtype": "cube",
+    "shape": { "base": "block/machines/burnerator" },
     "creativeinventory": {
         "general": [ "*" ],
         "lensstorytab": [ "*" ]
@@ -29,22 +28,13 @@
     "maxStackSize": 32,
     "materialDensity": 700,
     "resistance": 4,
-    "textures": {
-        "verticals": { "base": "game:block/metal/lantern/rust" },
-        "horizontals": {
-            "base": "game:block/metal/lantern/blackbronze",
-            "blendedoverlays": [
-                {
-                    "base": "game:block/metal/lantern/copper-deco",
-                    "blendMode": "Overlay"
-                }
-            ]
-        }
-    },
     "sideopaque": {
-        "all": true
+        "all": false,
+        "down":true
+
     },
     "sidesolid": {
-        "all": true
+        "all": true,
+        "up": false
     }
 }

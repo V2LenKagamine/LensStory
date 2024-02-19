@@ -1,7 +1,6 @@
 {
     "code": "autopanner",
-    "shape": { "base": "game:block/basic/cube" },
-    "drawtype": "cube",
+    "shape": { "base": "block/machines/autopanner" },
     "creativeinventory": {
         "general": [ "*" ],
         "lensstorytab": [ "*" ]
@@ -26,14 +25,11 @@
             "include": true
         }
     },
-    "textures": {
-        "verticals": { "base": "game:block/metal/sheet/iron1" },
-        "horizontals": {"base": "game:block/metal/lantern/brass","blendedoverlays": [{"base": "game:block/metal/lantern/steel-deco","blendMode": "Overlay"}]}
-    },
     "sideopaque": {
-        "all": true
+        "all": false,
+        "up": true
     },
     "sidesolid": {
-        "all": true
+        "all": false
     }
 }

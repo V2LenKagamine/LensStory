@@ -53,6 +53,8 @@ namespace LensstoryMod
             base.Initialize(api);
 
             RegisterGameTickListener(OnCommonTick, 1000);
+
+            theMana.begin();
         }
 
         private void OnCommonTick(float dt)
