@@ -105,8 +105,17 @@ namespace LensstoryMod {
 
             RegisterTrio(api, "kineticmpgen", typeof(KineticpotentianatorBlock), typeof(KineticpotentianatorBe), typeof(KineticpotentianatorBhv));
 
+            RegisterTrio(api, "icebox", typeof(RefridgerationUnitBlock), typeof(RefridgerationUnitBE), typeof(RefridgerationUnitBhv));
+
             api.RegisterBlockEntityClass("lensmagmanator", typeof(MagmanatorBe));
             api.RegisterBlockEntityBehaviorClass("lensmagmanatorbehavior", typeof(MagmanatorBhv));
+
+            api.RegisterBlockClass("lensredtransmission", typeof(RedstoneTransmissionBlock));
+            api.RegisterBlockEntityBehaviorClass("lensredtransmissionbehavior", typeof(RedstoneTransmissionBhv));
+
+            api.RegisterBlockClass("lenstempgiftblock", typeof(TemporalGiftBlock));
+            api.RegisterBlockEntityClass("lenstempgift", typeof(TemporalGiftBe));
+            api.RegisterItemClass("lenstempgiftjank", typeof(TemporalGiftItem));
 
             api.RegisterItemClass("lenskingssword", typeof(KingsSword));
             api.RegisterItemClass("lensblowdartgun", typeof(Blowdartgun));
@@ -187,7 +196,7 @@ namespace LensstoryMod {
 
         private void OnManaMessageS(IPlayer from, ManaWandMessage packet) 
         {
-            if (from.InventoryManager.ActiveHotbarSlot.Itemstack.Item.Code == AssetLocation.Create("lensstory:attunementwand"))
+            if (from.InventoryManager.ActiveHotbarSlot.Itemstack?.Item?.Code == AssetLocation.Create("lensstory:attunementwand"))
             {
                 from.InventoryManager.ActiveHotbarSlot.Itemstack.Attributes.SetInt("channel", packet.message);
                 from.InventoryManager.ActiveHotbarSlot.MarkDirty();

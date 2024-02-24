@@ -29,7 +29,8 @@
     "materialDensity": 700,
     "resistance": 4,
     "sideopaque": {
-        "all": true
+        "all": true,
+        "horizontals": false
     },
     "sidesolid": {
         "all": true

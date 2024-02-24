@@ -64,6 +64,7 @@
   <None Remove="assets\lensstory\blocktypes\crops\potato.json" />
   <None Remove="assets\lensstory\blocktypes\liquids\liquidconcrete.json" />
   <None Remove="assets\lensstory\blocktypes\machines\heater.json" />
+  <None Remove="assets\lensstory\blocktypes\machines\icebox.json" />
   <None Remove="assets\lensstory\blocktypes\machines\kineticmpgen.json" />
   <None Remove="assets\lensstory\blocktypes\machines\magmanator.json" />
   <None Remove="assets\lensstory\blocktypes\machines\reinforcedbloomery.json" />
@@ -73,6 +74,7 @@
   <None Remove="assets\lensstory\blocktypes\redstone\lever.json" />
   <None Remove="assets\lensstory\blocktypes\redstone\redlamp-pipe.json" />
   <None Remove="assets\lensstory\blocktypes\redstone\redlamp.json" />
+  <None Remove="assets\lensstory\blocktypes\redstone\redtransmission.json" />
   <None Remove="assets\lensstory\blocktypes\redstone\swapper.json" />
   <None Remove="assets\lensstory\blocktypes\redstone\swapperalt.json" />
   <None Remove="assets\lensstory\blocktypes\regularblocks\clearglass.json" />
@@ -100,6 +102,7 @@
   <None Remove="assets\lensstory\itemtypes\attunementwand.json" />
   <None Remove="assets\lensstory\itemtypes\consumable\potato.json" />
   <None Remove="assets\lensstory\itemtypes\consumable\sandwich.json" />
+  <None Remove="assets\lensstory\itemtypes\consumable\temporaljank.json" />
   <None Remove="assets\lensstory\itemtypes\consumable\toxicconcoction.json" />
   <None Remove="assets\lensstory\itemtypes\memery\realknife.json" />
   <None Remove="assets\lensstory\itemtypes\misc\concreteportion.json" />
@@ -126,6 +129,22 @@
   <None Remove="assets\lensstory\kingsswordproj.json" />
   <None Remove="assets\lensstory\patches\bloommaker.json" />
   <None Remove="assets\lensstory\patches\classes.json" />
+  <None Remove="assets\lensstory\patches\crops\survival-blocktypes-plant-crop-amaranth.json" />
+  <None Remove="assets\lensstory\patches\crops\survival-blocktypes-plant-crop-cabbage.json" />
+  <None Remove="assets\lensstory\patches\crops\survival-blocktypes-plant-crop-carrot.json" />
+  <None Remove="assets\lensstory\patches\crops\survival-blocktypes-plant-crop-cassava.json" />
+  <None Remove="assets\lensstory\patches\crops\survival-blocktypes-plant-crop-flax.json" />
+  <None Remove="assets\lensstory\patches\crops\survival-blocktypes-plant-crop-onion.json" />
+  <None Remove="assets\lensstory\patches\crops\survival-blocktypes-plant-crop-parsnip.json" />
+  <None Remove="assets\lensstory\patches\crops\survival-blocktypes-plant-crop-peanut.json" />
+  <None Remove="assets\lensstory\patches\crops\survival-blocktypes-plant-crop-pineapple.json" />
+  <None Remove="assets\lensstory\patches\crops\survival-blocktypes-plant-crop-rice.json" />
+  <None Remove="assets\lensstory\patches\crops\survival-blocktypes-plant-crop-rye.json" />
+  <None Remove="assets\lensstory\patches\crops\survival-blocktypes-plant-crop-soybean.json" />
+  <None Remove="assets\lensstory\patches\crops\survival-blocktypes-plant-crop-spelt.json" />
+  <None Remove="assets\lensstory\patches\crops\survival-blocktypes-plant-crop-sunflower.json" />
+  <None Remove="assets\lensstory\patches\crops\survival-blocktypes-plant-crop-turnip.json" />
+  <None Remove="assets\lensstory\patches\crops\survival-blocktypes-plant-fruittreebranch.json" />
   <None Remove="assets\lensstory\patches\soups.json" />
   <None Remove="assets\lensstory\patches\stew.json" />
   <None Remove="assets\lensstory\patches\tradershenanigans.json" />
@@ -140,6 +159,7 @@
   <None Remove="assets\lensstory\recipes\grid\blocks\concretestairs.json" />
   <None Remove="assets\lensstory\recipes\grid\blocks\concretestairsalt.json" />
   <None Remove="assets\lensstory\recipes\grid\blocks\frame.json" />
+  <None Remove="assets\lensstory\recipes\grid\blocks\metal-blocks.json" />
   <None Remove="assets\lensstory\recipes\grid\blocks\shroomstrate.json" />
   <None Remove="assets\lensstory\recipes\grid\blocks\spikestrip.json" />
   <None Remove="assets\lensstory\recipes\grid\blocks\sturdybucket.json" />
@@ -155,6 +175,7 @@
   <None Remove="assets\lensstory\recipes\grid\machines\beehive.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\burnerator.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\heater.json" />
+  <None Remove="assets\lensstory\recipes\grid\machines\icebox.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\kineticmp.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\magmanator.json" />
   <None Remove="assets\lensstory\recipes\grid\machines\manarepair.json" />
@@ -167,6 +188,7 @@
   <None Remove="assets\lensstory\recipes\grid\pruningscissors.json" />
   <None Remove="assets\lensstory\recipes\grid\redstone\lever.json" />
   <None Remove="assets\lensstory\recipes\grid\redstone\redlamp.json" />
+  <None Remove="assets\lensstory\recipes\grid\redstone\redtransmission.json" />
   <None Remove="assets\lensstory\recipes\grid\redstone\swappers.json" />
   <None Remove="assets\lensstory\recipes\grid\redwand.json" />
   <None Remove="assets\lensstory\recipes\grid\scrolls.json" />

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
 using Vintagestory.API.Datastructures;
@@ -33,14 +34,8 @@ namespace LensstoryMod
         {
             get => Powered; set
             {
-                if (Powered != value)
-                {
-                    if (value && !Powered)
-                    {
-                        MarkDirty();
-                    }
-                    Powered = value;
-                };
+                Powered = value;
+                MarkDirty();
             }
         }
         public int oreCycles;
@@ -106,52 +101,107 @@ namespace LensstoryMod
                     return ppws;
                 });
             }
-
+           
             RegisterGameTickListener(OnCommonTick, 1000);
-
-            GetBehavior<Mana>().begin(true);
+            if (GetBehavior<Mana>() != null) { GetBehavior<Mana>().begin(true); }
+            
         }
         internal void OnCommonTick(float dt)
         {
-            if (OreGenMode && Working && Api.World.BlockAccessor.GetBlock(Pos.UpCopy()).Id == 0)
+            if (contents != null && Working)
             {
-                DoOreGeneration();
-            }
-            else if (Working && contents != null)
-            {
-                if (Api.World.BlockAccessor.GetBlock(Pos.Copy().Add(0, 1, 0)).Id == 0)
+                if (OreGenMode)
                 {
-                    Api.World.BlockAccessor.SetBlock(contents.Id, Pos.Copy().ToVec3d().Add(0, 1, 0).AsBlockPos);
+                    DoOreGeneration();
+                }
+                else if (Api.World.BlockAccessor.GetBlock(Pos.UpCopy()).Id == 0)
+                {
+                    Api.World.BlockAccessor.SetBlock(contents.Id, Pos.UpCopy());
                 }
             }
+            LastTickTotalHours = Api.World.Calendar.TotalHours;
         }
 
         internal void DoOreGeneration()
         {
-            workdone = (float)((Api.World.Calendar.TotalHours - LastTickTotalHours) * 100);
-            if (workdone > 1)
+            workdone += (float)(Api.World.Calendar.TotalHours - LastTickTotalHours)* (7.5f + (15*(boostTowers/3f)));
+            if (workdone > 1 && Api.World.BlockAccessor.GetBlock(Pos.UpCopy()).Id == 0)
             {
-                if(oreCycles >= 4)
+                if(oreCycles >= 2)
                 {
                     boostTowers = CheckBoosts();
                     oreCycles = 0;
                 }
-                
                 if(theOreReading == null)
                 {
                     theOreReading = GetTheReading();
                 }
-
-                KeyValuePair<string,OreReading> chosen = theOreReading.OreReadings.ElementAt(Api.World.Rand.Next(0, theOreReading.OreReadings.Count));
-
-                if(Api.World.Rand.Next(100) <= chosen.Value.PartsPerThousand * ((boostTowers / 3f) + 1f ))
+                if (theOreReading != null && Api.ModLoader.GetModSystem<GenDeposits>() != null)
                 {
-                    Api.World.BlockAccessor.SetBlock(Api.World.GetBlock(new AssetLocation(chosen.Key)).Id,Pos.UpCopy());
-                }
+                    var DepoList = Api.ModLoader.GetModSystem<GenDeposits>().Deposits.ToList();
+                    KeyValuePair<string, OreReading> chosen = theOreReading.OreReadings.ElementAt(Api.World.Rand.Next(0, theOreReading.OreReadings.Count));
+                    if (DepoList.FirstOrDefault(thing => { return thing.Code == chosen.Key; })?.Attributes["placeblock"] == null) //Ghetto "Must actually generate" method.
+                    {
+                        for (int i = 0; i < 10; i++)
+                        {
+                            chosen = theOreReading.OreReadings.ElementAt(Api.World.Rand.Next(0, theOreReading.OreReadings.Count));
+                            if(DepoList.FirstOrDefault(thing => { return thing.Code == chosen.Key; })?.Attributes["placeblock"] != null) { break; }
+                            if (i == 10) { return; }//Statistically unlikely "I give up" button.
+                        }
+                    }
+                    if (contents.Collectible.FirstCodePart() == "rock")
+                    {
+                        DepositVariant Deposit = DepoList.FirstOrDefault(thing => { return thing.Code == chosen.Key;});
+                        var placeblock = Deposit.Attributes["placeblock"].Token;
+                        var inblock = Deposit.Attributes["inblock"].Token;
+                        var inallowed = inblock["allowedVariants"];
+                        string halfresin = "BAD";
+                        if (inallowed != null)
+                        {
+                            if (inallowed.ToArray().Contains(contents.Collectible.LastCodePart()))
+                            {
+                                halfresin = contents.Collectible.LastCodePart();
+                            }
+                        }
+                        else
+                        {
+                            halfresin = contents.Collectible.LastCodePart();
+                        }
+                        var togen = "BAD";
+                        if (placeblock["allowedVariants"] != null)
+                        {
+                            var temparray = placeblock["allowedVariants"].ToArray();
+                            togen = temparray[Api.World.Rand.Next(0, temparray.Length)].ToString();
+                        }
+                        else if (placeblock["allowedVariantsByInBlock"] != null)
+                        {
+                            if (placeblock["allowedVariantsByInBlock"].SelectToken("rock-" + halfresin) != null)
+                            {
+                                var temparray = placeblock["allowedVariantsByInBlock"].SelectToken("rock-" + halfresin).ToArray();
+                                togen = temparray[Api.World.Rand.Next(0, temparray.Length)].ToString();
+                            }
+                        }
 
+                        var resolvedplace = placeblock["code"].ToString().Replace("{rock}", halfresin).Replace("*", togen);
+
+                        if (!resolvedplace.Contains("BAD"))
+                        {
+                            if (Api.World.GetBlock(new AssetLocation(resolvedplace)) != null)
+                            {
+                                Api.World.BlockAccessor.SetBlock(Api.World.GetBlock(new AssetLocation(resolvedplace)).Id, Pos.UpCopy(1));
+                            }
+                        }
+                        else
+                        {
+                            Api.World.Logger.Log(EnumLogType.Error, "Not good! A rockmaker couldnt find the correct ore to place! At: {0}", Pos.Copy());
+                        }
+                    }
+                }
+                workdone -= 1;
                 oreCycles++;
             }
-            LastTickTotalHours = Api.World.Calendar.TotalHours;
+            workdone = Math.Clamp(workdone, 0, 50);
+            MarkDirty();
         }
 
         internal PropickReading GetTheReading()
@@ -165,8 +215,6 @@ namespace LensstoryMod
             int lx = Pos.X % regsize;
             int lz = Pos.Z % regsize;
 
-            Pos = Pos.Copy();
-            Pos.Y = Api.World.BlockAccessor.GetTerrainMapheightAt(Pos);
             int[] blockColumn = ppws.GetRockColumn(Pos.X, Pos.Z);
 
             PropickReading readings = new PropickReading();
@@ -222,7 +270,6 @@ namespace LensstoryMod
         {
             if (player.Entity.Controls.ShiftKey)
             {
-
                 if (contents == null) { return false; }
                 var split = contents.Clone();
                 split.StackSize = 1;
@@ -244,9 +291,10 @@ namespace LensstoryMod
             { return false; }
             var maybeblock = slot.Itemstack.Collectible;
             var type = maybeblock.FirstCodePart();
-            if (maybeblock != null && (type == "rock" || type == "gravel" || type == "sand" || type == "soil" || type == "cobblestone" || type == "rockpolished")) 
+            if (maybeblock != null && (type == "rock" || type == "gravel" || type == "sand" || type == "soil" || type == "cobblestone" || type == "rockpolished") && contents == null) 
             {
-                contents = slot.Itemstack;
+                contents = slot.Itemstack.Clone();
+                contents.StackSize = 1;
                 slot.TakeOut(1);
                 slot.MarkDirty();
                 MarkDirty();
@@ -271,6 +319,11 @@ namespace LensstoryMod
                 var pe = GetBehavior<RockmakerBhv>().ToVoid();
                 dsc.AppendLine("MP:\nConsuming: " + pe);
                 dsc.AppendLine($"\nContents: {nameJank}");
+                if (OreGenMode)
+                {
+                    dsc.AppendLine("Attempting to create ore...");
+                    dsc.AppendLine($"Found {boostTowers} booster levels!");
+                }
             }
         }
 
@@ -287,7 +340,7 @@ namespace LensstoryMod
         {
             base.ToTreeAttributes(tree);
             tree.SetItemstack("contents", contents);
-            tree.SetBool("working", Powered);
+            tree.SetBool("working", Working);
             tree.SetDouble("lasttick",LastTickTotalHours);
             tree.SetFloat("workdone",workdone);
         }
@@ -338,11 +391,11 @@ namespace LensstoryMod
                                     }
                                 case "compost":
                                     {
-                                        return 4;
+                                        return 16;
                                     }
                                 case "high":
                                     {
-                                        return 8;
+                                        return 32;
                                     }
                             }
                             return 1;

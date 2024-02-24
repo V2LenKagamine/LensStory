@@ -33,9 +33,26 @@ namespace LensstoryMod
                     if (mayhapMana != null && mayhapMana.GetBehavior<Mana>() is { } behavior)
                     {
                         behavior.ManaID = slot.Itemstack.Attributes.GetInt("channel");
+                        behavior.begin(true);
                     }
                 }
             }
+        }
+        public override float OnBlockBreaking(IPlayer player, BlockSelection blockSel, ItemSlot itemslot, float remainingResistance, float dt, int counter)
+        {
+            if (api.Side == EnumAppSide.Server)
+            {
+                if (blockSel != null)
+                {
+                    BlockEntity mayhapMana = api.World.BlockAccessor.GetBlockEntity(blockSel.Position);
+                    if (mayhapMana != null && mayhapMana.GetBehavior<Mana>() is { } behavior)
+                    {
+                        behavior.ManaID = itemslot.Itemstack.Attributes.GetInt("channel");
+                        behavior.begin(true);
+                    }
+                }
+            }
+            return base.OnBlockBreaking(player, blockSel, itemslot, remainingResistance, dt, counter);
         }
         public override void GetHeldItemInfo(ItemSlot inSlot, StringBuilder dsc, IWorldAccessor world, bool withDebugInfo)
         {

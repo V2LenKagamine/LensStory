@@ -1,6 +1,6 @@
 ﻿[
     {
-        "ingredientPattern": "G,R,G",
+        "ingredientPattern": "G,R,L",
         "width": 1,
         "height": 3,
         "ingredients": {
@@ -10,8 +10,11 @@
             },
             "G": {
                 "type": "item",
-                "code": "gear-*",
-                "quantity": 1
+                "code": "gear-*"
+            },
+            "L": {
+                "type": "block",
+                "code": "redlever-off-north-down"
             }
         },
         "output": {

@@ -40,7 +40,7 @@
         "path": "/-",
         "value": {
             "code": "len-scrollmaker",
-            "traits": [ "len-forbidden-knowledge","len-cursed" ],
+            "traits": [ "len-forbidden-knowledge", "len-cursed" ],
             "gear": [
                 {
                     "type": "item",
@@ -79,5 +79,87 @@
                 }
             ]
         }
+    },
+    {
+        "file": "game:config/characterclasses.json",
+        "op": "add",
+        "path": "/-",
+        "value": {
+            "code": "len-culinary-farmer",
+            "traits": [ "len-farmer", "len-cook", "nervous", "nearsighted" ],
+            "gear": [
+                {
+                    "type": "item",
+                    "code": "clothes-upperbody-commoner-shirt"
+                },
+                {
+                    "type": "item",
+                    "code": "clothes-upperbodyover-commoner-coat"
+                },
+                {
+                    "type": "item",
+                    "code": "clothes-lowerbody-commoner-trousers"
+                },
+                {
+                    "type": "item",
+                    "code": "clothes-foot-commoner-boots"
+                },
+                {
+                    "type": "item",
+                    "code": "clothes-hand-commoner-gloves"
+                },
+                {
+                    "type": "item",
+                    "code": "lensstory:temporalgift-c",
+                    "quantity": 1,
+                    "attributes": {
+                        "gifts": {
+                            "itemlist": [
+                                {
+                                    "type": "Block",
+                                    "code": "aculinaryartillery:cauldron-meteoriciron",
+                                    "amount": 1
+                                },
+                                {
+                                    "type": "Block",
+                                    "code": "aculinaryartillery:bottle-plain-burned",
+                                    "amount": 16
+                                },
+                                {
+                                    "type": "Block",
+                                    "code": "aculinaryartillery:spile-titanium-north",
+                                    "amount": 4
+                                },
+                                {
+                                    "type": "Block",
+                                    "code": "game:bowl-fired",
+                                    "amount": 4
+                                },
+                                {
+                                    "type": "Block",
+                                    "code": "game:crock-burned-east",
+                                    "amount": 4
+                                },
+                                {
+                                    "type": "Block",
+                                    "code": "game:claypot-burned",
+                                    "amount": 1
+                                },
+                                {
+                                    "type": "Item",
+                                    "code": "game:stone-halite",
+                                    "amount": 16
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "dependsOn": [
+            {
+                "modid": "aculinaryartillery"
+            }
+        ]
     }
 ]

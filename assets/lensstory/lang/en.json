@@ -218,12 +218,15 @@
     "block-rockmaker": "Geoformic Accelerator",
     "block-magmanator": "Magmanator",
     "block-kineticmpgen": "Kinetic Potentia-Accumulator",
+    "block-icebox-*": "Thermal Energy Reducer",
 
     "block-heaterblock-*": "Oven Heater",
 
     "block-sturdybucket-*": "Sturdy Bucket",
     "block-magmaforge": "Magmatic Forge",
-
+    "block-temporalgift": "Temporal Giftbox",
+    "item-temporalgift-c": "Unstable Temporal Giftbox",
+    "itemdesc-temporalgift-c": "Looks like it has some goodies, but will probably dissapear once opened.",
     "block-reinforcedbloomery-*": "Reinforced Bloomery",
 
     "block-shroomstrate": "Mushroom Growth Substrate",
@@ -257,6 +260,8 @@
     "block-redlamppipe-*": "Redlamp",
     "blockdesc-redlamp-*": "A lamp that can be turned off and on.",
     "blockdesc-redlamppipe-*": "A lamp that can be turned off and on.",
+    "block-redtransmission-*": "Red-Transmission",
+    "blockdesc-redtransmission-*": "Works like a normal Transmission, but controlled with RedNet.",
 
     "game:traitname-len-fortunate": "Fortunate",
     "game:trait-len-fortunate": "<font color=\"#84ff84\">• Fortunate</font>",
@@ -269,6 +274,12 @@
     "game:trait-len-forbidden-knowledge": "<font color=\"#84ff84\">• Scroll-maker</font>",
     "game:traitname-len-forbidden-knowledge": "Scroll-maker",
     "game:traitdesc-len-forbidden-knowledge": "Using Forbidden Knowledge, you can create scrolls that alter ones body temporarily.",
+    "game:trait-len-farmer": "<font color=\"#84ff84\">• Farmhand</font>",
+    "game:traitname-len-farmer": "Farmer",
+    "game:traitdesc-len-farmer": "You have a green thumb, and get more produce from farmed crops.",
+    "game:trait-len-cook": "<font color=\"#84ff84\">• Cook</font>",
+    "game:traitname-len-cook": "Cook",
+    "game:traitdesc-len-cook": "Start with a carefully packed case of items useful for a small kitchen.",
     "game:trait-len-cursed": "<font color=\"#ff8484\">• Cursed</font>",
     "game:traitname-len-cursed": "Cursed",
     "game:traitdesc-len-cursed": "Your forbidden knowledge attracts dark spirits...",
@@ -292,6 +303,9 @@
     "game:characterclass-len-scrollmaker": "Scroll-Maker",
     "game:characterdesc-len-scrollmaker": "<font color=\"#99c9f9\"><i>What makes you tick, hmm?</i></font><br><br>Scroll makers were once feared for their knowledge of the world and its workings, but most vanished shortly before some unknown event. They start with a few scroll-making materials.",
 
+    "game:characterclass-len-culinary-farmer": "Culinary-Expert",
+    "game:characterdesc-len-culinary-farmer": "<font color=\"#99c9f9\"><i>No you can't know the secret ingredient, then it wouldn't be a secret!</i></font><br><br>Culinary Experts work mostly as cooks and farmhands;despite working with their hands often, they are rather frail. They get more drops from farmed crops.",
+
 
     "game:handbook-block-magmaforge-title": "Usage:",
     "game:handbook-block-magmaforge-text": "Place in lava to fuel, otherwise, works just like a vanilla forge!",
@@ -311,6 +325,10 @@
     "game:handbook-block-swapper-title": "Usage:",
     "game:handbook-block-swapper-text": "When given linked to a Red Network,will swap blocks on the indicated faces when powered, and swap them back when de-powered. Won't do anything if it tries to swap something complex, like a chest. Has no Output.",
 
+    "game:handbook-block-icebox-title": "Usage:",
+    "game:handbook-block-icebox-text": "Causes perishable items to not perish while inside and powered.",
+
+
     "game:handbook-item-sandwich-title": "Creation:",
     "game:handbook-item-sandwich-text": "Place a Perfect bread,as well as any combination of 3 meat, vegetable, cheese, or fruit onto a Tinkering Table, then sneak right click with a knife.",
 
@@ -327,7 +345,7 @@
     "game:handbook-block-reinforcedbloomery-text": "Works just like the regular bloomery, but doesnt break,has a max temperature of 2000, and finished products can be removed by shift clicking. Is a little smaller, so it only holds 2/3rds the normal bloomery.",
 
     "game:handbook-block-rockmaker-title": "Geformic Accelerator Usage:",
-    "game:handbook-block-rockmaker-text": "To use the machine, insert a sample of geologic material, such as sand, dirt, gravel, or rock. Given enough MP, it will produce a sample in the space above it, if there is no obstructions. Sand and Rock are cheap, but dirt may require more MP depending on fertility. You can shift+interact to retreive the sample.",
+    "game:handbook-block-rockmaker-text": "To use the machine, insert a sample of geologic material, such as sand, dirt, gravel, or rock. Given enough MP, it will produce a sample in the space above it, if there is no obstructions. Sand and Rock are cheap, but dirt may require more MP depending on fertility. You can shift+interact to retreive the sample. If placed above mantle, it's function changes drastically, using obscene MP and a sample of host rock, will begin to generate ores based on the readings of the chunk it is located in! If a propick can't find it, however, it won't generate. It can be sped up in 'Ore Gen Mode' by placing up to a 3 block tower of any metal block in each of its diagonal corners.[NE,NW,SE,SW].",
     "game:handbook-block-manarepair-title": "Mechanical Entropy Siphoner Usage:",
     "game:handbook-block-manarepair-text": "To use the machine, insert a damaged tool or object. Given time and MP, it will be repaired. When it's done, you can retreive it with shift+interact.'",
     "game:handbook-block-burnerator-title": "Heat Fuled Potentia Accumulator Usage:",

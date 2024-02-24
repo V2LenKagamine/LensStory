@@ -11,7 +11,7 @@ namespace LensstoryMod
             if (blockSel.Block.FirstCodePart() == "leavesbranchy" || blockSel.Block.FirstCodePart() == "leaves")
             {
                 var treetype = blockSel.Block.FirstCodePart(2);
-                var maybeseed = world.GetItem(new AssetLocation("game:treeseed-" + treetype));
+                var maybeseed = world.GetBlock(new AssetLocation("game:sapling-" + treetype + "-free"));
                 if (maybeseed != null)
                 {
                     api.World.SpawnItemEntity(new(maybeseed, 1),blockSel.Position.ToVec3d().Add(0.5f,0.5f,0.5f));

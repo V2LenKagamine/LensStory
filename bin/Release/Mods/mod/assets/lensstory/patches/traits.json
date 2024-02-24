@@ -63,5 +63,25 @@
             "type": "positive",
             "attributes": {}
         }
+    },
+    {
+        "file": "game:config/traits.json",
+        "op": "add",
+        "path": "/-",
+        "value": {
+            "code": "len-farmer",
+            "type": "positive",
+            "attributes": { "produceDropRate": 0.25 }
+        }
+    },
+    {
+        "file": "game:config/traits.json",
+        "op": "add",
+        "path": "/-",
+        "value": {
+            "code": "len-cook",
+            "type": "positive",
+            "attributes": {}
+        }
     }
 ]
